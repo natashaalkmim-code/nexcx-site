@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reset margin/padding to match Figma layout */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /* =========================
    RAELA GROTESQUE — FONTES
    ========================= */
