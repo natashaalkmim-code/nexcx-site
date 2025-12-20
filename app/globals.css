@@ -8,6 +8,16 @@ html, body {
   padding: 0;
 }
 
+/* Prevent automatic text-size adjustments on mobile and hide horizontal overflow */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 /* =========================
    RAELA GROTESQUE — FONTES
    ========================= */
