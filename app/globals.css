@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Reset margin/padding to match Figma layout */
-html, body {
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; }
 
-/* Prevent automatic text-size adjustments on mobile and hide horizontal overflow */
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -16,128 +13,7 @@ html {
 
 body {
   overflow-x: hidden;
-}
-
-/* =========================
-   RAELA GROTESQUE — FONTES
-   ========================= */
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* =========================
-   BASE DO SITE (FIGMA-LIKE)
-   ========================= */
-
-:root {
-  --background: #F4F1E9;
-  --foreground: #292673;
-  --primary: #292673;
-  --accent: #fca402;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
   background: #F4F1E9;
   color: #292673;
   font-family: "Raela Grotesque", system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
-}
-
-/* Tipografia editorial (igual Figma) */
-
-h1 {
-  font-size: 40px;
-  font-weight: 500;
-}
-
-h2 {
-  font-size: 32px;
-  font-weight: 500;
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: 500;
-}
-
-p {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-button {
-  font-family: "Raela Grotesque", system-ui, sans-serif;
 }
