@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
-img { max-width: 100%; height: auto; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -16,4 +19,47 @@ body {
   background: #F4F1E9;
   color: #292673;
   font-family: "Raela Grotesque", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   RAELA GROTESQUE — FONTES
+   ========================= */
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
