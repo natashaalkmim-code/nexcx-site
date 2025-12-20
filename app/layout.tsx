@@ -10,12 +10,18 @@ export const viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased bg-[#F4F1E9]">
-        <div className="min-h-screen flex justify-center px-3 py-6">
-          <div className="w-full max-w-[420px] bg-white rounded-[28px] overflow-hidden shadow-md">
+      <body className="bg-[#F4F1E9] antialiased">
+        {/* fundo geral */}
+        <div className="min-h-screen flex justify-center">
+          {/* SITE (largura fixa = imagem) */}
+          <div className="w-full max-w-[420px] bg-white overflow-hidden">
             {children}
           </div>
         </div>
