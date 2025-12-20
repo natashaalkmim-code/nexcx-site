@@ -32,7 +32,7 @@ export default function Home() {
   const [openService, setOpenService] = useState<number | null>(0);
 
   return (
-<main className="max-w-[392px] mx-auto bg-white min-h-screen">
+<main className="w-full max-w-[392.854px] mx-auto bg-white min-h-screen overflow-x-hidden">
       {/* HERO IMAGE (SEM CORTE) */}
       <section className="w-full">
         <img
