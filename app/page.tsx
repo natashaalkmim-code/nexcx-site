@@ -44,15 +44,17 @@ export default function Home() {
       </section>
 
       {/* BLOCO AZUL */}
-      <section className="bg-[#292673] text-white px-8 py-10 space-y-6">
-        <img
-          src="/imagens/Seta.png"
-          alt=""
-          className="w-6 h-auto"
-          draggable={false}
-        />
+      <section className="bg-[#292673] text-white px-8 pt-8 pb-12 space-y-6 min-h-[320px] flex flex-col">
+        <div className="flex items-start">
+          <img
+            src="/imagens/Seta.png"
+            alt="seta"
+            className="w-6 h-auto"
+            draggable={false}
+          />
+        </div>
 
-        <h2 className="uppercase leading-snug tracking-wide text-[22px]">
+        <h2 className="uppercase font-extrabold leading-tight tracking-wide text-[28px] md:text-[32px]">
           Precisando de
           <br />
           um copiloto para
@@ -62,12 +64,14 @@ export default function Home() {
           empresa?
         </h2>
 
-        <a
-          href="#contato"
-          className="inline-flex items-center justify-center border border-white rounded-full px-4 py-2 text-sm font-semibold"
-        >
-          Vamos conversar
-        </a>
+        <div className="mt-auto">
+          <a
+            href="#contato"
+            className="inline-flex items-center justify-center border-2 border-white rounded-full px-4 py-2 text-sm font-extrabold bg-transparent hover:bg-white/10 transition"
+          >
+            Vamos conversar
+          </a>
+        </div>
       </section>
 
       {/* O QUE FAZEMOS */}
@@ -174,6 +178,17 @@ export default function Home() {
           </a>
         </div>
       </section>
+    </main>
+  );
+}
+
+import CopilotCard from '@/components/CopilotCard';
+
+export default function Home() {
+  return (
+    <main>
+      <CopilotCard />
+      {/* outros componentes */}
     </main>
   );
 }
