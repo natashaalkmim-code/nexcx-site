@@ -1,28 +1,37 @@
-// CopilotCard.tsx
+// components/CopilotCard.tsx
+
+"use client";
+
 export default function CopilotCard() {
   return (
-    <div className="max-w-[392px] rounded-[34px] overflow-hidden shadow-md bg-white mx-auto">
-      <div className="relative h-[260px] bg-orange-500 flex items-center justify-center">
-        {/* Aqui você pode inserir um SVG ou imagem */}
-        {/* Imagem/ícones decorativos */}
-        <span className="absolute top-4 left-4 w-10 h-10 bg-blue-900 rounded-full"></span>
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-xl font-bold">🚗</span>
+    <div className="w-full max-w-[392px] mx-auto rounded-[34px] overflow-hidden shadow-lg">
+      {/* Ilustração Topo */}
+      <div className="relative w-full h-auto">
+        <img
+          src="/imagens/Ilustracao.png"
+          alt="Ilustração NexCX"
+          className="w-full h-auto block"
+          draggable={false}
+        />
       </div>
 
-      <div className="bg-[#1d1a5e] text-white px-6 py-8 text-center">
-        <div className="text-2xl md:text-[32px] font-black mb-6 leading-tight">
-          PRECISANDO DE <br />
-          UM COPILOTO PARA <br />
-          TRANSFORMAR SUA <br />
-          EMPRESA?
+      {/* Bloco Azul com texto e botão */}
+      <div className="bg-[#292673] text-white px-6 pt-6 pb-10 text-center flex flex-col min-h-[380px]">
+        <div className="mb-4 text-3xl md:text-[32px] font-black leading-tight uppercase">
+          Precisando de <br />
+          um copiloto para <br />
+          transformar sua <br />
+          empresa?
         </div>
 
-        <a
-          href="#"
-          className="inline-block border border-white text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-[#1d1a5e] transition"
-        >
-          Vamos conversar
-        </a>
+        <div className="mt-auto">
+          <a
+            href="#contato"
+            className="inline-block border-2 border-white text-white px-6 py-2 rounded-full text-sm font-extrabold hover:bg-white hover:text-[#292673] transition"
+          >
+            Vamos conversar
+          </a>
+        </div>
       </div>
     </div>
   );
