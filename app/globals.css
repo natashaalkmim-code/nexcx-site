@@ -23,14 +23,38 @@ body {
 }
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 /* =========================
-   RAELA GROTESQUE — FONTES
+   FONTES — RAELA GROTESQUE
    ========================= */
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "Raela Grotesque";
@@ -62,4 +86,41 @@ img {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raela Grotesque";
+  src: url("/fonts/RaelaGrotesque-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   “FRAME” DO SITE (mobile card)
+   ========================= */
+
+.app-shell {
+  min-height: 100vh;
+  background: #F4F1E9;
+  display: flex;
+  justify-content: center;
+  padding: 24px 12px;
+}
+
+.app-frame {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }

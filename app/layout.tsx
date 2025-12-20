@@ -1,13 +1,14 @@
 import "./globals.css";
+import type { Metadata, Viewport } from "next";
 
-export const metadata = {
-  title: "NexCX",
-  description: "NexCX",
-};
-
-export const viewport = {
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+};
+
+export const metadata: Metadata = {
+  title: "NexCX",
+  description: "NexCX",
 };
 
 export default function RootLayout({
@@ -17,12 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased bg-[#F4F1E9]">
-        {/* “moldura” do site (mesma largura do mobile) */}
-        <div className="min-h-screen flex justify-center px-3 py-6">
-          <div className="w-full max-w-[420px] bg-white rounded-[28px] overflow-hidden shadow-md">
-            {children}
-          </div>
+      <body>
+        {/* Fundo geral (fora do “site”) */}
+        <div className="app-shell">
+          {/* “Site” = mesma largura da ilustração */}
+          <div className="app-frame">{children}</div>
         </div>
       </body>
     </html>

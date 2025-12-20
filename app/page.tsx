@@ -32,7 +32,7 @@ export default function Home() {
   const [openService, setOpenService] = useState<number | null>(0);
 
   return (
-    <>
+    <main className="w-full">
       {/* HERO IMAGE (SEM CORTE) */}
       <section className="w-full">
         <img
@@ -48,7 +48,7 @@ export default function Home() {
         <img
           src="/imagens/Seta.png"
           alt=""
-          className="w-6 h-auto block"
+          className="w-6 h-auto"
           draggable={false}
         />
 
@@ -148,7 +148,7 @@ export default function Home() {
           <img
             src="/imagens/Logo.png"
             alt="NexCX"
-            className="h-8 w-auto block"
+            className="h-8 w-auto"
             draggable={false}
           />
         </div>
@@ -174,6 +174,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-    </>
+    </main>
   );
 }
