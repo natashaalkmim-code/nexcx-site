@@ -29,7 +29,6 @@
 :root {
   --radius: 28px;
   --blue: #2b2b86;
-  --white: #ffffff;
   --paper: #f4f1ea;
   --ink: #1d1d1d;
   --accent: #f7a531;
@@ -114,7 +113,7 @@ body {
 .heroContent {
   flex: 1;
   min-height: 0;
-  color: var(--white);
+  color: var(--paper);
 
   background-color: var(--blue);
   background-image: url("/assets/images/hero.png");
@@ -159,7 +158,7 @@ body {
   margin-top: 28px;
   font-size: 34px;
   line-height: 1;
-  color: var(--white);
+  color: var(--paper);
   opacity: 0.95;
 }
 
@@ -225,7 +224,7 @@ a.heroCta,
 
 .servicesTitle {
   margin: 0 0 18px;
-  color: var(--white);
+  color: var(--paper]);
   font-weight: 900;
   font-size: 38px;
 }
@@ -287,7 +286,7 @@ summary::-webkit-details-marker { display: none; }
 ========================================================= */
 .footerSection {
   background: rgba(0,0,0,0.1);
-  color: var(--white);
+  color: var(--paper);
   padding: 22px var(--sidePadding);
 }
 
