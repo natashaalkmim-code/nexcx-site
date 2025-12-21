@@ -27,12 +27,11 @@
    VARIÁVEIS
 ========================================================= */
 :root {
-  --radius: 28px;
-  --blue: #2b2b86; /* fallback */
+  --blue: #2b2b86;
   --white: #ffffff;
   --paper: #f4f1ea;
   --ink: #1d1d1d;
-  --accent: #f7a531;
+
   --cardMaxWidth: 430px;
   --sidePadding: 50px;
 }
@@ -40,11 +39,16 @@
 /* =========================================================
    RESET
 ========================================================= */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
   font-family: "RaelaGrotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--paper);
   color: var(--ink);
@@ -54,108 +58,72 @@ body {
    APP / CONTAINER
 ========================================================= */
 .app {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
 
 .shell {
   width: min(var(--cardMaxWidth), 100%);
-  background: var(--paper);
-  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+  background: var(--blue); /* 🔥 fundo azul contínuo */
 }
 
 @media (max-width: 520px) {
   .shell {
     width: 100%;
-    border-radius: 0;
   }
 }
 
 /* =========================================================
-   HERO — COLAGEM EM CIMA / AZUL 1 VIEWPORT
+   HERO
 ========================================================= */
 
-/* ---------- COLAGEM (SEM GAP) ---------- */
+/* ---------- COLAGEM ---------- */
 .heroImageWrap {
-  background: var(--paper);
-  padding: 0;
-  margin: 0;
-  display: block;
-  font-size: 0;   /* mata whitespace */
-  line-height: 0; /* mata whitespace */
+  background: var(--blue); /* 🔥 elimina o branco */
 }
 
 .heroImage {
   width: 100%;
-  display: block; /* sem “linha fantasma” */
-  margin: 0;
-  border-radius: 0;
+  display: block;
 }
 
-/* ---------- AZUL (TELA INTEIRA, SEM BUG DO iOS) ---------- */
+/* ---------- FUNDO AZUL + TEXTO ---------- */
 .heroContent {
+  background: var(--blue);
   color: var(--white);
 
-  /* usa o TOM EXATO do arquivo */
-  background-color: var(--blue);
-  background-image: url("/assets/images/hero.png");
-  background-repeat: no-repeat;
-
-  /* é um azul “chapado”, então cover funciona perfeito */
-  background-size: cover;
-  background-position: center;
-
-  /* fallback geral */
-  min-height: 100vh;
+  /* 📏 TEXTO A 20px DO TOPO */
+  padding: 20px var(--sidePadding) 56px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  padding: 56px var(--sidePadding);
-}
-
-/* Safari/iOS: usa viewport “correta” quando disponível */
-@supports (min-height: 100svh) {
-  .heroContent { min-height: 100svh; }
-}
-@supports (min-height: 100dvh) {
-  .heroContent { min-height: 100dvh; }
-}
-
-/* MOBILE */
-@media (max-width: 520px) {
-  .heroContent {
-    padding: 56px var(--sidePadding);
-  }
 }
 
 /* ---------- TEXTO ---------- */
 .heroTitle {
   margin: 0;
-  font-weight: 600; /* semi-bold */
-  text-transform: uppercase;
   font-size: 28px;
   line-height: 1.25;
+  text-transform: uppercase;
+  font-weight: 600; /* semi-bold padrão */
   letter-spacing: 0.4px;
 }
 
-/* “COPILOTO” em black (usa span no HTML com class="heroBlack") */
-.heroBlack { font-weight: 900; }
+/* COPILOTO EM BLACK */
+.heroTitle .heroBlack {
+  font-weight: 900;
+}
 
-/* ---------- SETA (embaixo do texto) ---------- */
+/* ---------- SETA (EMBAIXO DO TEXTO) ---------- */
 .heroArrow {
-  margin-top: 40px;
+  margin-top: 28px;
   font-size: 32px;
   line-height: 1;
-  opacity: 0.95;
 }
 
 /* =========================================================
-   WHITE SECTION
+   SEÇÕES SEGUINTES
 ========================================================= */
 .whiteSection {
   background: var(--paper);
@@ -182,92 +150,5 @@ body {
 .servicesSection {
   background: var(--blue);
   padding: 26px var(--sidePadding) 34px;
-}
-
-.servicesTitle {
-  margin: 0 0 18px;
   color: var(--white);
-  font-weight: 900;
-  font-size: 38px;
-}
-
-.card {
-  background: var(--paper);
-  border-radius: 18px;
-  padding: 22px;
-  margin-bottom: 18px;
-}
-
-.cardTitle {
-  margin: 0 0 10px;
-  font-weight: 900;
-  color: var(--blue);
-  font-size: 28px;
-}
-
-.cardText {
-  margin: 0 0 14px;
-  font-size: 15px;
-  line-height: 1.6;
-  font-weight: 600;
-}
-
-/* =========================================================
-   TOGGLE
-========================================================= */
-details {
-  border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 14px;
-}
-
-summary {
-  cursor: pointer;
-  display: inline-flex;
-  gap: 10px;
-  color: var(--accent);
-  font-weight: 900;
-  font-size: 15px;
-}
-summary::-webkit-details-marker { display: none; }
-
-.subTitle {
-  margin: 18px 0 8px;
-  font-weight: 900;
-  color: var(--blue);
-}
-
-.ul {
-  padding-left: 18px;
-  font-weight: 700;
-  line-height: 1.55;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-.footerSection {
-  background: rgba(0,0,0,0.1);
-  color: var(--white);
-  padding: 22px var(--sidePadding);
-}
-
-.footerTitle {
-  margin: 0 0 8px;
-  font-weight: 900;
-  font-size: 22px;
-}
-
-.footerText {
-  margin: 0 0 14px;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-/* =========================================================
-   LOADING
-========================================================= */
-.loading {
-  width: min(var(--cardMaxWidth), 100%);
-  padding: 22px var(--sidePadding);
-  opacity: 0.8;
 }
