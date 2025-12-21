@@ -183,44 +183,46 @@ a.heroCta,
    - 1º parágrafo max 900px
    - 2º parágrafo max 400px e menor
 ========================================================= */
+/* ===============================
+   WHITE SECTION
+================================ */
 .whiteSection {
   background: var(--paper);
-  padding: 56px var(--sidePadding) 56px;
-
-  display: flex;
-  justify-content: center;
+  padding: 52px var(--sidePadding); /* menos branco em cima/baixo */
+  text-align: left; /* 🔥 */
 }
 
-.whiteTextBlock {
-  width: 100%;
-  max-width: 900px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.whiteLead {
+  margin: 0 0 18px; /* distância menor entre os dois textos */
+  font-size: 28px;  /* título maior */
+  line-height: 1.28;
+  font-weight: 800; /* mais grosso */
+  color: var(--ink);
+  max-width: 900px; /* opcional: segura linha no desktop sem “centralizar bloco” */
 }
 
-/* TEXTO MAIOR */
-.whiteTitle {
-  margin: 0;
-  font-size: 34px;      /* 🔥 maior */
-  font-weight: 800;    /* 🔥 mais grosso (sem ficar agressivo) */
-  line-height: 1.35;
-  color: var(--blue);
-  text-align: left;
-}
-
-/* TEXTO MENOR */
 .whiteSub {
-  margin-top: 20px;
-  font-size: 16px;     /* menor, mas confortável */
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.55;
   font-weight: 500;
-  line-height: 1.6;
-  color: var(--blue);
-
-  max-width: 400px;    /* mantém hierarquia */
-  text-align: left;    /* 🔥 alinhado ao título */
+  color: rgba(29, 29, 29, 0.9);
+  max-width: 700px; /* opcional */
 }
+
+@media (max-width: 520px) {
+  .whiteSection {
+    padding: 44px 24px;
+  }
+  .whiteLead {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .whiteSub {
+    font-size: 16px;
+  }
+}
+
 
 
 
