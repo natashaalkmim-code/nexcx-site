@@ -183,7 +183,7 @@ body {
 
 .whiteLead{
   margin: 0 0 22px;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.28;
   font-weight: 800;
   color: var(--ink);
@@ -191,9 +191,9 @@ body {
 
 .whiteSub{
   margin: 0;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1.55;
-  font-weight: 500;
+  font-weight: 400;
   color: rgba(29,29,29,0.9);
 
   max-width: 520px;
@@ -202,8 +202,8 @@ body {
 
 @media (max-width: 520px){
   .whiteSection{ padding: 44px 24px; }
-  .whiteLead{ font-size: 20px; margin-bottom: 16px; }
-  .whiteSub{ font-size: 16px; max-width: 320px; padding-left: 4px; }
+  .whiteLead{ font-size: 17px; margin-bottom: 16px; }
+  .whiteSub{ font-size: 13px; max-width: 320px; padding-left: 4px; }
 }
 
 /* =========================================================
