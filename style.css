@@ -28,7 +28,10 @@
   --ink: #1d1d1d;
   --accent: #f7a531;
   --cardMaxWidth: 430px;
+
+  --sidePadding: 28px;
 }
+
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
