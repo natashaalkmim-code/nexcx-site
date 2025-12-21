@@ -5,7 +5,7 @@
     "sidePadding": 50
   },
   "hero": {
-    "image": "/assets/images/collage-v2.png",
+    "image": "/assets/images/collage.png",
     "bg": "/assets/images/hero.png",
     "arrow": "↓",
     "titleLines": [
