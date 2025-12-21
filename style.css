@@ -183,26 +183,36 @@ a.heroCta,
    - 1º parágrafo max 900px
    - 2º parágrafo max 400px e menor
 
-.whiteSection, .whiteSection * { text-align: left !important; }
+/* =========================================================
+   WHITE SECTION (sem título “O que fazemos”)
+   Texto:
+   - 1º parágrafo max 900px
+   - 2º parágrafo menor e mais estreito
+========================================================= */
 
+.whiteSection,
+.whiteSection *{
+  text-align: left !important;
+}
 
-.whiteSection {
+.whiteSection{
   background: var(--paper);
   padding: 56px var(--sidePadding);
 }
 
 .whiteInner{
-  /* não centraliza “na página”, só cria o bloco com recuo */
+  width: 100%;
   max-width: 920px;
+  margin: 0;      /* não centraliza bloco */
+  padding: 0;
 }
 
 .whiteLead{
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   font-size: 28px;
   line-height: 1.28;
   font-weight: 800;
   color: var(--ink);
-  text-align: left;
 }
 
 .whiteSub{
@@ -211,27 +221,17 @@ a.heroCta,
   line-height: 1.55;
   font-weight: 500;
   color: rgba(29,29,29,0.9);
-  text-align: left;
 
-  /* deixa o subtítulo mais estreito e “mais pra dentro” */
   max-width: 520px;
   padding-left: 6px;
 }
 
 @media (max-width: 520px){
-  .whiteSection{
-    padding: 44px 24px;
-  }
-  .whiteLead{
-    font-size: 22px;
-    margin-bottom: 22px;
-  }
-  .whiteSub{
-    font-size: 16px;
-    max-width: 320px;
-    padding-left: 4px;
-  }
+  .whiteSection{ padding: 44px 24px; }
+  .whiteLead{ font-size: 22px; margin-bottom: 18px; }
+  .whiteSub{ font-size: 16px; max-width: 320px; padding-left: 4px; }
 }
+
 
 
 
