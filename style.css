@@ -185,7 +185,7 @@ a.heroCta,
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 48px var(--sidePadding); /* ↓ antes era maior */
+  padding: 48px var(--sidePadding); /* espaço igual em cima e embaixo */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -194,21 +194,21 @@ a.heroCta,
 /* TEXTO PRINCIPAL */
 .whiteLead {
   max-width: 900px;
-  font-size: 26px;          /* levemente menor */
+  font-size: 26px;
   line-height: 1.35;
   font-weight: 700;
   text-align: center;
-  margin: 0 0 24px;        /* ↓ menos espaço até o subtítulo */
+  margin: 0 0 24px; /* espaço até o texto menor */
 }
 
-/* SUBTÍTULO */
+/* TEXTO MENOR */
 .whiteSub {
   max-width: 400px;
-  font-size: 16px;         /* menor que o lead */
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
-  text-align: center;      /* 🔥 centralizado */
-  margin: 0;               /* remove espaço extra */
+  text-align: center;
+  margin: 0 0 48px; /* 🔥 agora igual ao espaço superior */
   opacity: 0.9;
 }
 
@@ -220,13 +220,15 @@ a.heroCta,
 
   .whiteLead {
     font-size: 22px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 
   .whiteSub {
     font-size: 15px;
+    margin-bottom: 36px;
   }
 }
+
 
 
 
