@@ -5,22 +5,16 @@
   font-family: "RaelaGrotesque";
   src: url("/assets/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("/assets/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("/assets/fonts/RaelaGrotesque-Black.ttf") format("truetype");
   font-weight: 900;
-  font-style: normal;
-  font-display: swap;
 }
 
 /* =========================================================
@@ -31,7 +25,6 @@
   --white: #ffffff;
   --paper: #f4f1ea;
   --ink: #1d1d1d;
-
   --cardMaxWidth: 430px;
   --sidePadding: 50px;
 }
@@ -49,7 +42,7 @@ html, body {
 }
 
 body {
-  font-family: "RaelaGrotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "RaelaGrotesque", system-ui, sans-serif;
   background: var(--paper);
   color: var(--ink);
 }
@@ -64,23 +57,22 @@ body {
 
 .shell {
   width: min(var(--cardMaxWidth), 100%);
+  background: var(--blue);
   overflow: hidden;
-  background: var(--blue); /* 🔥 fundo azul contínuo */
-}
-
-@media (max-width: 520px) {
-  .shell {
-    width: 100%;
-  }
 }
 
 /* =========================================================
-   HERO
+   HERO (COLAGEM + AZUL ATÉ O FIM DA VIEWPORT)
 ========================================================= */
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 🔥 garante preencher a viewport */
+}
 
 /* ---------- COLAGEM ---------- */
 .heroImageWrap {
-  background: var(--blue); /* 🔥 elimina o branco */
+  background: var(--blue); /* elimina qualquer branco */
 }
 
 .heroImage {
@@ -88,16 +80,17 @@ body {
   display: block;
 }
 
-/* ---------- FUNDO AZUL + TEXTO ---------- */
+/* ---------- FUNDO AZUL ---------- */
 .heroContent {
+  flex: 1; /* 🔥 ocupa TODO o espaço restante da viewport */
   background: var(--blue);
   color: var(--white);
 
-  /* 📏 TEXTO A 20px DO TOPO */
-  padding: 20px var(--sidePadding) 56px;
+  padding: 20px var(--sidePadding) 40px; /* 20px do topo */
 
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* ---------- TEXTO ---------- */
@@ -106,7 +99,7 @@ body {
   font-size: 28px;
   line-height: 1.25;
   text-transform: uppercase;
-  font-weight: 600; /* semi-bold padrão */
+  font-weight: 600; /* semi-bold */
   letter-spacing: 0.4px;
 }
 
@@ -115,9 +108,9 @@ body {
   font-weight: 900;
 }
 
-/* ---------- SETA (EMBAIXO DO TEXTO) ---------- */
+/* ---------- SETA (ABAIXO DO TEXTO) ---------- */
 .heroArrow {
-  margin-top: 28px;
+  margin-top: 32px;
   font-size: 32px;
   line-height: 1;
 }
@@ -142,13 +135,4 @@ body {
   font-size: 16px;
   line-height: 1.6;
   font-weight: 600;
-}
-
-/* =========================================================
-   SERVICES
-========================================================= */
-.servicesSection {
-  background: var(--blue);
-  padding: 26px var(--sidePadding) 34px;
-  color: var(--white);
 }
