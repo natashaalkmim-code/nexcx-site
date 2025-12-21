@@ -1,4 +1,3 @@
-// app/page.tsx
 import CopilotCard from "@/components/CopilotCard";
 
 export default function Home() {

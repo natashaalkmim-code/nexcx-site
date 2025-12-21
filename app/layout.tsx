@@ -1,27 +1,15 @@
-// app/layout.tsx
 import "./globals.css";
-import type { Metadata, Viewport } from "next";
+import { ReactNode } from "react";
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
+export const metadata = {
+  title: "NexCX Site",
+  description: "Landing page institucional",
 };
 
-export const metadata: Metadata = {
-  title: "NexCX",
-  description: "NexCX",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-[#F4F1E9] overflow-y-auto">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

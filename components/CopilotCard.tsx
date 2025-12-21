@@ -1,50 +1,28 @@
-"use client";
+'use client';
+
+import Image from 'next/image';
+import Illustration from '/public/illustration.png'; // Confirme se o nome está certo
 
 export default function CopilotCard() {
   return (
-    <div className="w-full max-w-[392px] mx-auto rounded-[34px] overflow-hidden shadow-xl bg-white">
-      {/* Ilustração no topo */}
-      <div className="w-full h-auto">
-        <img
-          src="/imagens/Ilustracao.png"
-          alt="Ilustração NexCX"
-          className="w-full h-auto block"
-          draggable={false}
-        />
-      </div>
-
-      {/* Bloco azul */}
-      <div className="bg-[#292673] text-white px-6 pt-10 pb-10 text-center flex flex-col min-h-[380px] justify-between">
-        {/* Seta branca */}
-        <div className="flex justify-center">
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 3V21M12 21L5 14M12 21L19 14"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+    <div className="w-[392px] rounded-[34px] shadow-md border border-neutral-300 overflow-hidden">
+      <Image
+        src={Illustration}
+        alt="Ilustração"
+        className="w-full h-auto"
+        priority
+      />
+      <div className="bg-[#1E197E] px-6 py-10 flex flex-col items-start justify-between gap-4 min-h-[380px]">
+        <div className="w-full text-center">
+          <div className="text-white text-xl md:text-[36px] font-black leading-tight">
+            PRECISANDO DE<br />
+            UM COPILOTO PARA<br />
+            TRANSFORMAR SUA<br />
+            EMPRESA?
+          </div>
         </div>
-
-        {/* Texto */}
-        <p className="font-black text-[32px] md:text-[36px] leading-tight mt-6">
-          PRECISANDO DE <br />
-          UM COPILOTO PARA <br />
-          TRANSFORMAR SUA <br />
-          EMPRESA?
-        </p>
-
-        {/* Botão */}
-        <div className="pt-6">
-          <button className="px-4 py-2 border border-white rounded-full text-white font-semibold hover:bg-white hover:text-[#292673] transition">
+        <div className="w-full text-center">
+          <button className="border border-white rounded-full px-4 py-1 text-white text-xs font-medium hover:bg-white hover:text-[#1E197E] transition">
             Vamos conversar
           </button>
         </div>

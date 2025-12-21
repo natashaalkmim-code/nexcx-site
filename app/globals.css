@@ -1,41 +1,7 @@
-/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
 body {
-  overflow-x: hidden;
-  background: #F4F1E9;
-  color: #292673;
-  font-family: "Raela Grotesque", system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* Fonte (mantida caso você já tenha o .ttf) */
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  @apply bg-[#F4F1E9];
 }
