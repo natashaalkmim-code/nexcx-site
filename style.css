@@ -108,25 +108,21 @@ body {
 /* ---------- FUNDO AZUL (preenche o resto do hero) ---------- */
 .heroContent {
   flex: 1;
-
-  /* 🔥 FUNDO AZUL VINDO DA IMAGEM */
   background-image: url("/assets/images/hero.png");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center bottom;
   background-size: cover;
 
   color: var(--white);
 
-  /* ✅ exatamente 20px entre o azul e o texto */
-  padding-top: 20px;
-  padding-right: var(--sidePadding);
-  padding-left: var(--sidePadding);
-  padding-bottom: 32px;
+  /* 🔥 MAIS AZUL ACIMA DO TEXTO */
+  padding: 40px var(--sidePadding) 40px; /* era 20px → agora 40px */
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
+
 
 
 
