@@ -33,9 +33,14 @@
   --sidePadding: 50px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -46,7 +51,7 @@ body {
 
 /* APP */
 .app {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   padding: 0;
@@ -85,33 +90,30 @@ body {
   color: var(--white);
   background: var(--blue);
 
-  /* ✅ MENOS “AR”: reduz altura mínima */
-  min-height: 30vh;
+  /* 🔥 ALTURA DO HERO */
+  min-height: 55vh;
 
-  /* ✅ MENOS “AR”: em vez de centralizar no meio, alinha pro topo */
+  /* 🔥 CENTRALIZA CONTEÚDO */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
 
-  /* ✅ MENOS “AR”: reduz padding vertical */
-  padding: 18px var(--sidePadding) 20px;
+  padding: 26px var(--sidePadding) 30px;
 }
 
 @media (max-width: 520px) {
   .heroContent {
-    /* ✅ mobile tava 80vh (gigante). baixa pra um hero ainda impactante, mas humano */
-    min-height: 55vh;
-    padding: 18px var(--sidePadding) 22px;
+    min-height: 40vh;
   }
 }
 
 .heroArrow {
   font-size: 28px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .heroTitle {
-  margin: 0 0 18px;
+  margin: 0 0 24px;
   font-weight: 900;
   text-transform: uppercase;
   font-size: 30px;
@@ -206,7 +208,9 @@ summary {
   font-size: 15px;
 }
 
-summary::-webkit-details-marker { display: none; }
+summary::-webkit-details-marker {
+  display: none;
+}
 
 .subTitle {
   margin: 18px 0 8px;
