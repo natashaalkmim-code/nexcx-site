@@ -18,5 +18,87 @@
       "label": "Vamos conversar",
       "href": "#contato"
     }
+  },
+  "intro": {
+    "id": "intro",
+    "title": "O que fazemos",
+    "textStrong": "Transformamos os processos internos e a experiência dos clientes da sua empresa com clareza, método e acompanhamento real",
+    "text": "Enquanto você dirige, a NexCX é o painel, aponta riscos, sugere rotas e ajusta o trajeto"
+  },
+  "services": {
+    "id": "servicos",
+    "title": "Nossos Serviços",
+    "items": [
+      {
+        "title": "Jornada e Experiência do Cliente",
+        "summary": "Desenhamos e estruturamos a experiência do cliente de forma integrada à operação, garantindo coerência entre estratégia, processos e relacionamento. Atuamos para que a experiência seja mensurável, gerenciável e alinhada aos objetivos do negócio.",
+        "servicesTitle": "Serviços",
+        "services": [
+          "Redesenho da jornada do cliente integrada à estratégia e à operação",
+          "Aplicação de pesquisas de satisfação e análises da percepção do cliente",
+          "Realização de cliente oculto para avaliação prática da experiência",
+          "Estruturação de departamento de pós-vendas e relacionamento",
+          "Definição de padrões e fluxos de atendimento ao cliente",
+          "Capacitação de equipes com foco em experiência, retenção e cobrança",
+          "Implantação de ações práticas para melhoria da satisfação, retenção e relacionamento"
+        ],
+        "gainsTitle": "Ganhos para a empresa",
+        "gains": [
+          "Visão clara e estruturada da experiência do cliente",
+          "Alinhamento entre discurso comercial, atendimento e pós-vendas",
+          "Melhoria na retenção e no relacionamento com clientes",
+          "Experiência conectada a resultado e sustentabilidade do negócio"
+        ]
+      },
+      {
+        "title": "Gestão de Processos",
+        "summary": "Estruturamos processos para que a operação funcione de forma clara, integrada e alinhada à estratégia do negócio. Nosso foco é transformar conhecimento operacional em métodos consistentes, que sustentam o crescimento e a tomada de decisão.",
+        "servicesTitle": "Serviços",
+        "services": [
+          "Mapeamento e redesenho de processos ponta a ponta",
+          "Otimização e automação de processos",
+          "Estruturação de áreas, funções e responsabilidades",
+          "Implantação de rotinas operacionais e de gestão",
+          "Padronização e documentação de processos",
+          "Elaboração e revisão de documentos e padrões ISO 9001"
+        ],
+        "gainsTitle": "Ganhos para a empresa",
+        "gains": [
+          "Maior clareza sobre papéis, fluxos e responsabilidades",
+          "Operação mais organizada, integrada e previsível",
+          "Redução de dependência de conhecimento tácito",
+          "Base sólida para crescimento e melhoria contínua"
+        ]
+      },
+      {
+        "title": "Auditoria e Monitoramento de Operações",
+        "summary": "Atuamos na avaliação contínua da operação para garantir que processos, normas e diretrizes estejam sendo seguidos na prática. Nosso foco não é apontar erros, mas garantir que os processos definidos estejam sendo executados, identificar riscos e fortalecer a governança do negócio.",
+        "servicesTitle": "Serviços",
+        "services": [
+          "Auditoria interna de operações e processos",
+          "Monitoramento contínuo da qualidade operacional",
+          "Avaliação de aderência aos processos definidos",
+          "Identificação de riscos, falhas e desvios",
+          "Suporte à governança corporativa e compliance",
+          "Auditoria interna baseada na ISO 9001"
+        ],
+        "gainsTitle": "Ganhos para a empresa",
+        "gains": [
+          "Mais controle e visibilidade sobre a execução operacional",
+          "Redução de riscos e inconsistências nos processos",
+          "Apoio à tomada de decisão com base em evidências",
+          "Fortalecimento da governança e da conformidade"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "id": "contato",
+    "title": "Vamos conversar",
+    "text": "Conte o que está travando sua operação ou sua experiência do cliente. A gente te devolve clareza, método e um plano de ação.",
+    "cta": {
+      "label": "Abrir contato",
+      "href": "mailto:contato@nexcx.com"
+    }
   }
 }

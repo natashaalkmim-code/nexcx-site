@@ -1,32 +1,94 @@
-fetch("content.json")
-  .then(res => res.json())
-  .then(data => {
-    const hero = data.hero;
+import { renderHero } from "./sections/hero.js";
+import { renderIntro } from "./sections/intro.js";
+import { renderServices } from "./sections/services.js";
+import { renderFooter } from "./sections/footer.js";
 
-    document.getElementById("app").innerHTML = `
-      <section class="hero-card">
-        <div class="hero-image">
-          <img src="${hero.image}" alt="Colagem NexCX" />
-        </div>
+function escapeHtml(str) {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
-        <div class="hero-content">
-          <div class="hero-arrow">${hero.arrow}</div>
+async function loadContent() {
+  const res = await fetch("./content.json", { cache: "no-store" });
+  if (!res.ok) throw new Error(`Falha ao carregar content.json: ${res.status}`);
+  return res.json();
+}
 
-          <div class="hero-title">
-            ${hero.titleLines.map(line => `<p>${line}</p>`).join("")}
-          </div>
+function applyTheme(theme) {
+  if (!theme) return;
+  const root = document.documentElement;
+  if (theme.blue) root.style.setProperty("--blue", theme.blue);
+  if (theme.white) root.style.setProperty("--white", theme.white);
+  if (theme.cardMaxWidth) root.style.setProperty("--cardMaxWidth", `${theme.cardMaxWidth}px`);
+  if (theme.radius) root.style.setProperty("--radius", `${theme.radius}px`);
+}
 
-          <div class="hero-cta">
-            <a href="${hero.cta.href}">
-              ${hero.cta.label}
-            </a>
-          </div>
-        </div>
-      </section>
-    `;
-  })
-  .catch(err => {
-    console.error(err);
-    document.getElementById("app").innerHTML =
-      "<p style='color:red'>Erro carregando content.json</p>";
+function setupBackToTop() {
+  const btn = document.getElementById("backToTop");
+  if (!btn) return;
+
+  const onScroll = () => {
+    if (window.scrollY > 420) btn.classList.add("show");
+    else btn.classList.remove("show");
+  };
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+function setupSmoothAnchors() {
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute("href");
+    if (!id || id === "#") return;
+
+    const target = document.querySelector(id);
+    if (!target) return;
+
+    e.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+async function init() {
+  const app = document.getElementById("app");
+  if (!app) return;
+
+  try {
+    const data = await loadContent();
+    applyTheme(data.theme);
+
+    app.innerHTML = `
+      <div class="phone">
+        ${renderHero(data.hero, escapeHtml)}
+        ${renderIntro(data.intro, escapeHtml)}
+        ${renderServices(data.services, escapeHtml)}
+        ${renderFooter(data.footer, escapeHtml)}
+      </div>
+    `;
+
+    setupBackToTop();
+    setupSmoothAnchors();
+  } catch (err) {
+    console.error(err);
+    app.innerHTML = `
+      <div class="phone">
+        <section class="section section-paper">
+          <h2 class="h2">Ops.</h2>
+          <p class="p">Erro carregando <b>content.json</b>. Abre o console.</p>
+        </section>
+      </div>
+    `;
+  }
+}
+
+init();
