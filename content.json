@@ -1,0 +1,22 @@
+{
+  "theme": {
+    "cardMaxWidth": 430,
+    "radius": 28,
+    "blue": "#2B2B86",
+    "white": "#FFFFFF"
+  },
+  "hero": {
+    "image": "/assets/images/collage.png",
+    "arrow": "↓",
+    "titleLines": [
+      "PRECISANDO DE",
+      "UM COPILOTO PARA",
+      "TRANSFORMAR SUA",
+      "EMPRESA?"
+    ],
+    "cta": {
+      "label": "Vamos conversar",
+      "href": "#contato"
+    }
+  }
+}

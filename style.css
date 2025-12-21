@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Raela";
+  src: url("/assets/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Raela";
+  src: url("/assets/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Raela";
+  src: url("/assets/fonts/RaelaGrotesque-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raela", system-ui, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.hero-card {
+  width: 100%;
+  max-width: 430px;
+  background: #2B2B86;
+  color: #ffffff;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  display: block;
+}
+
+.hero-content {
+  padding: 28px;
+}
+
+.hero-arrow {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.hero-title p {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.hero-title p + p {
+  margin-top: 6px;
+}
+
+.hero-cta {
+  margin-top: 24px;
+}
+
+.hero-cta a {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
