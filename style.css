@@ -1,76 +1,260 @@
-/* RESET BÁSICO */
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: "RaelaGrotesque";
+  src: url("/assets/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RaelaGrotesque";
+  src: url("/assets/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "RaelaGrotesque";
+  src: url("/assets/fonts/RaelaGrotesque-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
+:root {
+  --radius: 28px;
+  --blue: #2b2b86;
+  --white: #ffffff;
+  --paper: #f4f1ea;
+  --ink: #1d1d1d;
+  --accent: #f7a531;
+  --cardMaxWidth: 430px;
+
+  --sidePadding: 50px;
+}
+
+
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: 'RaelaGrotesque', system-ui, sans-serif;
-  background: #F4F1EB;
+  font-family: "RaelaGrotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
 }
 
-/* WRAPPER GLOBAL */
-.page {
+/* ✅ sem padding lateral => encosta na borda do celular */
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+/* ✅ no celular, o container vira “full-bleed” */
+.shell {
+  width: min(var(--cardMaxWidth), 100%);
+  background: var(--blue);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+}
+
+/* ✅ no mobile: ocupa a tela toda e sem borda arredondada */
+@media (max-width: 520px) {
+  .shell {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.section {
+  padding: 26px 22px;
+}
+
+/* ✅ remove padding do wrap pra imagem colar */
+.heroImageWrap {
+  background: var(--paper);
+  padding: 0;
+}
+
+/* ✅ remove border-radius da imagem pra ela encostar certinho */
+.heroImage {
   width: 100%;
+  display: block;
+  border-radius: 0;
 }
 
-/* CONTAINER PADRÃO DE TEXTO */
-.container {
-  width: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
+.heroContent {
+  color: var(--white);
+  padding: 26px 22px 30px;
 }
 
-/* HERO */
-.hero {
-  background: #2B2B86;
-  color: #FFFFFF;
-  padding-top: 48px;
-  padding-bottom: 56px;
+.heroArrow {
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 14px;
+  opacity: 0.95;
 }
 
-.hero .container {
-  padding-left: 50px;
-  padding-right: 50px;
+.heroTitle {
+  margin: 0 0 20px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 34px;
+  line-height: 1.08;
 }
 
-/* BOTÃO */
-.button {
-  display: inline-block;
-  margin-top: 24px;
-  padding: 12px 24px;
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
   border-radius: 999px;
-  border: 2px solid #FFFFFF;
-  color: #FFFFFF;
+  border: 2px solid rgba(255,255,255,0.9);
+  color: var(--white);
   text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.whiteSection {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 26px 22px;
+}
+
+.h2 {
+  margin: 0 0 14px;
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 1.05;
+  color: var(--blue);
+}
+
+.p {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(23,23,23,0.86);
   font-weight: 600;
 }
 
-/* SEÇÃO CLARA */
-.section {
-  background: #F4F1EB;
-  padding-top: 56px;
-  padding-bottom: 56px;
+.servicesSection {
+  padding: 26px 22px 34px;
 }
 
-.section .container {
-  padding-left: 50px;
-  padding-right: 50px;
+.servicesTitle {
+  margin: 0 0 18px;
+  color: var(--white);
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 1;
 }
 
-/* TÍTULOS */
-h1, h2 {
-  margin: 0 0 16px 0;
+.card {
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 22px 20px;
+  margin-bottom: 18px;
 }
 
-p {
-  margin: 0 0 16px 0;
+.cardTitle {
+  margin: 0 0 10px;
+  font-weight: 900;
+  color: var(--blue);
+  font-size: 28px;
+  line-height: 1.1;
 }
 
-/* MOBILE REAL (garante que não encoste nunca) */
-@media (max-width: 480px) {
-  .container {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
+.cardText {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(23,23,23,0.78);
+  font-weight: 600;
+}
+
+details {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 14px;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 15px;
+}
+summary::-webkit-details-marker { display: none; }
+
+.toggleMore { display: inline-flex; gap: 10px; align-items: center; }
+.toggleLess { display: inline-flex; gap: 10px; align-items: center; }
+details[open] .toggleMore { display: none; }
+details:not([open]) .toggleLess { display: none; }
+
+.toggleIcon {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.subTitle {
+  margin: 18px 0 8px;
+  font-weight: 900;
+  color: var(--blue);
+  font-size: 18px;
+}
+
+.ul {
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(23,23,23,0.78);
+  font-weight: 700;
+  line-height: 1.55;
+}
+.ul li { margin: 8px 0; }
+
+.footerSection {
+  background: rgba(0,0,0,0.10);
+  color: var(--white);
+  padding: 22px;
+}
+
+.footerTitle {
+  margin: 0 0 8px;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.footerText {
+  margin: 0 0 14px;
+  opacity: 0.95;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.footerCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.loading {
+  width: min(var(--cardMaxWidth), 100%);
+  padding: 22px;
+  opacity: 0.8;
 }
