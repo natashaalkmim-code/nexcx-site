@@ -296,3 +296,12 @@ body {
   font-weight: 600;
   line-height: 1.5;
 }
+
+/* mata estilo padrão de link (azul/sublinhado) */
+.whiteCta,
+.whiteCta:link,
+.whiteCta:visited {
+  color: var(--blue) !important;
+  text-decoration: none !important;
+}
+
