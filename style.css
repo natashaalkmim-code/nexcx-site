@@ -75,12 +75,20 @@ body {
 
 /* =========================================================
    HERO
-   colagem em cima + azul embaixo
+   colagem em cima + azul contínuo embaixo (SEM FAIXA BRANCA)
 ========================================================= */
 
-/* --- COLAGEM --- */
+/* wrapper geral do hero */
+.hero {
+  background-image: url("/assets/images/hero.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 110% auto;
+}
+
+/* ---------- COLAGEM ---------- */
 .heroImageWrap {
-  background: var(--paper);
+  background: transparent; /* ❌ tira o papel */
   padding: 0;
 }
 
@@ -90,15 +98,12 @@ body {
   border-radius: 0;
 }
 
-/* --- FUNDO AZUL + TEXTO --- */
+/* ---------- FUNDO AZUL + TEXTO ---------- */
 .heroContent {
   color: var(--white);
 
-  /* fundo azul vindo da imagem */
-  background-image: url("/assets/images/hero.png");
-  background-repeat: no-repeat;
-  background-size: 110% auto; /* zoom desktop */
-  background-position: center bottom;
+  /* 🔥 fundo azul CONTÍNUO */
+  background: transparent;
 
   min-height: 50vh;
 
@@ -106,50 +111,22 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 
-  /* 🔥 espaço real em cima e embaixo */
-  padding: 50px var(--sidePadding) 50px;
+  padding: 60px var(--sidePadding) 60px;
 }
 
-/* ajuste fino mobile */
+/* ---------- MOBILE ---------- */
 @media (max-width: 520px) {
+  .hero {
+    background-size: 115% auto;
+  }
+
   .heroContent {
     min-height: 45vh;
-    padding-top: 60px;
-    padding-bottom: 60px;
-
-    /* zoom maior no azul */
-    background-size: 115% auto;
-    background-position: center bottom;
+    padding-top: 70px;
+    padding-bottom: 70px;
   }
 }
 
-.heroArrow {
-  font-size: 28px;
-  margin-bottom: 18px;
-}
-
-.heroTitle {
-  margin: 0 0 26px;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 28px;
-  line-height: 1.25;
-  letter-spacing: 0.4px;
-}
-
-.heroCta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: 2px solid rgba(255,255,255,0.9);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  width: fit-content;
-}
 
 /* =========================================================
    WHITE SECTION
