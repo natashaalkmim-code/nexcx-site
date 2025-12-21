@@ -34,16 +34,12 @@
   --ink: #1d1d1d;
   --accent: #f7a531;
   --cardMaxWidth: 430px;
-
-  /* desktop */
   --sidePadding: 50px;
-}
 
-/* mobile: não deixa cortar */
-@media (max-width: 520px) {
-  :root {
-    --sidePadding: 28px;
-  }
+  /* ajuste fino do HERO */
+  --heroTopPadding: 64px;   /* MAIS espaço azul acima do texto (desktop) */
+  --heroBottomPadding: 44px;
+  --heroBgZoom: 140%;
 }
 
 /* =========================================================
@@ -63,9 +59,6 @@ body {
   color: var(--ink);
 }
 
-/* evita link azul feio caso exista algum <a> sobrando */
-a { color: inherit; text-decoration: none; }
-
 /* =========================================================
    APP / CONTAINER
 ========================================================= */
@@ -73,12 +66,11 @@ a { color: inherit; text-decoration: none; }
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 0;
 }
 
 .shell {
   width: min(var(--cardMaxWidth), 100%);
-  background: var(--paper);              /* 🔥 tem que ser paper, não azul */
+  background: var(--paper);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 18px 60px rgba(0,0,0,0.18);
@@ -92,70 +84,104 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* =========================================================
-   HERO — COLAGEM EM CIMA / AZUL (hero.png) EMBAIXO
-   ordem: colagem -> fundo azul -> (texto, seta)
+   HERO — ORDEM: COLAGEM (img) -> AZUL (hero.png) até o fim da viewport
+   ✅ azul chega no fim da viewport
+   ✅ mais espaço azul acima do texto
 ========================================================= */
 
-/* COLAGEM */
+/* IMPORTANTE: isso só funciona se no HTML o hero tiver class="hero"
+   (se não tiver, adicione no index: <section class="hero"> ... ) */
+.hero {
+  min-height: 100vh;              /* 🔥 garante altura mínima de viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- COLAGEM ---------- */
 .heroImageWrap {
-  background: var(--paper);
-  padding: 0;
+  background: var(--blue);        /* mata qualquer “risquinho” claro entre blocos */
   margin: 0;
-  font-size: 0;     /* mata qualquer “risco” */
-  line-height: 0;   /* mata qualquer “risco” */
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+  flex: 0 0 auto;
 }
 
 .heroImage {
   width: 100%;
   display: block;
   margin: 0;
+  padding: 0;
   border-radius: 0;
 }
 
-/* FUNDO AZUL (IMAGEM) */
+/* ---------- FUNDO AZUL + TEXTO (preenche o restante da viewport) ---------- */
 .heroContent {
+  flex: 1;                        /* 🔥 pega todo o espaço restante após a colagem */
+  min-height: 0;                  /* evita bug de overflow em alguns browsers */
   color: var(--white);
 
-  /* azul vindo da imagem */
+  /* fundo azul vindo da imagem */
+  background-color: var(--blue);
   background-image: url("/assets/images/hero.png");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover;
-  background-color: var(--blue); /* fallback */
-
-  /* não inventa 100vh aqui (isso foi o que quebrou e criou “vazio” e corte) */
-  padding: 20px var(--sidePadding) 26px; /* 20px do topo como você pediu */
+  background-size: var(--heroBgZoom) auto;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  /* MAIS azul acima do texto */
+  padding: var(--heroTopPadding) var(--sidePadding) var(--heroBottomPadding);
 }
 
-/* TEXTO DO HERO */
+/* MOBILE */
+@media (max-width: 520px) {
+  :root {
+    --sidePadding: 34px;
+    --heroTopPadding: 72px;      /* ainda mais espaço azul acima do texto no celular */
+    --heroBottomPadding: 44px;
+    --heroBgZoom: 165%;
+  }
+}
+
+/* ---------- TEXTO HERO ---------- */
 .heroTitle {
   margin: 0;
-  font-weight: 600; /* semi-bold no texto todo */
+  font-weight: 600;              /* semi-bold no geral */
   text-transform: uppercase;
   font-size: 30px;
-  line-height: 1.18;
+  line-height: 1.15;
   letter-spacing: 0.4px;
 }
 
-/* só COPILOTO em BLACK */
+/* só COPILOTO em black */
 .heroBlack {
   font-weight: 900;
 }
 
-/* SETA ABAIXO DO TEXTO */
+/* seta embaixo do texto */
 .heroArrow {
-  margin-top: 26px; /* espaço do texto até a seta */
+  margin-top: 28px;
   font-size: 34px;
   line-height: 1;
+  color: var(--white);
   opacity: 0.95;
 }
 
+/* se existir botão antigo no html, mata ele */
+.heroCta,
+a.heroCta,
+#heroCta {
+  display: none !important;
+}
+
 /* =========================================================
-   WHITE SECTION (O QUE FAZEMOS)
+   WHITE SECTION (sem título “O que fazemos”)
+   Texto:
+   - 1º parágrafo max 900px
+   - 2º parágrafo max 400px e menor
 ========================================================= */
 .whiteSection {
   background: var(--paper);
@@ -163,30 +189,27 @@ a { color: inherit; text-decoration: none; }
   padding: 26px var(--sidePadding);
 }
 
-.h2 {
-  margin: 0 0 14px;
-  font-weight: 900;
-  font-size: 34px;
-  color: var(--ink);
+/* some com o título "O que fazemos" */
+.whiteSection .h2 {
+  display: none !important;
 }
 
-.p {
+/* 1º texto (900px) */
+.whiteSection .p:first-of-type {
+  max-width: 900px;
   margin: 0 0 14px;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.55;
   font-weight: 600;
 }
 
-/* variações pedidas por você:
-   900px “Transformamos...” e 400px “Enquanto...” */
-.bloco900 {
-  max-width: 900px;
-}
-
-.bloco400 {
+/* 2º texto (400px, menor) */
+.whiteSection .p:nth-of-type(2) {
   max-width: 400px;
-  font-size: 14px;     /* tipografia menor */
-  line-height: 1.55;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
 }
 
 /* =========================================================
@@ -201,7 +224,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 18px;
   color: var(--white);
   font-weight: 900;
-  font-size: 42px;
+  font-size: 38px;
 }
 
 .card {
@@ -215,7 +238,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 10px;
   font-weight: 900;
   color: var(--blue);
-  font-size: 30px;
+  font-size: 28px;
 }
 
 .cardText {
@@ -226,7 +249,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* =========================================================
-   TOGGLE (DETALHES) — isso aqui “traz de volta” o toggle
+   TOGGLE
 ========================================================= */
 details {
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -236,20 +259,13 @@ details {
 summary {
   cursor: pointer;
   display: inline-flex;
-  align-items: center;
   gap: 10px;
   color: var(--accent);
   font-weight: 900;
   font-size: 15px;
-  user-select: none;
 }
 
 summary::-webkit-details-marker { display: none; }
-
-.toggleIcon {
-  font-size: 18px;
-  line-height: 1;
-}
 
 .subTitle {
   margin: 18px 0 8px;
@@ -267,7 +283,7 @@ summary::-webkit-details-marker { display: none; }
    FOOTER
 ========================================================= */
 .footerSection {
-  background: rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.1);
   color: var(--white);
   padding: 22px var(--sidePadding);
 }
@@ -279,7 +295,7 @@ summary::-webkit-details-marker { display: none; }
 }
 
 .footerText {
-  margin: 0;
+  margin: 0 0 14px;
   font-weight: 600;
   line-height: 1.5;
 }
