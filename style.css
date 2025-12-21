@@ -149,11 +149,11 @@ body {
 /* ---------- TEXTO HERO ---------- */
 .heroTitle {
   margin: 0;
-  font-weight: 600;              /* semi-bold no geral */
+  font-weight: 400;              /* semi-bold no geral */
   text-transform: uppercase;
   font-size: 30px;
-  line-height: 1.15;
-  letter-spacing: 0.4px;
+  line-height: 1.3;
+  letter-spacing: 0.6px;
 }
 
 /* só COPILOTO em black */
