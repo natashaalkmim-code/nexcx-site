@@ -51,7 +51,7 @@ body {
 
 /* APP */
 .app {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
   padding: 0;
@@ -91,7 +91,7 @@ body {
   background: var(--blue);
 
   /* 🔥 ALTURA DO HERO */
-  min-height: 40vh;
+  min-height: 60vh;
 
   /* 🔥 CENTRALIZA CONTEÚDO */
   display: flex;
