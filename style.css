@@ -91,7 +91,7 @@ body {
   background: var(--blue);
 
   /* 🔥 ALTURA DO HERO */
-  min-height: 75vh;
+  min-height: 40vh;
 
   /* 🔥 CENTRALIZA CONTEÚDO */
   display: flex;
