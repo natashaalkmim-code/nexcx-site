@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>NexCX</title>
 
-  <link rel="stylesheet" href="/style.css" />
+  <!-- caminho RELATIVO (menos dor no Vercel) -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="app">
     <div class="shell">
 
-      <!-- ==================================================
-           HERO
-           ordem: colagem → fundo azul (texto + seta)
-      =================================================== -->
+      <!-- HERO -->
       <section class="hero">
 
         <!-- COLAGEM -->
         <div class="heroImageWrap">
           <img
-            src="assets/images/collage.png"
+            src="assets/images/collage.png?v=2"
             alt="Colagem NexCX"
             class="heroImage"
+            loading="eager"
+            decoding="async"
           />
         </div>
 
@@ -37,41 +36,31 @@
             EMPRESA?
           </h1>
 
-          <!-- SETA ABAIXO DO TEXTO -->
           <div class="heroArrow">↓</div>
         </div>
 
       </section>
 
-      <!-- ==================================================
-           SEÇÃO BRANCA
-      =================================================== -->
+      <!-- SEÇÃO BRANCA -->
       <section class="whiteSection">
-  <div class="whiteInner">
-    <p class="whiteLead">
-      Transformamos os processos<br>
-      internos e a experiência dos<br>
-      clientes da sua empresa<br>
-      com clareza, método e<br>
-      acompanhamento real.
-    </p>
+        <div class="whiteInner">
+          <p class="whiteLead">
+            Transformamos os processos<br>
+            internos e a experiência dos<br>
+            clientes da sua empresa<br>
+            com clareza, método e<br>
+            acompanhamento real.
+          </p>
 
-    <p class="whiteSub">
-      Enquanto você dirige, a NexCX<br>
-      lê o painel, aponta riscos, sugere<br>
-      rotas e ajusta o trajeto.
-    </p>
-  </div>
-</section>
+          <p class="whiteSub">
+            Enquanto você dirige, a NexCX<br>
+            lê o painel, aponta riscos, sugere<br>
+            rotas e ajusta o trajeto.
+          </p>
+        </div>
+      </section>
 
-
-
-
-
-
-      <!-- ==================================================
-           SERVICES (exemplo)
-      =================================================== -->
+      <!-- SERVICES -->
       <section class="servicesSection">
         <h2 class="servicesTitle">Serviços</h2>
 
@@ -91,10 +80,8 @@
         </div>
       </section>
 
-      <!-- ==================================================
-           FOOTER
-      =================================================== -->
-      <footer class="footerSection">
+      <!-- FOOTER -->
+      <footer class="footerSection" id="contato">
         <h3 class="footerTitle">NexCX</h3>
         <p class="footerText">
           Estratégia, processo e experiência com clareza.
@@ -103,5 +90,7 @@
 
     </div>
   </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
