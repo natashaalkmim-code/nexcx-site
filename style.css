@@ -29,18 +29,12 @@
   --accent: #f7a531;
   --cardMaxWidth: 430px;
 
-  /* CONTROLE DE ESPAÇOS */
   --sidePadding: 50px;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html,
-body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   margin: 0;
@@ -51,7 +45,7 @@ body {
 
 /* APP */
 .app {
-  min-height: 70vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   padding: 0;
@@ -90,10 +84,8 @@ body {
   color: var(--white);
   background: var(--blue);
 
-  /* 🔥 ALTURA DO HERO */
   min-height: 55vh;
 
-  /* 🔥 CENTRALIZA CONTEÚDO */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,7 +95,11 @@ body {
 
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 40vh;
+    /* ✅ mantém impacto no mobile */
+    min-height: 55vh;
+
+    /* ✅ +10px em cima e embaixo no mobile */
+    padding: 33px var(--sidePadding) 33px;
   }
 }
 
@@ -208,9 +204,7 @@ summary {
   font-size: 15px;
 }
 
-summary::-webkit-details-marker {
-  display: none;
-}
+summary::-webkit-details-marker { display: none; }
 
 .subTitle {
   margin: 18px 0 8px;
