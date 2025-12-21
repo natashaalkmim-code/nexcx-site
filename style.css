@@ -5,26 +5,34 @@
   font-family: "RaelaGrotesque";
   src: url("/assets/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("/assets/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("/assets/fonts/RaelaGrotesque-Black.ttf") format("truetype");
   font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* =========================================================
    VARIÁVEIS
 ========================================================= */
 :root {
+  --radius: 28px;
   --blue: #2b2b86;
   --white: #ffffff;
   --paper: #f4f1ea;
   --ink: #1d1d1d;
+  --accent: #f7a531;
   --cardMaxWidth: 430px;
   --sidePadding: 50px;
 }
@@ -32,17 +40,16 @@
 /* =========================================================
    RESET
 ========================================================= */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: "RaelaGrotesque", system-ui, sans-serif;
+  font-family: "RaelaGrotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--paper);
   color: var(--ink);
 }
@@ -51,72 +58,94 @@ body {
    APP / CONTAINER
 ========================================================= */
 .app {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
 }
 
 .shell {
   width: min(var(--cardMaxWidth), 100%);
-  background: var(--blue);
+  background: var(--paper);
+  border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 520px) {
+  .shell {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 
 /* =========================================================
-   HERO (COLAGEM + AZUL ATÉ O FIM DA VIEWPORT)
+   HERO (COLAGEM EM CIMA / AZUL ATÉ O FIM DA VIEWPORT)
 ========================================================= */
 .hero {
+  height: 100vh;            /* 🔥 azul termina no fim da viewport */
   display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* 🔥 garante preencher a viewport */
+  flex-direction: column;   /* colagem em cima, azul embaixo */
+  background: var(--blue);  /* evita qualquer “linha branca” */
 }
 
 /* ---------- COLAGEM ---------- */
 .heroImageWrap {
-  background: var(--blue); /* elimina qualquer branco */
+  background: var(--blue);  /* mata o branco entre colagem e azul */
+  margin: 0;
+  padding: 0;
+  font-size: 0;             /* evita gaps de inline-image */
+  line-height: 0;
 }
 
 .heroImage {
   width: 100%;
   display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-/* ---------- FUNDO AZUL ---------- */
+/* ---------- FUNDO AZUL (preenche o resto do hero) ---------- */
 .heroContent {
-  flex: 1; /* 🔥 ocupa TODO o espaço restante da viewport */
+  flex: 1;                  /* 🔥 ocupa todo o espaço restante */
   background: var(--blue);
   color: var(--white);
 
-  padding: 20px var(--sidePadding) 40px; /* 20px do topo */
+  padding-top: 20px;        /* 🔥 texto a 20px do topo do azul */
+  padding-left: var(--sidePadding);
+  padding-right: var(--sidePadding);
+  padding-bottom: 20px;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: flex-start;  /* texto alinhado à esquerda */
 }
 
 /* ---------- TEXTO ---------- */
 .heroTitle {
   margin: 0;
+  font-weight: 600;         /* semi-bold no texto todo */
+  text-transform: uppercase;
   font-size: 28px;
   line-height: 1.25;
-  text-transform: uppercase;
-  font-weight: 600; /* semi-bold */
   letter-spacing: 0.4px;
 }
 
-/* COPILOTO EM BLACK */
-.heroTitle .heroBlack {
+/* COPILOTO em BLACK */
+.heroBlack {
   font-weight: 900;
 }
 
 /* ---------- SETA (ABAIXO DO TEXTO) ---------- */
 .heroArrow {
-  margin-top: 32px;
-  font-size: 32px;
+  margin-top: 26px;         /* espaço entre texto e seta */
+  font-size: 34px;
   line-height: 1;
+  color: var(--white);
 }
 
 /* =========================================================
-   SEÇÕES SEGUINTES
+   WHITE SECTION
 ========================================================= */
 .whiteSection {
   background: var(--paper);
@@ -135,4 +164,100 @@ body {
   font-size: 16px;
   line-height: 1.6;
   font-weight: 600;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+.servicesSection {
+  background: var(--blue);
+  padding: 26px var(--sidePadding) 34px;
+}
+
+.servicesTitle {
+  margin: 0 0 18px;
+  color: var(--white);
+  font-weight: 900;
+  font-size: 38px;
+}
+
+.card {
+  background: var(--paper);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+.cardTitle {
+  margin: 0 0 10px;
+  font-weight: 900;
+  color: var(--blue);
+  font-size: 28px;
+}
+
+.cardText {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+/* =========================================================
+   TOGGLE
+========================================================= */
+details {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 14px;
+}
+
+summary {
+  cursor: pointer;
+  display: inline-flex;
+  gap: 10px;
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 15px;
+}
+summary::-webkit-details-marker { display: none; }
+
+.subTitle {
+  margin: 18px 0 8px;
+  font-weight: 900;
+  color: var(--blue);
+}
+
+.ul {
+  padding-left: 18px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footerSection {
+  background: rgba(0,0,0,0.1);
+  color: var(--white);
+  padding: 22px var(--sidePadding);
+}
+
+.footerTitle {
+  margin: 0 0 8px;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.footerText {
+  margin: 0 0 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+.loading {
+  width: min(var(--cardMaxWidth), 100%);
+  padding: 22px var(--sidePadding);
+  opacity: 0.8;
 }
