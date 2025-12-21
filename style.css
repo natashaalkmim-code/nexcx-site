@@ -98,7 +98,7 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  padding: 26px var(--sidePadding) 30px;
+  padding: 23px var(--sidePadding) 23px;
 }
 
 @media (max-width: 520px) {
