@@ -85,14 +85,14 @@ body {
   color: var(--white);
   background: var(--blue);
 
-  min-height: 55vh;
+  min-height: 50vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   /* desktop */
-  padding: 20px var(--sidePadding) 20px;
+  padding: 18px var(--sidePadding) 18px;
 }
 
 /* 📱 MOBILE */
