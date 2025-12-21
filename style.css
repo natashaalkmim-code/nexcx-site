@@ -98,10 +98,10 @@ body {
 /* 📱 MOBILE */
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 55vh;
+    min-height: 50vh;
 
     /* 🔽 mais 10px em cima e 10px embaixo */
-    padding: 20px var(--sidePadding) 20px;
+    padding: 18px var(--sidePadding) 18px;
   }
 }
 
