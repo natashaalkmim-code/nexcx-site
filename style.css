@@ -29,13 +29,13 @@
   --accent: #f7a531;
   --cardMaxWidth: 430px;
 
-  --sidePadding: 50px; /* ✅ espaçamento lateral final */
+  /* ✅ CONTROLE ÚNICO DO ESPAÇO LATERAL */
+  --sidePadding: 50px;
 }
-
-
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
+
 body {
   margin: 0;
   font-family: "RaelaGrotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -43,7 +43,6 @@ body {
   color: var(--ink);
 }
 
-/* ✅ sem padding lateral => encosta na borda do celular */
 .app {
   min-height: 100vh;
   display: flex;
@@ -51,7 +50,6 @@ body {
   padding: 0;
 }
 
-/* ✅ no celular, o container vira “full-bleed” */
 .shell {
   width: min(var(--cardMaxWidth), 100%);
   background: var(--blue);
@@ -60,7 +58,6 @@ body {
   box-shadow: 0 18px 60px rgba(0,0,0,0.18);
 }
 
-/* ✅ no mobile: ocupa a tela toda e sem borda arredondada */
 @media (max-width: 520px) {
   .shell {
     width: 100%;
@@ -68,17 +65,19 @@ body {
   }
 }
 
+/* ---------- SEÇÕES ---------- */
+
 .section {
-  padding: 26px 22px;
+  padding: 26px var(--sidePadding);
 }
 
-/* ✅ remove padding do wrap pra imagem colar */
+/* ---------- HERO ---------- */
+
 .heroImageWrap {
   background: var(--paper);
   padding: 0;
 }
 
-/* ✅ remove border-radius da imagem pra ela encostar certinho */
 .heroImage {
   width: 100%;
   display: block;
@@ -87,20 +86,17 @@ body {
 
 .heroContent {
   color: var(--white);
-  padding: 26px 22px 30px;
+  padding: 26px var(--sidePadding) 30px;
 }
 
 .heroArrow {
   font-size: 28px;
-  line-height: 1;
   margin-bottom: 14px;
-  opacity: 0.95;
 }
 
 .heroTitle {
   margin: 0 0 20px;
   font-weight: 900;
-  letter-spacing: 0.3px;
   text-transform: uppercase;
   font-size: 34px;
   line-height: 1.08;
@@ -108,7 +104,6 @@ body {
 
 .heroCta {
   display: inline-flex;
-  align-items: center;
   gap: 10px;
   padding: 10px 16px;
   border-radius: 999px;
@@ -119,17 +114,18 @@ body {
   font-size: 14px;
 }
 
+/* ---------- WHITE SECTION ---------- */
+
 .whiteSection {
   background: var(--paper);
   color: var(--ink);
-  padding: 26px 22px;
+  padding: 26px var(--sidePadding);
 }
 
 .h2 {
   margin: 0 0 14px;
   font-weight: 900;
   font-size: 34px;
-  line-height: 1.05;
   color: var(--blue);
 }
 
@@ -137,12 +133,13 @@ body {
   margin: 0 0 14px;
   font-size: 16px;
   line-height: 1.55;
-  color: rgba(23,23,23,0.86);
   font-weight: 600;
 }
 
+/* ---------- SERVICES ---------- */
+
 .servicesSection {
-  padding: 26px 22px 34px;
+  padding: 26px var(--sidePadding) 34px;
 }
 
 .servicesTitle {
@@ -150,13 +147,12 @@ body {
   color: var(--white);
   font-weight: 900;
   font-size: 38px;
-  line-height: 1;
 }
 
 .card {
   background: var(--paper);
   border-radius: 18px;
-  padding: 22px 20px;
+  padding: 22px;
   margin-bottom: 18px;
 }
 
@@ -165,16 +161,16 @@ body {
   font-weight: 900;
   color: var(--blue);
   font-size: 28px;
-  line-height: 1.1;
 }
 
 .cardText {
   margin: 0 0 14px;
   font-size: 15px;
   line-height: 1.6;
-  color: rgba(23,23,23,0.78);
   font-weight: 600;
 }
+
+/* ---------- TOGGLE ---------- */
 
 details {
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -182,79 +178,60 @@ details {
 }
 
 summary {
-  list-style: none;
   cursor: pointer;
-  user-select: none;
   display: inline-flex;
-  align-items: center;
   gap: 10px;
   color: var(--accent);
   font-weight: 900;
-  font-size: 15px;
 }
+
 summary::-webkit-details-marker { display: none; }
 
-.toggleMore { display: inline-flex; gap: 10px; align-items: center; }
-.toggleLess { display: inline-flex; gap: 10px; align-items: center; }
-details[open] .toggleMore { display: none; }
-details:not([open]) .toggleLess { display: none; }
-
 .toggleIcon {
-  font-weight: 900;
   font-size: 18px;
-  line-height: 1;
 }
 
 .subTitle {
   margin: 18px 0 8px;
   font-weight: 900;
   color: var(--blue);
-  font-size: 18px;
 }
 
 .ul {
-  margin: 0;
   padding-left: 18px;
-  color: rgba(23,23,23,0.78);
   font-weight: 700;
-  line-height: 1.55;
 }
-.ul li { margin: 8px 0; }
+
+/* ---------- FOOTER ---------- */
 
 .footerSection {
   background: rgba(0,0,0,0.10);
   color: var(--white);
-  padding: 22px;
+  padding: 22px var(--sidePadding);
 }
 
 .footerTitle {
-  margin: 0 0 8px;
   font-weight: 900;
   font-size: 22px;
 }
 
 .footerText {
-  margin: 0 0 14px;
-  opacity: 0.95;
   font-weight: 600;
   line-height: 1.5;
 }
 
 .footerCta {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   padding: 10px 14px;
   border-radius: 999px;
   background: var(--white);
   color: var(--blue);
-  text-decoration: none;
   font-weight: 900;
-  font-size: 14px;
 }
+
+/* ---------- LOADING ---------- */
 
 .loading {
   width: min(var(--cardMaxWidth), 100%);
-  padding: 22px;
-  opacity: 0.8;
+  padding: 22px var(--sidePadding);
 }
