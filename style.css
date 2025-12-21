@@ -164,7 +164,7 @@ body {
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 56px var(--sidePadding);
+  padding: 92px var(--sidePadding);
 }
 
 .whiteInner {
@@ -172,24 +172,28 @@ body {
 }
 
 /* TEXTO MAIOR */
-.whiteLead {
-  margin: 0 0 22px;
-  font-size: 17px;
-  line-height: 1.3;
+.whiteLead{
+  margin: 0 0 28px;
+  font-size: 22px;     /* ↑ maior */
+  line-height: 1.35;   /* mantém elegância */
   font-weight: 800;
   color: var(--ink);
+
+  max-width: 720px;    /* 🔥 impede virar bloco pesado */
 }
 
 /* TEXTO MENOR */
-.whiteSub {
+.whiteSub{
   margin: 0;
-  font-size: 13px;
-  line-height: 1.55;
-  font-weight: 400;
-  color: rgba(29, 29, 29, 0.9);
+  font-size: 15px;     /* ↑ maior */
+  line-height: 1.6;
+  font-weight: 500;
+  color: rgba(29,29,29,0.9);
 
-  max-width: 520px;
+  max-width: 460px;    /* mantém leve */
+  padding-left: 4px;
 }
+
 
 /* BOTÃO VAZADO */
 .whiteButton {
@@ -212,19 +216,19 @@ body {
 }
 
 /* MOBILE WHITE */
-@media (max-width: 520px) {
-  .whiteSection {
-    padding: 44px 24px;
+@media (max-width: 520px){
+  .whiteSection{
+    padding: 80px 28px; /* ↑ mais altura no mobile */
   }
 
-  .whiteLead {
-    font-size: 17px;
-    margin-bottom: 16px;
+  .whiteLead{
+    font-size: 20px;
+    margin-bottom: 22px;
   }
 
-  .whiteSub {
-    font-size: 13px;
-    max-width: 320px;
+  .whiteSub{
+    font-size: 14px;
+    max-width: 100%;
   }
 }
 
