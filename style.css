@@ -183,58 +183,51 @@ a.heroCta,
    - 1º parágrafo max 900px
    - 2º parágrafo max 400px e menor
 ========================================================= */
-/* =========================================================
-   WHITE SECTION
-========================================================= */
-
-/* =========================================================
-   WHITE SECTION
-========================================================= */
-
 .whiteSection {
   background: var(--paper);
-  padding: 72px 40px; /* ↓ menos espaço em cima e embaixo */
+  padding: 48px var(--sidePadding); /* ↓ antes era maior */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px; /* ↓ menos espaço entre textos */
-  text-align: center;
 }
 
-/* texto principal */
+/* TEXTO PRINCIPAL */
 .whiteLead {
   max-width: 900px;
-  font-size: 24px;     /* ↓ era 28 */
-  line-height: 1.4;    /* um pouco mais fechado */
+  font-size: 26px;          /* levemente menor */
+  line-height: 1.35;
   font-weight: 700;
-  color: var(--ink);
+  text-align: center;
+  margin: 0 0 24px;        /* ↓ menos espaço até o subtítulo */
 }
 
-/* texto complementar */
+/* SUBTÍTULO */
 .whiteSub {
   max-width: 400px;
-  font-size: 16px;     /* ↓ era 18 */
-  line-height: 1.45;
+  font-size: 16px;         /* menor que o lead */
+  line-height: 1.5;
   font-weight: 500;
-  color: var(--ink);
-  opacity: 0.85;
+  text-align: center;      /* 🔥 centralizado */
+  margin: 0;               /* remove espaço extra */
+  opacity: 0.9;
 }
 
-/* mobile */
+/* MOBILE */
 @media (max-width: 520px) {
   .whiteSection {
-    padding: 56px 24px; /* ↓ menos respiro no mobile */
-    gap: 20px;
+    padding: 36px 24px;
   }
 
   .whiteLead {
-    font-size: 20px;
+    font-size: 22px;
+    margin-bottom: 18px;
   }
 
   .whiteSub {
     font-size: 15px;
   }
 }
+
 
 
 
