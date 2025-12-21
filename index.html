@@ -1,19 +1,92 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NexCX</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <div class="app">
-      <main class="shell" id="app">
-        <div class="loading">Carregando…</div>
-      </main>
+  <title>NexCX</title>
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <div class="shell">
+
+      <!-- ==================================================
+           HERO
+           ordem: colagem → fundo azul (texto + seta)
+      =================================================== -->
+      <section class="hero">
+
+        <!-- COLAGEM -->
+        <div class="heroImageWrap">
+          <img
+            src="/assets/images/collage.png"
+            alt="Colagem NexCX"
+            class="heroImage"
+          />
+        </div>
+
+        <!-- FUNDO AZUL -->
+        <div class="heroContent">
+          <h1 class="heroTitle">
+            PRECISANDO DE<br />
+            UM <span class="heroBlack">COPILOTO</span> PARA<br />
+            TRANSFORMAR SUA<br />
+            EMPRESA?
+          </h1>
+
+          <!-- SETA ABAIXO DO TEXTO -->
+          <div class="heroArrow">↓</div>
+        </div>
+
+      </section>
+
+      <!-- ==================================================
+           SEÇÃO BRANCA
+      =================================================== -->
+      <section class="whiteSection">
+        <h2 class="h2">O que fazemos</h2>
+        <p class="p">
+          Transformamos os processos internos e a experiência
+          dos clientes da sua empresa.
+        </p>
+      </section>
+
+      <!-- ==================================================
+           SERVICES (exemplo)
+      =================================================== -->
+      <section class="servicesSection">
+        <h2 class="servicesTitle">Serviços</h2>
+
+        <div class="card">
+          <h3 class="cardTitle">Mapeamento de processos</h3>
+          <p class="cardText">
+            Entendemos o que realmente acontece, identificamos gargalos
+            e redesenhamos o fluxo ideal.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="cardTitle">Experiência do cliente</h3>
+          <p class="cardText">
+            Criamos jornadas mais claras, humanas e eficientes.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================================================
+           FOOTER
+      =================================================== -->
+      <footer class="footerSection">
+        <h3 class="footerTitle">NexCX</h3>
+        <p class="footerText">
+          Estratégia, processo e experiência com clareza.
+        </p>
+      </footer>
+
     </div>
-
-    <script src="./script.js"></script>
-  </body>
+  </div>
+</body>
 </html>
