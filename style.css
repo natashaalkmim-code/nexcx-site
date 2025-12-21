@@ -95,11 +95,8 @@ body {
 
 @media (max-width: 520px) {
   .heroContent {
-    /* ✅ mantém impacto no mobile */
     min-height: 55vh;
-
-    /* ✅ +10px em cima e embaixo no mobile */
-    padding: 28px var(--sidePadding) 28px;
+    padding: 23px var(--sidePadding) 23px;
   }
 }
 
