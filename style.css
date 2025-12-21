@@ -58,8 +58,8 @@ body {
 }
 
 body {
-  font-family: "RaelaGrotesque", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "RaelaGrotesque", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--paper);
   color: var(--ink);
 }
@@ -164,7 +164,7 @@ body {
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 70px var(--sidePadding);
+  padding: 80px var(--sidePadding); /* ↑ seção mais alta */
 }
 
 .whiteInner {
@@ -172,41 +172,40 @@ body {
 }
 
 /* TEXTO MAIOR */
-.whiteLead{
-  margin: 0 0 28px;
-  font-size: 22px;     /* ↑ maior */
-  line-height: 1.35;   /* mantém elegância */
+.whiteLead {
+  margin: 0 0 32px; /* respiro controlado */
+  font-size: 22px;
+  line-height: 1.35;
   font-weight: 800;
   color: var(--ink);
 
-  max-width: 720px;    /* 🔥 impede virar bloco pesado */
+  max-width: 720px;
 }
 
 /* TEXTO MENOR */
-.whiteSub{
+.whiteSub {
   margin: 0;
-  font-size: 15px;     /* ↑ maior */
+  font-size: 15px;
   line-height: 1.6;
   font-weight: 500;
-  color: rgba(29,29,29,0.9);
+  color: rgba(29, 29, 29, 0.9);
 
-  max-width: 460px;    /* mantém leve */
+  max-width: 460px;
   padding-left: 4px;
 }
 
-
 /* BOTÃO VAZADO */
-.whiteCta{
+.whiteCta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: 32px;
+  margin-top: 48px; /* 🔥 MAIS ESPAÇO ENTRE TEXTO E BOTÃO */
 
-  padding: 10px 22px;        /* ↓ menor altura e largura */
-  border-radius: 999px;      /* pílula perfeita */
+  padding: 10px 22px;
+  border-radius: 999px;
 
-  font-size: 14px;           /* ↓ tipografia menor */
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.2px;
   text-decoration: none;
@@ -218,15 +217,28 @@ body {
   transition: all 0.25s ease;
 }
 
-.whiteCta:hover{
+.whiteCta:hover {
   background: var(--blue);
   color: var(--white);
 }
 
-
 /* MOBILE WHITE */
-@media (max-width: 520px){
-  .whiteCta{
+@media (max-width: 520px) {
+  .whiteSection {
+    padding: 64px 24px;
+  }
+
+  .whiteLead {
+    font-size: 20px;
+    margin-bottom: 28px;
+  }
+
+  .whiteSub {
+    font-size: 14px;
+  }
+
+  .whiteCta {
+    margin-top: 44px;
     padding: 9px 20px;
     font-size: 13px;
   }
