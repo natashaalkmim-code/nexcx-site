@@ -107,19 +107,17 @@ body {
 
 /* ---------- FUNDO AZUL (preenche o resto do hero) ---------- */
 .heroContent {
-  flex: 1;                  /* 🔥 ocupa todo o espaço restante */
+  flex: 1;
   background: var(--blue);
   color: var(--white);
 
-  padding-top: 20px;        /* 🔥 texto a 20px do topo do azul */
-  padding-left: var(--sidePadding);
-  padding-right: var(--sidePadding);
-  padding-bottom: 20px;
+  padding: 20px var(--sidePadding) 24px;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;  /* texto alinhado à esquerda */
+  justify-content: flex-start;
 }
+
 
 /* ---------- TEXTO ---------- */
 .heroTitle {
