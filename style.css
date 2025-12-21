@@ -8,6 +8,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("assets/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
@@ -15,6 +16,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("assets/fonts/RaelaGrotesque-Black.ttf") format("truetype");
@@ -27,17 +29,15 @@
    VARIÁVEIS
 ========================================================= */
 :root {
-  --radius: 28px;
   --blue: #2b2b86;
-  --white: #ffffff;
   --paper: #f4f1ea;
   --ink: #1d1d1d;
-  --accent: #f7a531;
+  --white: #ffffff;
 
+  --radius: 28px;
   --cardMaxWidth: 430px;
   --sidePadding: 50px;
 
-  /* HERO */
   --heroTopPadding: 64px;
   --heroBottomPadding: 44px;
   --heroBgZoom: 140%;
@@ -46,16 +46,20 @@
 /* =========================================================
    RESET
 ========================================================= */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
-  height: 100%;
+html,
+body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
-  font-family: "RaelaGrotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "RaelaGrotesque", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--paper);
   color: var(--ink);
 }
@@ -74,7 +78,7 @@ body {
   background: var(--paper);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
 }
 
 @media (max-width: 520px) {
@@ -96,25 +100,18 @@ body {
 /* ---------- COLAGEM ---------- */
 .heroImageWrap {
   background: var(--blue);
-  margin: 0;
-  padding: 0;
   line-height: 0;
   font-size: 0;
-  flex: 0 0 auto;
 }
 
 .heroImage {
   width: 100%;
   display: block;
-  margin: 0;
-  padding: 0;
-  border-radius: 0;
 }
 
-/* ---------- FUNDO AZUL + TEXTO ---------- */
+/* ---------- FUNDO AZUL ---------- */
 .heroContent {
   flex: 1;
-  min-height: 0;
   color: var(--white);
 
   background-color: var(--blue);
@@ -127,20 +124,9 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 
-  padding: var(--heroTopPadding) var(--sidePadding) var(--heroBottomPadding);
+  padding: var(--heroTopPadding) var(--sidePadding)
+    var(--heroBottomPadding);
 }
-
-/* MOBILE */
-@media (max-width: 520px) {
-  :root {
-    --sidePadding: 48px; /* AQUI está o ganho real */
-    --heroTopPadding: 72px;
-    --heroBottomPadding: 44px;
-    --heroBgZoom: 165%;
-  }
-}
-
-
 
 /* ---------- TEXTO HERO ---------- */
 .heroTitle {
@@ -160,54 +146,86 @@ body {
   margin-top: 28px;
   font-size: 34px;
   line-height: 1;
-  color: var(--white);
   opacity: 0.95;
+}
+
+/* MOBILE HERO */
+@media (max-width: 520px) {
+  :root {
+    --sidePadding: 34px;
+    --heroTopPadding: 72px;
+    --heroBottomPadding: 44px;
+    --heroBgZoom: 165%;
+  }
 }
 
 /* =========================================================
    WHITE SECTION
 ========================================================= */
-.whiteSection,
-.whiteSection *{
-  text-align: left;
-}
-
-.whiteSection{
+.whiteSection {
   background: var(--paper);
   padding: 56px var(--sidePadding);
 }
 
-.whiteInner{
-  width: 100%;
-  max-width: 760px;   /* ✅ bloco mais contido (fica mais editorial) */
-  margin: 0;
-  padding: 0;
+.whiteInner {
+  max-width: 920px;
 }
 
-/* ✅ volta pra um tamanho forte, mas um pouco menor que antes */
-.whiteLead{
+/* TEXTO MAIOR */
+.whiteLead {
   margin: 0 0 22px;
-  font-size: 26px;    /* ✅ antes você derrubou pra 17 (ficou pequeno demais) */
-  line-height: 1.22;
+  font-size: 17px;
+  line-height: 1.3;
   font-weight: 800;
   color: var(--ink);
 }
 
-.whiteSub{
+/* TEXTO MENOR */
+.whiteSub {
   margin: 0;
-  font-size: 17px;    /* ✅ acompanha bem */
+  font-size: 13px;
   line-height: 1.55;
-  font-weight: 500;
-  color: rgba(29,29,29,0.9);
+  font-weight: 400;
+  color: rgba(29, 29, 29, 0.9);
 
   max-width: 520px;
-  padding-left: 0;    /* ✅ tira “dentinho” que pode parecer desalinhado */
 }
 
-@media (max-width: 520px){
-  .whiteSection{ padding: 44px var(--sidePadding); } /* ✅ usa o mesmo padding variável */
-  .whiteLead{ font-size: 22px; margin-bottom: 16px; } /* ✅ menor só um pouco */
-  .whiteSub{ font-size: 15px; max-width: 320px; }
+/* BOTÃO VAZADO */
+.whiteButton {
+  display: inline-block;
+  margin-top: 28px;
+
+  padding: 14px 36px;
+  border: 3px solid var(--blue);
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--blue);
+
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+
+  line-height: 1;
+}
+
+/* MOBILE WHITE */
+@media (max-width: 520px) {
+  .whiteSection {
+    padding: 44px 24px;
+  }
+
+  .whiteLead {
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+
+  .whiteSub {
+    font-size: 13px;
+    max-width: 320px;
+  }
 }
 
 /* =========================================================
@@ -250,7 +268,7 @@ body {
    FOOTER
 ========================================================= */
 .footerSection {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   color: var(--white);
   padding: 22px var(--sidePadding);
 }
