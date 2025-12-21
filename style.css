@@ -40,13 +40,9 @@
 /* =========================================================
    RESET
 ========================================================= */
-* {
-  box-sizing: border-box;
-}
-html,
-body {
-  height: 100%;
-}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
 body {
   margin: 0;
   font-family: "RaelaGrotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -79,79 +75,89 @@ body {
 }
 
 /* =========================================================
-   HERO
-   colagem em cima + azul embaixo (SEM FAIXA BRANCA)
+   HERO — COLAGEM EM CIMA / AZUL (TELA INTEIRA)
 ========================================================= */
 
-/* --- COLAGEM --- */
+/* ---------- COLAGEM ---------- */
 .heroImageWrap {
-  margin: 0;
+  background: var(--paper);
   padding: 0;
+  margin: 0;
   font-size: 0;
   line-height: 0;
-  background: transparent;
 }
 
 .heroImage {
   width: 100%;
   display: block;
   margin: 0;
-  vertical-align: bottom;
+  border-radius: 0;
 }
 
-/* --- FUNDO AZUL + TEXTO --- */
+/* ---------- FUNDO AZUL (TELA INTEIRA REAL NO MOBILE) ---------- */
 .heroContent {
-  color: #fff;
-  background-color: var(--blue);
+  color: var(--white);
+
   background-image: url("/assets/images/hero.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 130% auto;
 
-  /* 🔽 ALTURA MAIS BAIXA */
-  min-height: 34vh;
+  /* fallback */
+  height: 100vh;
+  min-height: 100vh;
+
+  /* iOS/Safari correto (viewport “real”) */
+  height: 100svh;
+  min-height: 100svh;
+
+  /* quando o browser suporta “dynamic viewport” */
+  height: 100dvh;
+  min-height: 100dvh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  /* 🔽 menos respiro em cima/baixo */
-  padding: 34px var(--sidePadding) 34px;
+  padding: 64px var(--sidePadding);
 }
 
-/* mobile */
+/* MOBILE */
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 31vh;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    background-size: 140% auto;
+    padding: 56px var(--sidePadding);
+
+    /* zoom maior no azul */
+    background-size: 150% auto;
+
+    /* força caso algum estilo esteja pisando */
+    height: 100svh !important;
+    min-height: 100svh !important;
   }
 }
 
-/* some com o “vamos conversar” (link) só no hero */
-.heroContent a {
-  display: none !important;
-}
-
-.heroArrow {
-  font-size: 34px;
-  line-height: 1;
-  color: #fff;
-  opacity: 0.95;
-
-  /* ✅ mais espaço entre seta e texto */
-  margin: 0 0 26px;
-}
-
+/* ---------- TEXTO ---------- */
 .heroTitle {
   margin: 0;
-  font-weight: 900;
+  font-weight: 600; /* semi-bold */
   text-transform: uppercase;
   font-size: 28px;
   line-height: 1.25;
   letter-spacing: 0.4px;
-  color: #fff;
+}
+
+/* COPILOTO em BLACK */
+.heroBlack {
+  font-weight: 900;
+}
+
+/* ---------- SETA ---------- */
+/* (a posição “embaixo do texto” depende do HTML: seta precisa vir depois do título) */
+.heroArrow {
+  margin-top: 36px;
+  font-size: 32px;
+  line-height: 1;
+  opacity: 0.95;
 }
 
 /* =========================================================
@@ -227,26 +233,8 @@ summary {
   color: var(--accent);
   font-weight: 900;
   font-size: 15px;
-  list-style: none;
 }
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-details .toggleLess {
-  display: none;
-}
-details[open] .toggleMore {
-  display: none;
-}
-details[open] .toggleLess {
-  display: inline-flex;
-}
-
-.toggleIcon {
-  font-weight: 900;
-}
+summary::-webkit-details-marker { display: none; }
 
 .subTitle {
   margin: 18px 0 8px;
@@ -279,17 +267,6 @@ details[open] .toggleLess {
   margin: 0 0 14px;
   font-weight: 600;
   line-height: 1.5;
-}
-
-.footerCta {
-  display: inline-flex;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: var(--white);
-  color: var(--blue);
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 14px;
 }
 
 /* =========================================================
