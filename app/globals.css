@@ -1,8 +1,11 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   margin: 0;
@@ -28,101 +31,11 @@ img {
   height: auto;
 }
 
-/* =========================
-   FONTES — RAELA GROTESQUE
-   ========================= */
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-ExtraLight.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* Fonte (mantida caso você já tenha o .ttf) */
 @font-face {
   font-family: "Raela Grotesque";
   src: url("/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raela Grotesque";
-  src: url("/fonts/RaelaGrotesque-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* =========================
-   “FRAME” DO SITE (mobile card)
-   ========================= */
-
-.app-shell {
-  min-height: 100vh;
-  background: #F4F1E9;
-  display: flex;
-  justify-content: center;
-  padding: 24px 12px;
-}
-
-.app-frame {
-  width: 100%;
-  max-width: 420px;
-  background: #ffffff;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-
-  
 }

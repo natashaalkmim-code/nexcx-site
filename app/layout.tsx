@@ -1,3 +1,4 @@
+// app/layout.tsx
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
@@ -18,12 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>
-        {/* Fundo geral (fora do “site”) */}
-        <div className="app-shell">
-          {/* “Site” = mesma largura da ilustração */}
-          <div className="app-frame">{children}</div>
-        </div>
+      <body className="bg-[#F4F1E9] overflow-y-auto">
+        {children}
       </body>
     </html>
   );
