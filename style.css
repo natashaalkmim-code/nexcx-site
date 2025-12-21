@@ -29,12 +29,18 @@
   --accent: #f7a531;
   --cardMaxWidth: 430px;
 
+  /* CONTROLE DE ESPAÇOS */
   --sidePadding: 50px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -84,19 +90,24 @@ body {
   color: var(--white);
   background: var(--blue);
 
+  /* ALTURA BASE */
   min-height: 55vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  padding: 18px var(--sidePadding) 18px;
+  padding: 23px var(--sidePadding) 23px;
 }
 
+/* 📱 MOBILE */
 @media (max-width: 520px) {
   .heroContent {
+    /* mantém impacto */
     min-height: 55vh;
-    padding: 18px var(--sidePadding) 18px;
+
+    /* 🔽 10px a menos no total (5 em cima + 5 embaixo) */
+    padding: 23px var(--sidePadding) 23px;
   }
 }
 
@@ -201,7 +212,9 @@ summary {
   font-size: 15px;
 }
 
-summary::-webkit-details-marker { display: none; }
+summary::-webkit-details-marker {
+  display: none;
+}
 
 .subTitle {
   margin: 18px 0 8px;
