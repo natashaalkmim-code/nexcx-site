@@ -3,7 +3,10 @@
     "cardMaxWidth": 430,
     "radius": 28,
     "blue": "#2B2B86",
-    "white": "#FFFFFF"
+    "white": "#FFFFFF",
+    "paper": "#F4F1EA",
+    "ink": "#1D1D1D",
+    "accent": "#F7A531"
   },
   "hero": {
     "image": "/assets/images/collage.png",
@@ -14,7 +17,17 @@
       "TRANSFORMAR SUA",
       "EMPRESA?"
     ],
-    "cta": { "label": "Vamos conversar", "href": "#contato" }
+    "cta": {
+      "label": "Vamos conversar",
+      "href": "#contato"
+    }
+  },
+  "intro": {
+    "title": "O que fazemos",
+    "blocks": [
+      "Transformamos os processos internos e a experiência dos clientes da sua empresa com clareza, método e acompanhamento real",
+      "Enquanto você dirige, a NexCX é o painel, aponta riscos, sugere rotas e ajusta o trajeto"
+    ]
   },
   "services": {
     "title": "Nossos Serviços",
@@ -22,7 +35,8 @@
       {
         "title": "Jornada e Experiência do Cliente",
         "description": "Desenhamos e estruturamos a experiência do cliente de forma integrada à operação, garantindo coerência entre estratégia, processos e relacionamento. Atuamos para que a experiência seja mensurável, gerenciável e alinhada aos objetivos do negócio.",
-        "services": [
+        "servicesTitle": "Serviços",
+        "servicesBullets": [
           "Redesenho da jornada do cliente integrada à estratégia e à operação",
           "Aplicação de pesquisas de satisfação e análises da percepção do cliente",
           "Realização de cliente oculto para avaliação prática da experiência",
@@ -31,7 +45,8 @@
           "Capacitação de equipes com foco em experiência, retenção e cobrança",
           "Implantação de ações práticas para melhoria da satisfação, retenção e relacionamento"
         ],
-        "gains": [
+        "gainsTitle": "Ganhos para a empresa",
+        "gainsBullets": [
           "Visão clara e estruturada da experiência do cliente",
           "Alinhamento entre discurso comercial, atendimento e pós-vendas",
           "Melhoria na retenção e no relacionamento com clientes",
@@ -41,7 +56,8 @@
       {
         "title": "Gestão de Processos",
         "description": "Estruturamos processos para que a operação funcione de forma clara, integrada e alinhada à estratégia do negócio. Nosso foco é transformar conhecimento operacional em métodos consistentes, que sustentam o crescimento e a tomada de decisão.",
-        "services": [
+        "servicesTitle": "Serviços",
+        "servicesBullets": [
           "Mapeamento e redesenho de processos ponta a ponta",
           "Otimização e automação de processos",
           "Estruturação de áreas, funções e responsabilidades",
@@ -49,7 +65,8 @@
           "Padronização e documentação de processos",
           "Elaboração e revisão de documentos e padrões ISO 9001"
         ],
-        "gains": [
+        "gainsTitle": "Ganhos para a empresa",
+        "gainsBullets": [
           "Maior clareza sobre papéis, fluxos e responsabilidades",
           "Operação mais organizada, integrada e previsível",
           "Redução de dependência de conhecimento tácito",
@@ -59,7 +76,8 @@
       {
         "title": "Auditoria e Monitoramento de Operações",
         "description": "Atuamos na avaliação contínua da operação para garantir que processos, normas e diretrizes estejam sendo seguidos na prática. Nosso foco não é apontar erros, mas garantir que os processos definidos estejam sendo executados, identificar riscos e fortalecer a governança do negócio.",
-        "services": [
+        "servicesTitle": "Serviços",
+        "servicesBullets": [
           "Auditoria interna de operações e processos",
           "Monitoramento contínuo da qualidade operacional",
           "Avaliação de aderência aos processos definidos",
@@ -67,7 +85,8 @@
           "Suporte à governança corporativa e compliance",
           "Auditoria interna baseada na ISO 9001"
         ],
-        "gains": [
+        "gainsTitle": "Ganhos para a empresa",
+        "gainsBullets": [
           "Mais controle e visibilidade sobre a execução operacional",
           "Redução de riscos e inconsistências nos processos",
           "Apoio à tomada de decisão com base em evidências",
@@ -75,5 +94,14 @@
         ]
       }
     ]
+  },
+  "footer": {
+    "id": "contato",
+    "title": "Contato",
+    "text": "Vamos conversar sobre o que sua operação precisa agora — e o que ela precisa virar.",
+    "cta": {
+      "label": "Falar com a NexCX",
+      "href": "#"
+    }
   }
 }
