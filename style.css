@@ -46,12 +46,9 @@
 /* =========================================================
    RESET
 ========================================================= */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -82,10 +79,7 @@ body {
 }
 
 @media (max-width: 520px) {
-  .shell {
-    width: 100%;
-    border-radius: 0;
-  }
+  .shell { width: 100%; border-radius: 0; }
 }
 
 /* =========================================================
@@ -124,8 +118,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 
-  padding: var(--heroTopPadding) var(--sidePadding)
-    var(--heroBottomPadding);
+  padding: var(--heroTopPadding) var(--sidePadding) var(--heroBottomPadding);
 }
 
 /* TEXTO HERO */
@@ -138,9 +131,7 @@ body {
   letter-spacing: 0.6px;
 }
 
-.heroBlack {
-  font-weight: 900;
-}
+.heroBlack { font-weight: 900; }
 
 .heroArrow {
   margin-top: 28px;
@@ -164,12 +155,10 @@ body {
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 80px var(--sidePadding); /* mais respiro */
+  padding: 80px var(--sidePadding);
 }
 
-.whiteInner {
-  max-width: 720px;
-}
+.whiteInner { max-width: 720px; }
 
 /* TEXTO PRINCIPAL */
 .whiteLead {
@@ -190,53 +179,64 @@ body {
   max-width: 460px;
 }
 
-/* BOTÃO VAZADO */
+/* =========================================================
+   BOTÃO (igual ao print: pílula, vazado, azul, SEM preencher)
+========================================================= */
 .whiteCta,
+.whiteCta:link,
 .whiteCta:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: 48px;       /* 🔥 mais espaço do texto */
-  padding: 8px 18px;      /* 🔥 botão menor */
+  margin-top: 56px;          /* mais espaço do texto */
+  padding: 7px 20px;         /* menor e mais “pílula” */
   border-radius: 999px;
 
-  font-size: 14px;
+  font-size: 14px;           /* tipografia igual à sua */
   font-weight: 700;
   letter-spacing: 0.2px;
+  line-height: 1;            /* deixa o botão mais baixinho */
 
   color: var(--blue);
-  border: 2px solid var(--blue);
+  border: 3px solid var(--blue); /* borda mais presente (igual print) */
   background: transparent;
 
-  text-decoration: none;  /* mata sublinhado */
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* HOVER */
-.whiteCta:hover,
+/* hover: só “aperta” levemente, continua vazado */
+.whiteCta:hover {
+  transform: translateY(-1px);
+}
+
+/* active: dá sensação de clique */
 .whiteCta:active {
-  background: var(--blue);
-  color: var(--white);
+  transform: translateY(0px) scale(0.98);
+}
+
+/* foco bonito (acessível) */
+.whiteCta:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(43, 43, 134, 0.18);
 }
 
 /* MOBILE WHITE */
 @media (max-width: 520px) {
-  .whiteSection {
-    padding: 64px 24px;
-  }
-
-  .whiteLead {
-    font-size: 20px;
-  }
-
-  .whiteSub {
-    font-size: 14px;
-  }
+  .whiteSection { padding: 64px 24px; }
+  .whiteLead { font-size: 20px; }
+  .whiteSub { font-size: 14px; }
 
   .whiteCta,
+  .whiteCta:link,
   .whiteCta:visited {
-    padding: 7px 16px;
-    font-size: 13px;
+    margin-top: 52px;
+    padding: 6px 18px;
+    border-width: 3px;
+    font-size: 14px;
   }
 }
 
@@ -296,12 +296,3 @@ body {
   font-weight: 600;
   line-height: 1.5;
 }
-
-/* mata estilo padrão de link (azul/sublinhado) */
-.whiteCta,
-.whiteCta:link,
-.whiteCta:visited {
-  color: var(--blue) !important;
-  text-decoration: none !important;
-}
-
