@@ -100,22 +100,22 @@ body {
   background-size: 110% auto; /* zoom desktop */
   background-position: center bottom;
 
-  min-height: 55vh;
+  min-height: 50vh;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
   /* 🔥 espaço real em cima e embaixo */
-  padding: 60px var(--sidePadding) 60px;
+  padding: 50px var(--sidePadding) 50px;
 }
 
 /* ajuste fino mobile */
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 50vh;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    min-height: 45vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     /* zoom maior no azul */
     background-size: 115% auto;
