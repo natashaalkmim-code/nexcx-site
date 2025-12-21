@@ -164,7 +164,7 @@ body {
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 92px var(--sidePadding);
+  padding: 70px var(--sidePadding);
 }
 
 .whiteInner {
