@@ -34,7 +34,16 @@
   --ink: #1d1d1d;
   --accent: #f7a531;
   --cardMaxWidth: 430px;
+
+  /* desktop */
   --sidePadding: 50px;
+}
+
+/* mobile: não deixa cortar */
+@media (max-width: 520px) {
+  :root {
+    --sidePadding: 28px;
+  }
 }
 
 /* =========================================================
@@ -54,6 +63,9 @@ body {
   color: var(--ink);
 }
 
+/* evita link azul feio caso exista algum <a> sobrando */
+a { color: inherit; text-decoration: none; }
+
 /* =========================================================
    APP / CONTAINER
 ========================================================= */
@@ -61,11 +73,12 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  padding: 0;
 }
 
 .shell {
   width: min(var(--cardMaxWidth), 100%);
-  background: var(--paper);
+  background: var(--paper);              /* 🔥 tem que ser paper, não azul */
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 18px 60px rgba(0,0,0,0.18);
@@ -79,118 +92,102 @@ body {
 }
 
 /* =========================================================
-   HERO (COLAGEM EM CIMA / AZUL ATÉ O FIM DA VIEWPORT)
+   HERO — COLAGEM EM CIMA / AZUL (hero.png) EMBAIXO
+   ordem: colagem -> fundo azul -> (texto, seta)
 ========================================================= */
-.hero {
-  height: 100vh;            /* 🔥 azul termina no fim da viewport */
-  display: flex;
-  flex-direction: column;   /* colagem em cima, azul embaixo */
-  background: var(--blue);  /* evita qualquer “linha branca” */
-}
 
-/* ---------- COLAGEM ---------- */
+/* COLAGEM */
 .heroImageWrap {
-  background: var(--blue);  /* mata o branco entre colagem e azul */
-  margin: 0;
+  background: var(--paper);
   padding: 0;
-  font-size: 0;             /* evita gaps de inline-image */
-  line-height: 0;
+  margin: 0;
+  font-size: 0;     /* mata qualquer “risco” */
+  line-height: 0;   /* mata qualquer “risco” */
 }
 
 .heroImage {
   width: 100%;
   display: block;
   margin: 0;
-  padding: 0;
-  border: 0;
+  border-radius: 0;
 }
 
-/* ---------- FUNDO AZUL (preenche o resto do hero) ---------- */
+/* FUNDO AZUL (IMAGEM) */
 .heroContent {
-  flex: 1;
-  background-image: url("/assets/images/hero.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
-
   color: var(--white);
 
-  /* 🔥 MAIS AZUL ACIMA DO TEXTO */
-  padding: 40px var(--sidePadding) 40px; /* era 20px → agora 40px */
+  /* azul vindo da imagem */
+  background-image: url("/assets/images/hero.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-color: var(--blue); /* fallback */
+
+  /* não inventa 100vh aqui (isso foi o que quebrou e criou “vazio” e corte) */
+  padding: 20px var(--sidePadding) 26px; /* 20px do topo como você pediu */
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-
-
-
-/* ---------- TEXTO ---------- */
+/* TEXTO DO HERO */
 .heroTitle {
   margin: 0;
-  font-weight: 400;         /* semi-bold no texto todo */
+  font-weight: 600; /* semi-bold no texto todo */
   text-transform: uppercase;
-  font-size: 28px;
-  line-height: 1.25;
+  font-size: 30px;
+  line-height: 1.18;
   letter-spacing: 0.4px;
 }
 
-/* COPILOTO em BLACK */
+/* só COPILOTO em BLACK */
 .heroBlack {
   font-weight: 900;
 }
 
-/* ---------- SETA (ABAIXO DO TEXTO) ---------- */
+/* SETA ABAIXO DO TEXTO */
 .heroArrow {
-  margin-top: 26px;         /* espaço entre texto e seta */
+  margin-top: 26px; /* espaço do texto até a seta */
   font-size: 34px;
   line-height: 1;
-  color: var(--white);
+  opacity: 0.95;
 }
 
 /* =========================================================
-   WHITE SECTION
+   WHITE SECTION (O QUE FAZEMOS)
 ========================================================= */
-./* WHITE SECTION */
 .whiteSection {
   background: var(--paper);
+  color: var(--ink);
   padding: 26px var(--sidePadding);
 }
 
-/* parágrafo base */
+.h2 {
+  margin: 0 0 14px;
+  font-weight: 900;
+  font-size: 34px;
+  color: var(--ink);
+}
+
 .p {
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 600;
-  color: rgba(23, 23, 23, 0.86);
 }
 
-/* 900px de largura */
-.pWide {
+/* variações pedidas por você:
+   900px “Transformamos...” e 400px “Enquanto...” */
+.bloco900 {
   max-width: 900px;
 }
 
-/* 400px de largura + tipografia menor */
-.pNarrow {
+.bloco400 {
   max-width: 400px;
-  font-size: 14px;
+  font-size: 14px;     /* tipografia menor */
   line-height: 1.55;
 }
-
-/* mobile: não faz sentido travar em 900/400, vira full */
-@media (max-width: 520px) {
-  .pWide,
-  .pNarrow {
-    max-width: 100%;
-  }
-
-  .pNarrow {
-    font-size: 14px;
-  }
-}
-
 
 /* =========================================================
    SERVICES
@@ -204,7 +201,7 @@ body {
   margin: 0 0 18px;
   color: var(--white);
   font-weight: 900;
-  font-size: 38px;
+  font-size: 42px;
 }
 
 .card {
@@ -218,7 +215,7 @@ body {
   margin: 0 0 10px;
   font-weight: 900;
   color: var(--blue);
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .cardText {
@@ -229,7 +226,7 @@ body {
 }
 
 /* =========================================================
-   TOGGLE
+   TOGGLE (DETALHES) — isso aqui “traz de volta” o toggle
 ========================================================= */
 details {
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -239,12 +236,20 @@ details {
 summary {
   cursor: pointer;
   display: inline-flex;
+  align-items: center;
   gap: 10px;
   color: var(--accent);
   font-weight: 900;
   font-size: 15px;
+  user-select: none;
 }
+
 summary::-webkit-details-marker { display: none; }
+
+.toggleIcon {
+  font-size: 18px;
+  line-height: 1;
+}
 
 .subTitle {
   margin: 18px 0 8px;
@@ -262,7 +267,7 @@ summary::-webkit-details-marker { display: none; }
    FOOTER
 ========================================================= */
 .footerSection {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.10);
   color: var(--white);
   padding: 22px var(--sidePadding);
 }
@@ -274,7 +279,7 @@ summary::-webkit-details-marker { display: none; }
 }
 
 .footerText {
-  margin: 0 0 14px;
+  margin: 0;
   font-weight: 600;
   line-height: 1.5;
 }
