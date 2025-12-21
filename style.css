@@ -90,13 +90,13 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  padding: 23px var(--sidePadding) 23px;
+  padding: 18px var(--sidePadding) 18px;
 }
 
 @media (max-width: 520px) {
   .heroContent {
     min-height: 55vh;
-    padding: 23px var(--sidePadding) 23px;
+    padding: 18px var(--sidePadding) 18px;
   }
 }
 
