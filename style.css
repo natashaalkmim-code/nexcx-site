@@ -183,29 +183,54 @@ a.heroCta,
    - 1º parágrafo max 900px
    - 2º parágrafo max 400px e menor
 ========================================================= */
+/* =========================================================
+   WHITE SECTION
+========================================================= */
+
 .whiteSection {
   background: var(--paper);
-  color: var(--ink);
-  padding: 26px var(--sidePadding);
+  padding: 96px 50px; /* bastante respiro em cima e embaixo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
 }
 
-/* texto 900px */
+/* texto principal */
 .whiteLead {
   max-width: 900px;
-  margin: 0 0 14px;
-  font-size: 18px;
-  line-height: 1.55;
-  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.35;
+  font-weight: 700; /* bold elegante */
+  color: var(--ink);
 }
 
-/* texto 400px menor */
+/* texto complementar */
 .whiteSub {
   max-width: 400px;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.55;
-  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--ink);
+  opacity: 0.85;
 }
+
+/* ajuste mobile */
+@media (max-width: 520px) {
+  .whiteSection {
+    padding: 72px 24px;
+  }
+
+  .whiteLead {
+    font-size: 22px;
+  }
+
+  .whiteSub {
+    font-size: 16px;
+  }
+}
+
 
 
 /* =========================================================
