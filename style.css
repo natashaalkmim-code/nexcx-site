@@ -1,3 +1,4 @@
+/* ---------- FONTES ---------- */
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("/assets/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
@@ -20,37 +21,28 @@
   font-display: swap;
 }
 
+/* ---------- VARIÁVEIS ---------- */
 :root {
   --radius: 28px;
+  --blue: #2b2b86;
   --white: #ffffff;
   --paper: #f4f1ea;
   --ink: #1d1d1d;
   --accent: #f7a531;
-
-  /* largura do “cartão” */
   --cardMaxWidth: 430px;
 
-  /* espaço lateral (desktop/tablet) */
+  /* controle único do espaço lateral */
   --sidePadding: 50px;
-
-  /* HERO: controle fino de altura do retângulo azul (top/bottom) */
-  --heroPadTop: 18px;
-  --heroPadBottom: 18px;
-
-  /* HERO: tipografia */
-  --heroTitleSize: 30px;
-  --heroTitleLine: 1.18;
-
-  /* ajustes mobile */
-  --sidePaddingMobile: 50px;
-  --heroPadTopMobile: 8px;
-  --heroPadBottomMobile: 8px;
-  --heroTitleSizeMobile: 28px;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-
+/* ---------- RESET ---------- */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: "RaelaGrotesque", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -58,15 +50,14 @@ body {
   color: var(--ink);
 }
 
-/* APP */
+/* ---------- APP ---------- */
 .app {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 0;
 }
 
-/* CONTAINER */
+/* ---------- CONTAINER ---------- */
 .shell {
   width: min(var(--cardMaxWidth), 100%);
   background: var(--paper);
@@ -82,8 +73,12 @@ body {
   }
 }
 
-/* ---------- HERO (colagem em cima + azul embaixo) ---------- */
+/* =========================================================
+   HERO
+   colagem em cima + azul embaixo
+========================================================= */
 
+/* --- COLAGEM --- */
 .heroImageWrap {
   background: var(--paper);
   padding: 0;
@@ -95,57 +90,57 @@ body {
   border-radius: 0;
 }
 
-/* azul só abaixo da colagem */
+/* --- FUNDO AZUL + TEXTO --- */
 .heroContent {
   color: var(--white);
 
-  /* fundo azul vindo do arquivo hero.png */
+  /* fundo azul vindo da imagem */
   background-image: url("/assets/images/hero.png");
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-size: 120% auto; /* zoom desktop */
+  background-position: center bottom;
 
-  /* altura “do retângulo azul” = padding + conteúdo */
-  padding: var(--heroPadTop) var(--sidePadding) var(--heroPadBottom);
+  min-height: 55vh;
 
-  /* deixa o texto mais “no meio” sem criar um bloco gigante */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  /* 🔥 espaço real em cima e embaixo */
+  padding: 60px var(--sidePadding) 70px;
 }
 
+/* ajuste fino mobile */
 @media (max-width: 520px) {
   .heroContent {
-    padding: var(--heroPadTopMobile) var(--sidePaddingMobile) var(--heroPadBottomMobile);
+    min-height: 50vh;
+    padding-top: 70px;
+    padding-bottom: 80px;
+
+    /* zoom maior no azul */
+    background-size: 140% auto;
+    background-position: center bottom;
   }
 }
 
 .heroArrow {
   font-size: 28px;
-  line-height: 1;
-  margin: 0 0 14px;
-  opacity: 0.95;
+  margin-bottom: 18px;
 }
 
 .heroTitle {
-  margin: 0 0 18px;
+  margin: 0 0 26px;
   font-weight: 900;
   text-transform: uppercase;
+  font-size: 28px;
+  line-height: 1.25;
   letter-spacing: 0.4px;
-  font-size: var(--heroTitleSize);
-  line-height: var(--heroTitleLine);
-}
-
-@media (max-width: 520px) {
-  .heroTitle {
-    font-size: var(--heroTitleSizeMobile);
-  }
 }
 
 .heroCta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
   padding: 10px 16px;
   border-radius: 999px;
   border: 2px solid rgba(255,255,255,0.9);
@@ -156,24 +151,20 @@ body {
   width: fit-content;
 }
 
-/* ---------- SEÇÕES BRANCAS ---------- */
+/* =========================================================
+   WHITE SECTION
+========================================================= */
 
 .whiteSection {
   background: var(--paper);
-  color: var(--ink);
   padding: 26px var(--sidePadding);
-}
-
-@media (max-width: 520px) {
-  .whiteSection { padding-left: var(--sidePaddingMobile); padding-right: var(--sidePaddingMobile); }
 }
 
 .h2 {
   margin: 0 0 14px;
   font-weight: 900;
   font-size: 34px;
-  line-height: 1.05;
-  color: #2b2b86;
+  color: var(--blue);
 }
 
 .p {
@@ -181,21 +172,15 @@ body {
   font-size: 16px;
   line-height: 1.6;
   font-weight: 600;
-  color: rgba(23,23,23,0.86);
 }
 
-/* ---------- SERVICES ---------- */
+/* =========================================================
+   SERVICES
+========================================================= */
 
 .servicesSection {
+  background: var(--blue);
   padding: 26px var(--sidePadding) 34px;
-  background-image: url("/assets/images/hero.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@media (max-width: 520px) {
-  .servicesSection { padding-left: var(--sidePaddingMobile); padding-right: var(--sidePaddingMobile); }
 }
 
 .servicesTitle {
@@ -203,7 +188,6 @@ body {
   color: var(--white);
   font-weight: 900;
   font-size: 38px;
-  line-height: 1;
 }
 
 .card {
@@ -216,20 +200,18 @@ body {
 .cardTitle {
   margin: 0 0 10px;
   font-weight: 900;
-  color: #2b2b86;
+  color: var(--blue);
   font-size: 28px;
-  line-height: 1.1;
 }
 
 .cardText {
   margin: 0 0 14px;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.6;
   font-weight: 600;
-  color: rgba(23,23,23,0.78);
 }
 
-/* ---------- TOGGLE (Saiba mais / Mostrar menos) ---------- */
+/* ---------- TOGGLE ---------- */
 
 details {
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -237,58 +219,38 @@ details {
 }
 
 summary {
-  list-style: none;
   cursor: pointer;
-  user-select: none;
   display: inline-flex;
-  align-items: center;
   gap: 10px;
   color: var(--accent);
   font-weight: 900;
   font-size: 15px;
 }
 
-summary::-webkit-details-marker { display: none; }
-
-.toggleMore { display: inline-flex; gap: 10px; align-items: center; }
-.toggleLess { display: none; gap: 10px; align-items: center; }
-
-details[open] .toggleMore { display: none; }
-details[open] .toggleLess { display: inline-flex; }
-
-.toggleIcon {
-  font-weight: 900;
-  font-size: 18px;
-  line-height: 1;
+summary::-webkit-details-marker {
+  display: none;
 }
 
 .subTitle {
   margin: 18px 0 8px;
   font-weight: 900;
-  color: #2b2b86;
-  font-size: 18px;
+  color: var(--blue);
 }
 
 .ul {
-  margin: 0;
   padding-left: 18px;
-  color: rgba(23,23,23,0.78);
   font-weight: 700;
   line-height: 1.55;
 }
 
-.ul li { margin: 8px 0; }
-
-/* ---------- FOOTER ---------- */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footerSection {
-  background: rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.1);
   color: var(--white);
   padding: 22px var(--sidePadding);
-}
-
-@media (max-width: 520px) {
-  .footerSection { padding-left: var(--sidePaddingMobile); padding-right: var(--sidePaddingMobile); }
 }
 
 .footerTitle {
@@ -299,24 +261,22 @@ details[open] .toggleLess { display: inline-flex; }
 
 .footerText {
   margin: 0 0 14px;
-  opacity: 0.95;
   font-weight: 600;
   line-height: 1.5;
 }
 
 .footerCta {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   padding: 10px 14px;
   border-radius: 999px;
   background: var(--white);
-  color: #2b2b86;
+  color: var(--blue);
   text-decoration: none;
   font-weight: 900;
   font-size: 14px;
 }
 
+/* ---------- LOADING ---------- */
 .loading {
   width: min(var(--cardMaxWidth), 100%);
   padding: 22px var(--sidePadding);
