@@ -185,10 +185,13 @@ a.heroCta,
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 48px var(--sidePadding); /* espaço igual em cima e embaixo */
+  padding: 48px var(--sidePadding);
+  padding-top: 53px; /* 48 + 5 */
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
 }
 
 /* TEXTO PRINCIPAL */
