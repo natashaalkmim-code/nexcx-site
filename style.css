@@ -185,38 +185,44 @@ a.heroCta,
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 48px var(--sidePadding) 52px;
+  padding: 56px var(--sidePadding) 56px;
 
   display: flex;
   justify-content: center;
 }
 
-/* 🔥 wrapper único */
 .whiteTextBlock {
   width: 100%;
   max-width: 900px;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* 🔥 eixo esquerdo comum */
+  align-items: flex-start;
 }
 
 /* TEXTO MAIOR */
-.whiteLead {
-  font-size: 24px;
-  font-weight: 700;       /* mais grosso */
-  line-height: 1.45;
+.whiteTitle {
   margin: 0;
+  font-size: 34px;      /* 🔥 maior */
+  font-weight: 800;    /* 🔥 mais grosso (sem ficar agressivo) */
+  line-height: 1.35;
+  color: var(--blue);
+  text-align: left;
 }
 
 /* TEXTO MENOR */
 .whiteSub {
-  margin-top: 16px;
-  font-size: 16px;
-  font-weight: 400;
+  margin-top: 20px;
+  font-size: 16px;     /* menor, mas confortável */
+  font-weight: 500;
   line-height: 1.6;
-  max-width: 400px;       /* hierarquia */
+  color: var(--blue);
+
+  max-width: 400px;    /* mantém hierarquia */
+  text-align: left;    /* 🔥 alinhado ao título */
 }
+
+
 
 /* =========================================================
    SERVICES
