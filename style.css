@@ -85,21 +85,16 @@ body {
 
 /* =========================================================
    HERO — ORDEM: COLAGEM (img) -> AZUL (hero.png) até o fim da viewport
-   ✅ azul chega no fim da viewport
-   ✅ mais espaço azul acima do texto
 ========================================================= */
-
-/* IMPORTANTE: isso só funciona se no HTML o hero tiver class="hero"
-   (se não tiver, adicione no index: <section class="hero"> ... ) */
 .hero {
-  min-height: 100vh;              /* 🔥 garante altura mínima de viewport */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 /* ---------- COLAGEM ---------- */
 .heroImageWrap {
-  background: var(--blue);        /* mata qualquer “risquinho” claro entre blocos */
+  background: var(--blue);
   margin: 0;
   padding: 0;
   line-height: 0;
@@ -115,13 +110,12 @@ body {
   border-radius: 0;
 }
 
-/* ---------- FUNDO AZUL + TEXTO (preenche o restante da viewport) ---------- */
+/* ---------- FUNDO AZUL + TEXTO ---------- */
 .heroContent {
-  flex: 1;                        /* 🔥 pega todo o espaço restante após a colagem */
-  min-height: 0;                  /* evita bug de overflow em alguns browsers */
+  flex: 1;
+  min-height: 0;
   color: var(--white);
 
-  /* fundo azul vindo da imagem */
   background-color: var(--blue);
   background-image: url("/assets/images/hero.png");
   background-repeat: no-repeat;
@@ -132,7 +126,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 
-  /* MAIS azul acima do texto */
   padding: var(--heroTopPadding) var(--sidePadding) var(--heroBottomPadding);
 }
 
@@ -140,7 +133,7 @@ body {
 @media (max-width: 520px) {
   :root {
     --sidePadding: 34px;
-    --heroTopPadding: 72px;      /* ainda mais espaço azul acima do texto no celular */
+    --heroTopPadding: 72px;
     --heroBottomPadding: 44px;
     --heroBgZoom: 165%;
   }
@@ -149,7 +142,7 @@ body {
 /* ---------- TEXTO HERO ---------- */
 .heroTitle {
   margin: 0;
-  font-weight: 400;              /* semi-bold no geral */
+  font-weight: 600; /* semi-bold no geral */
   text-transform: uppercase;
   font-size: 30px;
   line-height: 1.3;
@@ -179,11 +172,7 @@ a.heroCta,
 
 /* =========================================================
    WHITE SECTION (sem título “O que fazemos”)
-   Texto:
-   - 1º parágrafo max 900px
-   - 2º parágrafo max 400px e menor
 ========================================================= */
-
 .whiteSection,
 .whiteSection *{
   text-align: left !important;
@@ -199,7 +188,7 @@ a.heroCta,
   max-width: 920px;
   margin: 0;      /* não centraliza bloco */
   padding: 0;
-
+}
 
 .whiteLead{
   margin: 0 0 22px;
@@ -225,11 +214,6 @@ a.heroCta,
   .whiteLead{ font-size: 22px; margin-bottom: 18px; }
   .whiteSub{ font-size: 16px; max-width: 320px; padding-left: 4px; }
 }
-
-
-
-
-
 
 /* =========================================================
    SERVICES
@@ -326,4 +310,4 @@ summary::-webkit-details-marker { display: none; }
   width: min(var(--cardMaxWidth), 100%);
   padding: 22px var(--sidePadding);
   opacity: 0.8;
-    }
+}
