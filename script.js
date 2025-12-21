@@ -1,116 +1,121 @@
-(function () {
-  const app = document.getElementById("app");
+const $ = (sel, root = document) => root.querySelector(sel);
 
-  function escapeHtml(str) {
-    return String(str)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
+function escapeHtml(str = "") {
+  return str
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function renderHero(hero) {
+  const title = (hero.titleLines || []).map(l => `<div>${escapeHtml(l)}</div>`).join("");
+
+  return `
+    <section class="hero">
+      <div class="heroImageWrap">
+        <img class="heroImage" src="${escapeHtml(hero.image)}" alt="Colagem NexCX" />
+      </div>
+
+      <div class="heroContent" style="background-image: url('${escapeHtml(hero.bg)}')">
+        <div class="heroArrow">${escapeHtml(hero.arrow || "↓")}</div>
+        <h1 class="heroTitle">${title}</h1>
+        <a class="heroCta" href="${escapeHtml(hero.cta?.href || "#contato")}">${escapeHtml(hero.cta?.label || "Vamos conversar")}</a>
+      </div>
+    </section>
+  `;
+}
+
+function renderIntro(intro) {
+  const paras = (intro.paragraphs || [])
+    .map(p => `<p class="p">${escapeHtml(p)}</p>`)
+    .join("");
+
+  return `
+    <section class="whiteSection">
+      <h2 class="h2">${escapeHtml(intro.title || "")}</h2>
+      ${paras}
+    </section>
+  `;
+}
+
+function renderServiceCard(item, toggleMoreLabel, toggleLessLabel) {
+  const services = (item.services || []).map(x => `<li>${escapeHtml(x)}</li>`).join("");
+  const gains = (item.gains || []).map(x => `<li>${escapeHtml(x)}</li>`).join("");
+
+  return `
+    <article class="card">
+      <h3 class="cardTitle">${escapeHtml(item.title || "")}</h3>
+      <p class="cardText">${escapeHtml(item.description || "")}</p>
+
+      <details>
+        <summary>
+          <span class="toggleMore">
+            <span class="toggleIcon">＋</span>
+            <span>${escapeHtml(toggleMoreLabel || "Saiba mais")}</span>
+          </span>
+
+          <span class="toggleLess">
+            <span class="toggleIcon">—</span>
+            <span>${escapeHtml(toggleLessLabel || "Mostrar menos")}</span>
+          </span>
+        </summary>
+
+        <div class="subTitle">Serviços</div>
+        <ul class="ul">${services}</ul>
+
+        <div class="subTitle">Ganhos para a empresa</div>
+        <ul class="ul">${gains}</ul>
+      </details>
+    </article>
+  `;
+}
+
+function renderServices(services) {
+  const items = (services.items || [])
+    .map(item => renderServiceCard(item, services.toggleMoreLabel, services.toggleLessLabel))
+    .join("");
+
+  return `
+    <section class="servicesSection">
+      <h2 class="servicesTitle">${escapeHtml(services.title || "Nossos Serviços")}</h2>
+      ${items}
+    </section>
+  `;
+}
+
+function renderFooter(footer) {
+  const idAttr = footer.id ? `id="${escapeHtml(footer.id)}"` : "";
+  return `
+    <footer class="footerSection" ${idAttr}>
+      <div class="footerTitle">${escapeHtml(footer.title || "Contato")}</div>
+      <div class="footerText">${escapeHtml(footer.text || "")}</div>
+      <a class="footerCta" href="${escapeHtml(footer.cta?.href || "#")}">${escapeHtml(footer.cta?.label || "Vamos conversar")}</a>
+    </footer>
+  `;
+}
+
+async function main() {
+  const app = $("#app");
+  try {
+    const res = await fetch("./content.json", { cache: "no-store" });
+    const data = await res.json();
+
+    // aplica theme básico no CSS via variáveis
+    if (data.theme?.cardMaxWidth) document.documentElement.style.setProperty("--cardMaxWidth", `${data.theme.cardMaxWidth}px`);
+    if (data.theme?.radius) document.documentElement.style.setProperty("--radius", `${data.theme.radius}px`);
+    if (typeof data.theme?.sidePadding === "number") document.documentElement.style.setProperty("--sidePadding", `${data.theme.sidePadding}px`);
+
+    app.innerHTML =
+      renderHero(data.hero || {}) +
+      renderIntro(data.intro || {}) +
+      renderServices(data.services || {}) +
+      renderFooter(data.footer || {});
+  } catch (e) {
+    app.innerHTML = `<div class="loading">Deu ruim ao carregar o conteúdo. Confere o <b>content.json</b> e o console.</div>`;
+    console.error(e);
   }
+}
 
-  function setThemeVars(theme) {
-    if (!theme) return;
-    const root = document.documentElement;
-    if (theme.cardMaxWidth) root.style.setProperty("--cardMaxWidth", `${theme.cardMaxWidth}px`);
-    if (theme.radius) root.style.setProperty("--radius", `${theme.radius}px`);
-    if (theme.blue) root.style.setProperty("--blue", theme.blue);
-    if (theme.white) root.style.setProperty("--white", theme.white);
-    if (theme.paper) root.style.setProperty("--paper", theme.paper);
-    if (theme.ink) root.style.setProperty("--ink", theme.ink);
-    if (theme.accent) root.style.setProperty("--accent", theme.accent);
-  }
-
-  function render(data) {
-    setThemeVars(data.theme);
-
-    const hero = data.hero || {};
-    const intro = data.intro || {};
-    const services = data.services || {};
-    const footer = data.footer || {};
-
-    const heroTitle = (hero.titleLines || []).map(escapeHtml).join("<br/>");
-
-    const introBlocks = (intro.blocks || [])
-      .map((p) => `<p class="p">${escapeHtml(p)}</p>`)
-      .join("");
-
-    const serviceCards = (services.items || [])
-      .map((item, idx) => {
-        const servicesBullets = (item.servicesBullets || [])
-          .map((b) => `<li>${escapeHtml(b)}</li>`)
-          .join("");
-
-        const gainsBullets = (item.gainsBullets || [])
-          .map((b) => `<li>${escapeHtml(b)}</li>`)
-          .join("");
-
-        return `
-          <article class="card">
-            <h3 class="cardTitle">${escapeHtml(item.title || "")}</h3>
-            <p class="cardText">${escapeHtml(item.description || "")}</p>
-
-            <details>
-              <summary>
-                <span class="toggleMore"><span class="toggleIcon">+</span> Saiba mais</span>
-                <span class="toggleLess"><span class="toggleIcon">—</span> Mostrar menos</span>
-              </summary>
-
-              <div class="subTitle">${escapeHtml(item.servicesTitle || "Serviços")}</div>
-              <ul class="ul">${servicesBullets}</ul>
-
-              <div class="subTitle">${escapeHtml(item.gainsTitle || "Ganhos para a empresa")}</div>
-              <ul class="ul">${gainsBullets}</ul>
-            </details>
-          </article>
-        `;
-      })
-      .join("");
-
-    app.innerHTML = `
-      <section class="shell">
-        <div class="heroImageWrap">
-          <img class="heroImage" src="${escapeHtml(hero.image || "")}" alt="NexCX collage" />
-        </div>
-
-        <div class="heroContent">
-          <div class="heroArrow">${escapeHtml(hero.arrow || "")}</div>
-          <h1 class="heroTitle">${heroTitle}</h1>
-          <a class="heroCta" href="${escapeHtml(hero.cta?.href || "#")}">${escapeHtml(
-      hero.cta?.label || ""
-    )}</a>
-        </div>
-
-        <div class="whiteSection">
-          <h2 class="h2">${escapeHtml(intro.title || "")}</h2>
-          ${introBlocks}
-        </div>
-
-        <div class="servicesSection">
-          <h2 class="servicesTitle">${escapeHtml(services.title || "")}</h2>
-          ${serviceCards}
-        </div>
-
-        <div class="footerSection" id="${escapeHtml(footer.id || "contato")}">
-          <div class="footerTitle">${escapeHtml(footer.title || "")}</div>
-          <p class="footerText">${escapeHtml(footer.text || "")}</p>
-          <a class="footerCta" href="${escapeHtml(footer.cta?.href || "#")}">${escapeHtml(
-      footer.cta?.label || ""
-    )}</a>
-        </div>
-      </section>
-    `;
-  }
-
-  fetch("./content.json", { cache: "no-store" })
-    .then((r) => {
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return r.json();
-    })
-    .then(render)
-    .catch((err) => {
-      console.error(err);
-      app.innerHTML = `<div class="loading">Erro carregando content.json</div>`;
-    });
-})();
+main();

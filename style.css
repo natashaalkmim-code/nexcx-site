@@ -22,24 +22,34 @@
 
 :root {
   --radius: 28px;
-  --blue: #2b2f7f; /* azul NÃO usado no hero, só em textos */
   --white: #ffffff;
   --paper: #f4f1ea;
   --ink: #1d1d1d;
   --accent: #f7a531;
 
+  /* largura do “cartão” */
   --cardMaxWidth: 430px;
+
+  /* espaço lateral (desktop/tablet) */
   --sidePadding: 50px;
+
+  /* HERO: controle fino de altura do retângulo azul (top/bottom) */
+  --heroPadTop: 18px;
+  --heroPadBottom: 18px;
+
+  /* HERO: tipografia */
+  --heroTitleSize: 30px;
+  --heroTitleLine: 1.18;
+
+  /* ajustes mobile */
+  --sidePaddingMobile: 50px;
+  --heroPadTopMobile: 8px;
+  --heroPadBottomMobile: 8px;
+  --heroTitleSizeMobile: 28px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 
 body {
   margin: 0;
@@ -53,6 +63,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  padding: 0;
 }
 
 /* CONTAINER */
@@ -71,57 +82,70 @@ body {
   }
 }
 
-/* ================= HERO ================= */
+/* ---------- HERO (colagem em cima + azul embaixo) ---------- */
 
 .heroImageWrap {
-  display: none; /* ❌ não usamos img no hero */
+  background: var(--paper);
+  padding: 0;
 }
 
+.heroImage {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+/* azul só abaixo da colagem */
 .heroContent {
   color: var(--white);
 
-  /* 🔥 FUNDO REAL DO HERO */
+  /* fundo azul vindo do arquivo hero.png */
   background-image: url("/assets/images/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  /* 🔥 ALTURA CONTROLADA */
-  min-height: 52vh;
+  /* altura “do retângulo azul” = padding + conteúdo */
+  padding: var(--heroPadTop) var(--sidePadding) var(--heroPadBottom);
 
+  /* deixa o texto mais “no meio” sem criar um bloco gigante */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  padding: 20px var(--sidePadding);
+  justify-content: flex-start;
 }
 
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 42vh;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: var(--heroPadTopMobile) var(--sidePaddingMobile) var(--heroPadBottomMobile);
   }
 }
 
 .heroArrow {
-  font-size: 26px;
-  margin-bottom: 14px;
+  font-size: 28px;
+  line-height: 1;
+  margin: 0 0 14px;
+  opacity: 0.95;
 }
 
 .heroTitle {
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 28px;
-  line-height: 1.2;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
+  font-size: var(--heroTitleSize);
+  line-height: var(--heroTitleLine);
+}
+
+@media (max-width: 520px) {
+  .heroTitle {
+    font-size: var(--heroTitleSizeMobile);
+  }
 }
 
 .heroCta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   padding: 10px 16px;
   border-radius: 999px;
   border: 2px solid rgba(255,255,255,0.9);
@@ -132,18 +156,24 @@ body {
   width: fit-content;
 }
 
-/* ================= WHITE SECTION ================= */
+/* ---------- SEÇÕES BRANCAS ---------- */
 
 .whiteSection {
   background: var(--paper);
+  color: var(--ink);
   padding: 26px var(--sidePadding);
+}
+
+@media (max-width: 520px) {
+  .whiteSection { padding-left: var(--sidePaddingMobile); padding-right: var(--sidePaddingMobile); }
 }
 
 .h2 {
   margin: 0 0 14px;
   font-weight: 900;
   font-size: 34px;
-  color: var(--blue);
+  line-height: 1.05;
+  color: #2b2b86;
 }
 
 .p {
@@ -151,20 +181,29 @@ body {
   font-size: 16px;
   line-height: 1.6;
   font-weight: 600;
+  color: rgba(23,23,23,0.86);
 }
 
-/* ================= SERVICES ================= */
+/* ---------- SERVICES ---------- */
 
 .servicesSection {
-  background: #2b2f7f;
   padding: 26px var(--sidePadding) 34px;
+  background-image: url("/assets/images/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 520px) {
+  .servicesSection { padding-left: var(--sidePaddingMobile); padding-right: var(--sidePaddingMobile); }
 }
 
 .servicesTitle {
   margin: 0 0 18px;
   color: var(--white);
   font-weight: 900;
-  font-size: 36px;
+  font-size: 38px;
+  line-height: 1;
 }
 
 .card {
@@ -177,18 +216,20 @@ body {
 .cardTitle {
   margin: 0 0 10px;
   font-weight: 900;
-  color: var(--blue);
-  font-size: 26px;
+  color: #2b2b86;
+  font-size: 28px;
+  line-height: 1.1;
 }
 
 .cardText {
   margin: 0 0 14px;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.65;
   font-weight: 600;
+  color: rgba(23,23,23,0.78);
 }
 
-/* ================= TOGGLE ================= */
+/* ---------- TOGGLE (Saiba mais / Mostrar menos) ---------- */
 
 details {
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -196,24 +237,58 @@ details {
 }
 
 summary {
+  list-style: none;
   cursor: pointer;
+  user-select: none;
   display: inline-flex;
+  align-items: center;
   gap: 10px;
   color: var(--accent);
   font-weight: 900;
   font-size: 15px;
 }
 
-summary::-webkit-details-marker {
-  display: none;
+summary::-webkit-details-marker { display: none; }
+
+.toggleMore { display: inline-flex; gap: 10px; align-items: center; }
+.toggleLess { display: none; gap: 10px; align-items: center; }
+
+details[open] .toggleMore { display: none; }
+details[open] .toggleLess { display: inline-flex; }
+
+.toggleIcon {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1;
 }
 
-/* ================= FOOTER ================= */
+.subTitle {
+  margin: 18px 0 8px;
+  font-weight: 900;
+  color: #2b2b86;
+  font-size: 18px;
+}
+
+.ul {
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(23,23,23,0.78);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.ul li { margin: 8px 0; }
+
+/* ---------- FOOTER ---------- */
 
 .footerSection {
-  background: rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.10);
   color: var(--white);
   padding: 22px var(--sidePadding);
+}
+
+@media (max-width: 520px) {
+  .footerSection { padding-left: var(--sidePaddingMobile); padding-right: var(--sidePaddingMobile); }
 }
 
 .footerTitle {
@@ -224,17 +299,26 @@ summary::-webkit-details-marker {
 
 .footerText {
   margin: 0 0 14px;
+  opacity: 0.95;
   font-weight: 600;
   line-height: 1.5;
 }
 
 .footerCta {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 14px;
   border-radius: 999px;
   background: var(--white);
-  color: var(--blue);
+  color: #2b2b86;
   text-decoration: none;
   font-weight: 900;
   font-size: 14px;
+}
+
+.loading {
+  width: min(var(--cardMaxWidth), 100%);
+  padding: 22px var(--sidePadding);
+  opacity: 0.8;
 }
