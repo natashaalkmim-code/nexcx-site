@@ -196,39 +196,39 @@ body {
 
 
 /* BOTÃO VAZADO */
-.whiteButton {
-  display: inline-block;
-  margin-top: 28px;
+.whiteCta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  padding: 14px 36px;
-  border: 3px solid var(--blue);
-  border-radius: 999px;
+  margin-top: 32px;
 
-  background: transparent;
-  color: var(--blue);
+  padding: 10px 22px;        /* ↓ menor altura e largura */
+  border-radius: 999px;      /* pílula perfeita */
 
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 0.4px;
+  font-size: 14px;           /* ↓ tipografia menor */
+  font-weight: 700;
+  letter-spacing: 0.2px;
   text-decoration: none;
 
-  line-height: 1;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  background: transparent;
+
+  transition: all 0.25s ease;
 }
+
+.whiteCta:hover{
+  background: var(--blue);
+  color: var(--white);
+}
+
 
 /* MOBILE WHITE */
 @media (max-width: 520px){
-  .whiteSection{
-    padding: 80px 28px; /* ↑ mais altura no mobile */
-  }
-
-  .whiteLead{
-    font-size: 20px;
-    margin-bottom: 22px;
-  }
-
-  .whiteSub{
-    font-size: 14px;
-    max-width: 100%;
+  .whiteCta{
+    padding: 9px 20px;
+    font-size: 13px;
   }
 }
 
