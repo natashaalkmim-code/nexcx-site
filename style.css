@@ -22,20 +22,24 @@
 
 :root {
   --radius: 28px;
-  --blue: #2A2E77;
+  --blue: #2b2f7f; /* azul NÃO usado no hero, só em textos */
   --white: #ffffff;
   --paper: #f4f1ea;
   --ink: #1d1d1d;
   --accent: #f7a531;
-  --cardMaxWidth: 430px;
 
+  --cardMaxWidth: 430px;
   --sidePadding: 50px;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html,
-body { height: 100%; }
+body {
+  height: 100%;
+}
 
 body {
   margin: 0;
@@ -49,10 +53,9 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 0;
 }
 
-/* CONTAINER PRINCIPAL */
+/* CONTAINER */
 .shell {
   width: min(var(--cardMaxWidth), 100%);
   background: var(--paper);
@@ -68,55 +71,51 @@ body {
   }
 }
 
-/* ---------- HERO ---------- */
+/* ================= HERO ================= */
 
 .heroImageWrap {
-  background: var(--paper);
-  padding: 0;
-}
-
-.heroImage {
-  width: 100%;
-  display: block;
-  border-radius: 0;
+  display: none; /* ❌ não usamos img no hero */
 }
 
 .heroContent {
   color: var(--white);
-  background: var(--blue);
 
-  min-height: 50vh;
+  /* 🔥 FUNDO REAL DO HERO */
+  background-image: url("/assets/images/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* 🔥 ALTURA CONTROLADA */
+  min-height: 52vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  /* desktop */
-  padding: 18px var(--sidePadding) 18px;
+  padding: 20px var(--sidePadding);
 }
 
-/* 📱 MOBILE */
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 50vh;
-
-    /* 🔽 mais 10px em cima e 10px embaixo */
-    padding: 18px var(--sidePadding) 18px;
+    min-height: 42vh;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 
 .heroArrow {
-  font-size: 28px;
-  margin-bottom: 16px;
+  font-size: 26px;
+  margin-bottom: 14px;
 }
 
 .heroTitle {
-  margin: 0 0 24px;
+  margin: 0 0 20px;
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 30px;
-  line-height: 1.25;
-  letter-spacing: 0.4px;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
 }
 
 .heroCta {
@@ -133,11 +132,10 @@ body {
   width: fit-content;
 }
 
-/* ---------- WHITE SECTION ---------- */
+/* ================= WHITE SECTION ================= */
 
 .whiteSection {
   background: var(--paper);
-  color: var(--ink);
   padding: 26px var(--sidePadding);
 }
 
@@ -155,10 +153,10 @@ body {
   font-weight: 600;
 }
 
-/* ---------- SERVICES ---------- */
+/* ================= SERVICES ================= */
 
 .servicesSection {
-  background: var(--blue);
+  background: #2b2f7f;
   padding: 26px var(--sidePadding) 34px;
 }
 
@@ -166,7 +164,7 @@ body {
   margin: 0 0 18px;
   color: var(--white);
   font-weight: 900;
-  font-size: 38px;
+  font-size: 36px;
 }
 
 .card {
@@ -180,7 +178,7 @@ body {
   margin: 0 0 10px;
   font-weight: 900;
   color: var(--blue);
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .cardText {
@@ -190,7 +188,7 @@ body {
   font-weight: 600;
 }
 
-/* ---------- TOGGLE ---------- */
+/* ================= TOGGLE ================= */
 
 details {
   border-top: 1px solid rgba(0,0,0,0.08);
@@ -206,24 +204,14 @@ summary {
   font-size: 15px;
 }
 
-summary::-webkit-details-marker { display: none; }
-
-.subTitle {
-  margin: 18px 0 8px;
-  font-weight: 900;
-  color: var(--blue);
+summary::-webkit-details-marker {
+  display: none;
 }
 
-.ul {
-  padding-left: 18px;
-  font-weight: 700;
-  line-height: 1.55;
-}
-
-/* ---------- FOOTER ---------- */
+/* ================= FOOTER ================= */
 
 .footerSection {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.08);
   color: var(--white);
   padding: 22px var(--sidePadding);
 }
@@ -249,12 +237,4 @@ summary::-webkit-details-marker { display: none; }
   text-decoration: none;
   font-weight: 900;
   font-size: 14px;
-}
-
-/* ---------- LOADING ---------- */
-
-.loading {
-  width: min(var(--cardMaxWidth), 100%);
-  padding: 22px var(--sidePadding);
-  opacity: 0.8;
 }
