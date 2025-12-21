@@ -187,49 +187,55 @@ a.heroCta,
    WHITE SECTION
 ========================================================= */
 
+/* =========================================================
+   WHITE SECTION
+========================================================= */
+
 .whiteSection {
   background: var(--paper);
-  padding: 96px 50px; /* bastante respiro em cima e embaixo */
+  padding: 72px 40px; /* ↓ menos espaço em cima e embaixo */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 24px; /* ↓ menos espaço entre textos */
   text-align: center;
 }
 
 /* texto principal */
 .whiteLead {
   max-width: 900px;
-  font-size: 28px;
-  line-height: 1.35;
-  font-weight: 700; /* bold elegante */
+  font-size: 24px;     /* ↓ era 28 */
+  line-height: 1.4;    /* um pouco mais fechado */
+  font-weight: 700;
   color: var(--ink);
 }
 
 /* texto complementar */
 .whiteSub {
   max-width: 400px;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 16px;     /* ↓ era 18 */
+  line-height: 1.45;
   font-weight: 500;
   color: var(--ink);
   opacity: 0.85;
 }
 
-/* ajuste mobile */
+/* mobile */
 @media (max-width: 520px) {
   .whiteSection {
-    padding: 72px 24px;
+    padding: 56px 24px; /* ↓ menos respiro no mobile */
+    gap: 20px;
   }
 
   .whiteLead {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .whiteSub {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
+
 
 
 
