@@ -133,12 +133,14 @@ body {
 /* MOBILE */
 @media (max-width: 520px) {
   :root {
-    --sidePadding: 28px;        /* ✅ MAIS respiro lateral */
+    --sidePadding: 48px; /* AQUI está o ganho real */
     --heroTopPadding: 72px;
     --heroBottomPadding: 44px;
     --heroBgZoom: 165%;
   }
 }
+
+
 
 /* ---------- TEXTO HERO ---------- */
 .heroTitle {
