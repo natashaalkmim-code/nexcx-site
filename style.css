@@ -97,7 +97,7 @@ body {
   /* fundo azul vindo da imagem */
   background-image: url("/assets/images/hero.png");
   background-repeat: no-repeat;
-  background-size: 120% auto; /* zoom desktop */
+  background-size: 110% auto; /* zoom desktop */
   background-position: center bottom;
 
   min-height: 55vh;
@@ -118,7 +118,7 @@ body {
     padding-bottom: 80px;
 
     /* zoom maior no azul */
-    background-size: 140% auto;
+    background-size: 115% auto;
     background-position: center bottom;
   }
 }
