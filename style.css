@@ -142,7 +142,7 @@ body {
 /* ---------- TEXTO HERO ---------- */
 .heroTitle {
   margin: 0;
-  font-weight: 600; /* semi-bold no geral */
+  font-weight: 400; /* semi-bold no geral */
   text-transform: uppercase;
   font-size: 30px;
   line-height: 1.3;
