@@ -92,7 +92,7 @@ body {
   justify-content: center;
 
   /* desktop */
-  padding: 15px var(--sidePadding) 15px;
+  padding: 18px var(--sidePadding) 18px;
 }
 
 /* 📱 MOBILE */
@@ -101,7 +101,7 @@ body {
     min-height: 45vh;
 
     /* 🔽 mais 10px em cima e 10px embaixo */
-    padding: 15px var(--sidePadding) 15px;
+    padding: 18px var(--sidePadding) 18px;
   }
 }
 
