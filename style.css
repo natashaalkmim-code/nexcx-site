@@ -85,7 +85,7 @@ body {
   color: var(--white);
   background: var(--blue);
 
-  min-height: 45vh;
+  min-height: 50vh;
 
   display: flex;
   flex-direction: column;
@@ -98,7 +98,7 @@ body {
 /* 📱 MOBILE */
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 45vh;
+    min-height: 50vh;
 
     /* 🔽 mais 10px em cima e 10px embaixo */
     padding: 18px var(--sidePadding) 18px;
