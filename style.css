@@ -107,7 +107,7 @@ body {
   justify-content: flex-start;
 
   /* 🔥 espaço real em cima e embaixo */
-  padding: 60px var(--sidePadding) 70px;
+  padding: 60px var(--sidePadding) 60px;
 }
 
 /* ajuste fino mobile */
@@ -115,7 +115,7 @@ body {
   .heroContent {
     min-height: 50vh;
     padding-top: 70px;
-    padding-bottom: 80px;
+    padding-bottom: 70px;
 
     /* zoom maior no azul */
     background-size: 115% auto;
