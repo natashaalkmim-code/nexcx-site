@@ -1,4 +1,6 @@
-/* ---------- FONTES ---------- */
+/* =========================================================
+   FONTES
+========================================================= */
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("/assets/fonts/RaelaGrotesque-Regular.ttf") format("truetype");
@@ -21,7 +23,9 @@
   font-display: swap;
 }
 
-/* ---------- VARIÁVEIS ---------- */
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
 :root {
   --radius: 28px;
   --blue: #2b2b86;
@@ -31,16 +35,17 @@
   --accent: #f7a531;
   --cardMaxWidth: 430px;
 
-  /* controle único do espaço lateral */
+  /* controle único de padding lateral */
   --sidePadding: 50px;
 }
 
-/* ---------- RESET ---------- */
+/* =========================================================
+   RESET
+========================================================= */
 * {
   box-sizing: border-box;
 }
-html,
-body {
+html, body {
   height: 100%;
 }
 body {
@@ -50,14 +55,15 @@ body {
   color: var(--ink);
 }
 
-/* ---------- APP ---------- */
+/* =========================================================
+   APP / CONTAINER
+========================================================= */
 .app {
   min-height: 100vh;
   display: flex;
   justify-content: center;
 }
 
-/* ---------- CONTAINER ---------- */
 .shell {
   width: min(var(--cardMaxWidth), 100%);
   background: var(--paper);
@@ -75,63 +81,91 @@ body {
 
 /* =========================================================
    HERO
-   colagem em cima + azul contínuo embaixo (SEM FAIXA BRANCA)
+   (colagem em cima + azul embaixo)
 ========================================================= */
 
-/* wrapper geral do hero */
-.hero {
-  background-image: url("/assets/images/hero.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 110% auto;
-}
-
-/* ---------- COLAGEM ---------- */
+/* --- COLAGEM --- */
 .heroImageWrap {
-  background: transparent; /* ❌ tira o papel */
+  background: var(--paper);
   padding: 0;
+  margin: 0;
 }
 
 .heroImage {
   width: 100%;
   display: block;
   border-radius: 0;
+  margin: 0;
 }
 
-/* ---------- FUNDO AZUL + TEXTO ---------- */
+/* --- FUNDO AZUL + TEXTO --- */
 .heroContent {
   color: var(--white);
 
-  /* 🔥 fundo azul CONTÍNUO */
-  background: transparent;
+  /* fundo azul via imagem */
+  background-image: url("/assets/images/hero.png");
+  background-repeat: no-repeat;
+  background-size: 112% auto;
+  background-position: center top;
 
-  min-height: 50vh;
+  /* ↓ REDUÇÃO REAL DO AZUL */
+  min-height: calc(48vh - 6px);
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  padding: 60px var(--sidePadding) 60px;
+  /* ↓ menos espaço em cima e embaixo */
+  padding: 44px var(--sidePadding) 44px;
+
+  margin: 0;
 }
 
 /* ---------- MOBILE ---------- */
 @media (max-width: 520px) {
-  .hero {
-    background-size: 115% auto;
-  }
-
   .heroContent {
-    min-height: 45vh;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    min-height: calc(42vh - 6px);
+
+    /* ↓ reduz exatamente o azul */
+    padding-top: 52px;
+    padding-bottom: 52px;
+
+    background-size: 118% auto;
+    background-position: center top;
   }
 }
 
+.heroArrow {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.heroTitle {
+  margin: 0 0 26px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.9);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  width: fit-content;
+}
 
 /* =========================================================
    WHITE SECTION
 ========================================================= */
-
 .whiteSection {
   background: var(--paper);
   padding: 26px var(--sidePadding);
@@ -154,7 +188,6 @@ body {
 /* =========================================================
    SERVICES
 ========================================================= */
-
 .servicesSection {
   background: var(--blue);
   padding: 26px var(--sidePadding) 34px;
@@ -188,8 +221,9 @@ body {
   font-weight: 600;
 }
 
-/* ---------- TOGGLE ---------- */
-
+/* =========================================================
+   TOGGLE
+========================================================= */
 details {
   border-top: 1px solid rgba(0,0,0,0.08);
   padding-top: 14px;
@@ -223,7 +257,6 @@ summary::-webkit-details-marker {
 /* =========================================================
    FOOTER
 ========================================================= */
-
 .footerSection {
   background: rgba(0,0,0,0.1);
   color: var(--white);
@@ -253,7 +286,9 @@ summary::-webkit-details-marker {
   font-size: 14px;
 }
 
-/* ---------- LOADING ---------- */
+/* =========================================================
+   LOADING
+========================================================= */
 .loading {
   width: min(var(--cardMaxWidth), 100%);
   padding: 22px var(--sidePadding);
