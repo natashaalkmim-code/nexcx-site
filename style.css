@@ -185,58 +185,38 @@ a.heroCta,
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 48px var(--sidePadding);
-  padding-top: 53px; /* 48 + 5 */
+  padding: 48px var(--sidePadding) 52px;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* 🔥 wrapper único */
+.whiteTextBlock {
+  width: 100%;
+  max-width: 900px;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* 🔥 eixo esquerdo comum */
 }
 
-}
-
+/* TEXTO MAIOR */
 .whiteLead {
-  font-size: 24px;       /* mantém o tamanho atual */
-  font-weight: 700;     /* 🔥 mais corpo, sem virar black */
+  font-size: 24px;
+  font-weight: 700;       /* mais grosso */
   line-height: 1.45;
-  text-align: left;     /* garante alinhamento correto */
-  max-width: 900px;
-}
-
+  margin: 0;
 }
 
 /* TEXTO MENOR */
 .whiteSub {
+  margin-top: 16px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
-
-  text-align: left;     /* 🔥 isso resolve */
-  max-width: 400px;     /* mantém a hierarquia */
-  margin-top: 16px;
+  max-width: 400px;       /* hierarquia */
 }
-
-
-/* MOBILE */
-@media (max-width: 520px) {
-  .whiteSection {
-    padding: 36px 24px;
-  }
-
-  .whiteLead {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  .whiteSub {
-    font-size: 15px;
-    margin-bottom: 36px;
-  }
-}
-
-
-
-
-
 
 /* =========================================================
    SERVICES
