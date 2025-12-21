@@ -80,7 +80,7 @@ body {
 }
 
 /* =========================================================
-   HERO — COLAGEM EM CIMA + AZUL EMBAIXO (CORRIGIDO)
+   HERO — COLAGEM EM CIMA + AZUL EMBAIXO
 ========================================================= */
 
 /* --- COLAGEM --- */
@@ -106,19 +106,18 @@ body {
   background-size: 120% auto;
   background-position: center top;
 
-  /* ✅ altura visual do azul */
   min-height: 52vh;
 
-  /* ✅ garante espaço real pro conteúdo */
-  padding-top: 56px;
-  padding-bottom: 56px;
+  /* 🔥 AQUI FOI O AJUSTE */
+  padding-top: 51px;     /* era 56px */
+  padding-bottom: 51px;  /* era 56px */
   padding-left: var(--sidePadding);
   padding-right: var(--sidePadding);
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 22px; /* 🔥 isso resolve o sumiço do botão */
+  gap: 22px;
 }
 
 /* ---------- MOBILE ---------- */
@@ -126,13 +125,49 @@ body {
   .heroContent {
     min-height: 48vh;
 
-    padding-top: 64px;   /* ↑ MAIS RESPIRO */
-    padding-bottom: 64px;
+    /* 🔥 –5px EM CIMA E EMBAIXO NO MOBILE */
+    padding-top: 59px;    /* era 64px */
+    padding-bottom: 59px; /* era 64px */
 
     background-size: 125% auto;
     background-position: center top;
   }
 }
+
+/* ---------- ELEMENTOS ---------- */
+
+.heroArrow {
+  font-size: 32px;
+  line-height: 1;
+  opacity: 0.95;
+}
+
+.heroTitle {
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.95);
+
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+
+  width: fit-content;
+}
+
 
 /* ---------- ELEMENTOS ---------- */
 
