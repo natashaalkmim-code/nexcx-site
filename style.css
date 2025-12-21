@@ -87,7 +87,7 @@ body {
 .heroImageWrap {
   margin: 0;
   padding: 0;
-  font-size: 0;          /* mata gap inline */
+  font-size: 0;
   line-height: 0;
   background: transparent;
 }
@@ -106,27 +106,42 @@ body {
   background-image: url("/assets/images/hero.png");
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: 125% auto;
+  background-size: 130% auto;
 
-  /* 🔽 ALTURA CONTROLADA (já reduzida) */
-  min-height: 42vh;
+  /* 🔽 ALTURA MAIS BAIXA */
+  min-height: 34vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  /* 🔽 padding reduzido em cima e embaixo */
-  padding: 40px var(--sidePadding) 40px;
+  /* 🔽 menos respiro em cima/baixo */
+  padding: 34px var(--sidePadding) 34px;
 }
 
 /* mobile */
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 38vh;
-    padding-top: 42px;
-    padding-bottom: 42px;
-    background-size: 135% auto;
+    min-height: 31vh;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-size: 140% auto;
   }
+}
+
+/* some com o “vamos conversar” (link) só no hero */
+.heroContent a {
+  display: none !important;
+}
+
+.heroArrow {
+  font-size: 34px;
+  line-height: 1;
+  color: #fff;
+  opacity: 0.95;
+
+  /* ✅ mais espaço entre seta e texto */
+  margin: 0 0 26px;
 }
 
 .heroTitle {
@@ -137,15 +152,6 @@ body {
   line-height: 1.25;
   letter-spacing: 0.4px;
   color: #fff;
-}
-
-/* seta branca abaixo do texto */
-.heroArrow {
-  margin-top: 22px;
-  font-size: 34px;
-  line-height: 1;
-  color: #fff;
-  opacity: 0.95;
 }
 
 /* =========================================================
@@ -228,7 +234,6 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-/* só um texto por vez */
 details .toggleLess {
   display: none;
 }
