@@ -1,3 +1,4 @@
+// script.js
 import { renderHero } from "./sections/hero.js";
 import { renderIntro } from "./sections/intro.js";
 import { renderServices } from "./sections/services.js";
@@ -13,49 +14,32 @@ function escapeHtml(str) {
 }
 
 async function loadContent() {
-  const res = await fetch("./content.json", { cache: "no-store" });
-  if (!res.ok) throw new Error(`Falha ao carregar content.json: ${res.status}`);
+  const res = await fetch("/content.json", { cache: "no-store" });
+  if (!res.ok) throw new Error(`Falha ao carregar content.json (${res.status})`);
   return res.json();
 }
 
-function applyTheme(theme) {
-  if (!theme) return;
-  const root = document.documentElement;
-  if (theme.blue) root.style.setProperty("--blue", theme.blue);
-  if (theme.white) root.style.setProperty("--white", theme.white);
-  if (theme.cardMaxWidth) root.style.setProperty("--cardMaxWidth", `${theme.cardMaxWidth}px`);
-  if (theme.radius) root.style.setProperty("--radius", `${theme.radius}px`);
-}
-
-function setupBackToTop() {
-  const btn = document.getElementById("backToTop");
-  if (!btn) return;
-
-  const onScroll = () => {
-    if (window.scrollY > 420) btn.classList.add("show");
-    else btn.classList.remove("show");
-  };
-
-  btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-}
-
-function setupSmoothAnchors() {
+function bindInteractions() {
+  // Event delegation: funciona mesmo que o HTML seja renderizado depois
   document.addEventListener("click", (e) => {
-    const a = e.target.closest('a[href^="#"]');
-    if (!a) return;
-    const id = a.getAttribute("href");
-    if (!id || id === "#") return;
-
-    const target = document.querySelector(id);
-    if (!target) return;
+    const btn = e.target.closest("[data-toggle='service']");
+    if (!btn) return;
 
     e.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    const targetId = btn.getAttribute("aria-controls");
+    if (!targetId) return;
+
+    const panel = document.getElementById(targetId);
+    if (!panel) return;
+
+    const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+    btn.setAttribute("aria-expanded", String(!isOpen));
+    btn.textContent = isOpen ? "Saiba mais" : "Mostrar menos";
+
+    panel.hidden = isOpen;
+    panel.classList.toggle("is-open", !isOpen);
   });
 }
 
@@ -65,29 +49,18 @@ async function init() {
 
   try {
     const data = await loadContent();
-    applyTheme(data.theme);
 
-    app.innerHTML = `
-      <div class="phone">
-        ${renderHero(data.hero, escapeHtml)}
-        ${renderIntro(data.intro, escapeHtml)}
-        ${renderServices(data.services, escapeHtml)}
-        ${renderFooter(data.footer, escapeHtml)}
-      </div>
-    `;
+    app.innerHTML = [
+      renderHero(data, escapeHtml),
+      renderIntro(data, escapeHtml),
+      renderServices(data, escapeHtml),
+      renderFooter(data, escapeHtml),
+    ].join("");
 
-    setupBackToTop();
-    setupSmoothAnchors();
+    bindInteractions();
   } catch (err) {
     console.error(err);
-    app.innerHTML = `
-      <div class="phone">
-        <section class="section section-paper">
-          <h2 class="h2">Ops.</h2>
-          <p class="p">Erro carregando <b>content.json</b>. Abre o console.</p>
-        </section>
-      </div>
-    `;
+    app.innerHTML = `<p style="padding:24px">Erro carregando content.json</p>`;
   }
 }
 
