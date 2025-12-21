@@ -34,8 +34,6 @@
   --ink: #1d1d1d;
   --accent: #f7a531;
   --cardMaxWidth: 430px;
-
-  /* controle único de padding lateral */
   --sidePadding: 50px;
 }
 
@@ -45,7 +43,8 @@
 * {
   box-sizing: border-box;
 }
-html, body {
+html,
+body {
   height: 100%;
 }
 body {
@@ -79,14 +78,75 @@ body {
   }
 }
 
-.heroContent {
-  min-height: 52vh;
+/* =========================================================
+   HERO
+   colagem em cima + azul embaixo (SEM FAIXA BRANCA)
+========================================================= */
 
-  padding-top: 51px;
-  padding-bottom: 51px;
+/* --- COLAGEM --- */
+.heroImageWrap {
+  margin: 0;
+  padding: 0;
+  font-size: 0;          /* mata gap inline */
+  line-height: 0;
+  background: transparent;
 }
 
+.heroImage {
+  width: 100%;
+  display: block;
+  margin: 0;
+  vertical-align: bottom;
+}
 
+/* --- FUNDO AZUL + TEXTO --- */
+.heroContent {
+  color: #fff;
+  background-color: var(--blue);
+  background-image: url("/assets/images/hero.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 125% auto;
+
+  /* 🔽 ALTURA CONTROLADA (já reduzida) */
+  min-height: 42vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* 🔽 padding reduzido em cima e embaixo */
+  padding: 40px var(--sidePadding) 40px;
+}
+
+/* mobile */
+@media (max-width: 520px) {
+  .heroContent {
+    min-height: 38vh;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    background-size: 135% auto;
+  }
+}
+
+.heroTitle {
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+  color: #fff;
+}
+
+/* seta branca abaixo do texto */
+.heroArrow {
+  margin-top: 22px;
+  font-size: 34px;
+  line-height: 1;
+  color: #fff;
+  opacity: 0.95;
+}
 
 /* =========================================================
    WHITE SECTION
@@ -161,10 +221,26 @@ summary {
   color: var(--accent);
   font-weight: 900;
   font-size: 15px;
+  list-style: none;
 }
 
 summary::-webkit-details-marker {
   display: none;
+}
+
+/* só um texto por vez */
+details .toggleLess {
+  display: none;
+}
+details[open] .toggleMore {
+  display: none;
+}
+details[open] .toggleLess {
+  display: inline-flex;
+}
+
+.toggleIcon {
+  font-weight: 900;
 }
 
 .subTitle {
