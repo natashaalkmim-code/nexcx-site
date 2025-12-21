@@ -182,12 +182,6 @@ a.heroCta,
    Texto:
    - 1º parágrafo max 900px
    - 2º parágrafo max 400px e menor
-
-/* =========================================================
-   WHITE SECTION (sem título “O que fazemos”)
-   Texto:
-   - 1º parágrafo max 900px
-   - 2º parágrafo menor e mais estreito
 ========================================================= */
 
 .whiteSection,
@@ -205,7 +199,7 @@ a.heroCta,
   max-width: 920px;
   margin: 0;      /* não centraliza bloco */
   padding: 0;
-}
+
 
 .whiteLead{
   margin: 0 0 22px;
