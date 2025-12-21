@@ -85,23 +85,23 @@ body {
   color: var(--white);
   background: var(--blue);
 
-  min-height: 50vh;
+  min-height: 55vh;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   /* desktop */
-  padding: 18px var(--sidePadding) 18px;
+  padding: 20px var(--sidePadding) 20px;
 }
 
 /* 📱 MOBILE */
 @media (max-width: 520px) {
   .heroContent {
-    min-height: 50vh;
+    min-height: 55vh;
 
     /* 🔽 mais 10px em cima e 10px embaixo */
-    padding: 18px var(--sidePadding) 18px;
+    padding: 20px var(--sidePadding) 20px;
   }
 }
 
