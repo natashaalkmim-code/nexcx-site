@@ -202,7 +202,7 @@ body {
 
 @media (max-width: 520px){
   .whiteSection{ padding: 44px 24px; }
-  .whiteLead{ font-size: 22px; margin-bottom: 18px; }
+  .whiteLead{ font-size: 20px; margin-bottom: 16px; }
   .whiteSub{ font-size: 16px; max-width: 320px; padding-left: 4px; }
 }
 
