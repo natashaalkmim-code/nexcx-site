@@ -29,7 +29,7 @@
   --accent: #f7a531;
   --cardMaxWidth: 430px;
 
-  --sidePadding: 50px;
+  --sidePadding: 50px; /* ✅ espaçamento lateral final */
 }
 
 
