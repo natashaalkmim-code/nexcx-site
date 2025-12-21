@@ -130,9 +130,10 @@ body {
   padding: var(--heroTopPadding) var(--sidePadding) var(--heroBottomPadding);
 }
 
+/* MOBILE */
 @media (max-width: 520px) {
   :root {
-    --sidePadding: 34px;
+    --sidePadding: 28px;        /* ✅ MAIS respiro lateral */
     --heroTopPadding: 72px;
     --heroBottomPadding: 44px;
     --heroBgZoom: 165%;
@@ -176,34 +177,35 @@ body {
 
 .whiteInner{
   width: 100%;
-  max-width: 920px;
+  max-width: 760px;   /* ✅ bloco mais contido (fica mais editorial) */
   margin: 0;
   padding: 0;
 }
 
+/* ✅ volta pra um tamanho forte, mas um pouco menor que antes */
 .whiteLead{
   margin: 0 0 22px;
-  font-size: 17px;
-  line-height: 1.28;
+  font-size: 26px;    /* ✅ antes você derrubou pra 17 (ficou pequeno demais) */
+  line-height: 1.22;
   font-weight: 800;
   color: var(--ink);
 }
 
 .whiteSub{
   margin: 0;
-  font-size: 13px;
+  font-size: 17px;    /* ✅ acompanha bem */
   line-height: 1.55;
-  font-weight: 400;
+  font-weight: 500;
   color: rgba(29,29,29,0.9);
 
   max-width: 520px;
-  padding-left: 6px;
+  padding-left: 0;    /* ✅ tira “dentinho” que pode parecer desalinhado */
 }
 
 @media (max-width: 520px){
-  .whiteSection{ padding: 44px 24px; }
-  .whiteLead{ font-size: 17px; margin-bottom: 16px; }
-  .whiteSub{ font-size: 13px; max-width: 320px; padding-left: 4px; }
+  .whiteSection{ padding: 44px var(--sidePadding); } /* ✅ usa o mesmo padding variável */
+  .whiteLead{ font-size: 22px; margin-bottom: 16px; } /* ✅ menor só um pouco */
+  .whiteSub{ font-size: 15px; max-width: 320px; }
 }
 
 /* =========================================================
