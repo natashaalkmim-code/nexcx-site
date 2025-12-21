@@ -182,46 +182,57 @@ a.heroCta,
    Texto:
    - 1º parágrafo max 900px
    - 2º parágrafo max 400px e menor
-========================================================= */
-/* ===============================
-   WHITE SECTION
-================================ */
+
+.whiteSection, .whiteSection * { text-align: left !important; }
+
+
 .whiteSection {
   background: var(--paper);
-  padding: 52px var(--sidePadding); /* menos branco em cima/baixo */
-  text-align: left; /* 🔥 */
+  padding: 56px var(--sidePadding);
 }
 
-.whiteLead {
-  margin: 0 0 18px; /* distância menor entre os dois textos */
-  font-size: 28px;  /* título maior */
+.whiteInner{
+  /* não centraliza “na página”, só cria o bloco com recuo */
+  max-width: 920px;
+}
+
+.whiteLead{
+  margin: 0 0 28px;
+  font-size: 28px;
   line-height: 1.28;
-  font-weight: 800; /* mais grosso */
+  font-weight: 800;
   color: var(--ink);
-  max-width: 900px; /* opcional: segura linha no desktop sem “centralizar bloco” */
+  text-align: left;
 }
 
-.whiteSub {
+.whiteSub{
   margin: 0;
   font-size: 18px;
   line-height: 1.55;
   font-weight: 500;
-  color: rgba(29, 29, 29, 0.9);
-  max-width: 700px; /* opcional */
+  color: rgba(29,29,29,0.9);
+  text-align: left;
+
+  /* deixa o subtítulo mais estreito e “mais pra dentro” */
+  max-width: 520px;
+  padding-left: 6px;
 }
 
-@media (max-width: 520px) {
-  .whiteSection {
+@media (max-width: 520px){
+  .whiteSection{
     padding: 44px 24px;
   }
-  .whiteLead {
+  .whiteLead{
     font-size: 22px;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
   }
-  .whiteSub {
+  .whiteSub{
     font-size: 16px;
+    max-width: 320px;
+    padding-left: 4px;
   }
 }
+
 
 
 
