@@ -326,4 +326,4 @@ summary::-webkit-details-marker { display: none; }
   width: min(var(--cardMaxWidth), 100%);
   padding: 22px var(--sidePadding);
   opacity: 0.8;
-}
+    }
