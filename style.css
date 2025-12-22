@@ -34,23 +34,25 @@
 
   --radius: 28px;
   --cardMaxWidth: 430px;
-  --sidePadding: 50px;
+  --sidePadding: 56px;
 
-  /* HERO */
-  --heroTopPadding: 64px;
-  --heroBottomPadding: 44px;
+  --heroTopPadding: 72px;
+  --heroBottomPadding: 56px;
   --heroBgZoom: 140%;
 }
 
 /* =========================================================
    RESET
 ========================================================= */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
-  height: 100%;
+html,
+body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
@@ -74,7 +76,7 @@ body {
   background: var(--paper);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
 }
 
 @media (max-width: 520px) {
@@ -93,11 +95,9 @@ body {
   flex-direction: column;
 }
 
-/* COLAGEM */
+/* ---------- COLAGEM ---------- */
 .heroImageWrap {
   background: var(--blue);
-  margin: 0;
-  padding: 0;
   line-height: 0;
   font-size: 0;
 }
@@ -107,8 +107,9 @@ body {
   display: block;
 }
 
-/* FUNDO AZUL */
+/* ---------- FUNDO AZUL ---------- */
 .heroContent {
+  position: relative;
   flex: 1;
   color: var(--white);
 
@@ -122,23 +123,47 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 
-  padding: var(--heroTopPadding) var(--sidePadding) var(--heroBottomPadding);
+  padding: var(--heroTopPadding) var(--sidePadding)
+    var(--heroBottomPadding);
 }
 
+/* DEGRADÊ TRANSPARENTE NO FINAL */
+.heroContent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 96px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(244, 241, 234, 0) 0%,
+    rgba(244, 241, 234, 0.6) 60%,
+    rgba(244, 241, 234, 1) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* TEXTO HERO */
 .heroTitle {
   margin: 0;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.3;
   letter-spacing: 0.6px;
 }
 
-.heroBlack { font-weight: 900; }
+.heroBlack {
+  font-weight: 900;
+}
 
 .heroArrow {
   margin-top: 28px;
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1;
   opacity: 0.95;
 }
@@ -146,10 +171,14 @@ body {
 /* MOBILE HERO */
 @media (max-width: 520px) {
   :root {
-    --sidePadding: 34px;
-    --heroTopPadding: 72px;
-    --heroBottomPadding: 44px;
+    --sidePadding: 32px;
+    --heroTopPadding: 80px;
+    --heroBottomPadding: 56px;
     --heroBgZoom: 165%;
+  }
+
+  .heroTitle {
+    font-size: 26px;
   }
 }
 
@@ -158,83 +187,72 @@ body {
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 70px var(--sidePadding); /* mais altura */
+  padding: 64px var(--sidePadding);
 }
 
 .whiteInner {
-  max-width: 760px;
+  max-width: 720px;
 }
 
-/* TEXTO PRINCIPAL (maior) */
+/* TEXTO PRINCIPAL */
 .whiteLead {
-  margin: 0 0 34px;
-  font-size: 24px;
+  margin: 0 0 18px;
+  font-size: 20px;
   line-height: 1.35;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--ink);
 }
 
-/* TEXTO SECUNDÁRIO (maior) */
+/* TEXTO SECUNDÁRIO */
 .whiteSub {
-  margin-top: -10px;
-  font-size: 16px;
-  line-height: 1.7;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
   font-weight: 500;
-  color: rgba(29,29,29,0.92);
-  max-width: 520px;
+  color: rgba(29, 29, 29, 0.9);
+  max-width: 460px;
 }
 
-/* BOTÃO (igual ao print) */
-a.whiteCta,
-a.whiteCta:link,
-a.whiteCta:visited,
-a.whiteCta:hover,
-a.whiteCta:active,
-a.whiteCta:focus {
+/* BOTÃO */
+.whiteCta,
+.whiteCta:visited {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: 56px;     /* MAIS espaço do texto */
-  padding: 8px 20px;    /* menor (como você pediu) */
-
+  margin-top: 28px;
+  padding: 8px 18px;
   border-radius: 999px;
-  border: 3px solid var(--blue);
 
-  font-size: 14px;      /* tipografia igualzinha */
-  font-weight: 800;
-  line-height: 1;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
 
   color: var(--blue);
+  border: 2px solid var(--blue);
   background: transparent;
 
   text-decoration: none;
-  -webkit-text-decoration: none;
-  outline: none;
+  transition: all 0.25s ease;
 }
 
-a.whiteCta:hover {
+.whiteCta:hover {
   background: var(--blue);
   color: var(--white);
 }
 
 /* MOBILE WHITE */
 @media (max-width: 520px) {
-  .whiteSection { padding: 76px 24px; }
+  .whiteSection {
+    padding: 56px 24px;
+  }
 
-  .whiteLead { font-size: 22px; margin-bottom: 28px; }
+  .whiteLead {
+    font-size: 18px;
+  }
 
-  .whiteSub { font-size: 15px; }
-
-  a.whiteCta,
-  a.whiteCta:link,
-  a.whiteCta:visited,
-  a.whiteCta:hover,
-  a.whiteCta:active,
-  a.whiteCta:focus {
-    margin-top: 46px;
-    padding: 7px 18px;
-    font-size: 14px;
+  .whiteSub {
+    font-size: 13px;
   }
 }
 
@@ -243,14 +261,14 @@ a.whiteCta:hover {
 ========================================================= */
 .servicesSection {
   background: var(--blue);
-  padding: 40px var(--sidePadding) 56px;
+  padding: 48px var(--sidePadding) 64px;
 }
 
 .servicesTitle {
   margin: 0 0 24px;
   color: var(--white);
   font-weight: 900;
-  font-size: 38px;
+  font-size: 34px;
 }
 
 .card {
@@ -264,12 +282,12 @@ a.whiteCta:hover {
   margin: 0 0 10px;
   font-weight: 900;
   color: var(--blue);
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .cardText {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
   font-weight: 600;
 }
@@ -278,7 +296,7 @@ a.whiteCta:hover {
    FOOTER
 ========================================================= */
 .footerSection {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.08);
   color: var(--white);
   padding: 28px var(--sidePadding);
 }
