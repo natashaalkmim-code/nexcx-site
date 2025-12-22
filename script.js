@@ -1,12 +1,18 @@
-// Cache-buster automático da colagem (pra parar de ficar vendo imagem velha)
-document.addEventListener("DOMContentLoaded", () => {
-  const img = document.querySelector(".heroImage");
-  if (!img) return;
+const backToTop = document.getElementById("backToTop");
 
-  // se já tem ?v= no HTML, ele mantém, mas se não tiver, adiciona
-  const url = new URL(img.src, window.location.href);
-  if (!url.searchParams.get("v")) {
-    url.searchParams.set("v", String(Date.now()));
-    img.src = url.toString();
+// mostrar/esconder ao rolar
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
   }
+});
+
+// voltar ao topo
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });

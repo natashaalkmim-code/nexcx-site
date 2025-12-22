@@ -278,3 +278,49 @@ body {
   font-weight: 600;
   line-height: 1.5;
 }
+
+/* =========================================================
+   BOTÃO VOLTAR AO TOPO
+========================================================= */
+#backToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  background: var(--blue);
+  color: var(--white);
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* visível */
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* hover sutil */
+#backToTop:hover {
+  transform: translateY(-2px);
+}
