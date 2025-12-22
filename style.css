@@ -237,10 +237,6 @@ body {
    TOGGLE DE SERVIÇOS
 ========================================================= */
 
-/* =========================================================
-   TOGGLE DE SERVIÇOS
-========================================================= */
-
 .servicesToggleSection {
   background: var(--blue);
   padding: 72px var(--sidePadding);
@@ -349,6 +345,60 @@ body {
     font-size: 15px;
   }
 }
+
+/* =========================================================
+   3 PASSOS
+========================================================= */
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  padding: 40px;
+  color: #1a1a1a;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 30px;
+  padding-left: 30px;
+  border-left: 4px solid #2a2a8f; /* Linha vertical da timeline */
+}
+
+.step {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.circle {
+  position: absolute;
+  left: -42px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 4px solid #2a2a8f;
+  border-radius: 50%;
+  color: #2a2a8f;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  line-height: 32px;
+}
+
+.content h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2a2a8f;
+  font-weight: bold;
+}
+
+.content p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+
 
 /* =========================================================
    BOTÃO VOLTAR AO TOPO
