@@ -158,7 +158,7 @@ body {
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 92px var(--sidePadding); /* mais altura */
+  padding: 70px var(--sidePadding); /* mais altura */
 }
 
 .whiteInner {
