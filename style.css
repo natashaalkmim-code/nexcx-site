@@ -44,12 +44,9 @@
 /* =========================================================
    RESET
 ========================================================= */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -95,7 +92,7 @@ body {
   flex-direction: column;
 }
 
-/* ---------- COLAGEM ---------- */
+/* COLAGEM */
 .heroImageWrap {
   background: var(--blue);
   line-height: 0;
@@ -107,7 +104,7 @@ body {
   display: block;
 }
 
-/* ---------- FUNDO AZUL ---------- */
+/* FUNDO AZUL */
 .heroContent {
   flex: 1;
   color: var(--white);
@@ -136,9 +133,7 @@ body {
   letter-spacing: 0.6px;
 }
 
-.heroBlack {
-  font-weight: 900;
-}
+.heroBlack { font-weight: 900; }
 
 .heroArrow {
   margin-top: 28px;
@@ -147,26 +142,12 @@ body {
   opacity: 0.95;
 }
 
-/* MOBILE HERO */
-@media (max-width: 520px) {
-  :root {
-    --sidePadding: 32px;
-    --heroTopPadding: 80px;
-    --heroBottomPadding: 56px;
-    --heroBgZoom: 165%;
-  }
-
-  .heroTitle {
-    font-size: 26px;
-  }
-}
-
 /* =========================================================
    WHITE SECTION
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 64px var(--sidePadding);
+  padding: 56px var(--sidePadding); /* ↓ seção mais compacta */
 }
 
 .whiteInner {
@@ -175,7 +156,7 @@ body {
 
 /* TEXTO PRINCIPAL */
 .whiteLead {
-  margin: 0 0 18px;
+  margin: 0 0 14px; /* ↓ menos espaço */
   font-size: 20px;
   line-height: 1.35;
   font-weight: 800;
@@ -186,7 +167,7 @@ body {
 .whiteSub {
   margin: 0;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.55;
   font-weight: 500;
   color: rgba(29, 29, 29, 0.9);
   max-width: 460px;
@@ -199,7 +180,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  margin-top: 28px;
+  margin-top: 18px;          /* 🔥 MENOS DISTÂNCIA */
   padding: 8px 18px;
   border-radius: 999px;
 
@@ -207,23 +188,23 @@ body {
   font-weight: 700;
   letter-spacing: 0.2px;
 
-  color: var(--blue);
+  color: var(--white);       /* 🔥 TEXTO BRANCO */
+  background: var(--blue);   /* 🔥 FUNDO AZUL */
   border: 2px solid var(--blue);
-  background: transparent;
 
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
 .whiteCta:hover {
-  background: var(--blue);
-  color: var(--white);
+  background: transparent;
+  color: var(--blue);
 }
 
 /* MOBILE WHITE */
 @media (max-width: 520px) {
   .whiteSection {
-    padding: 56px 24px;
+    padding: 48px 24px;
   }
 
   .whiteLead {
@@ -232,6 +213,12 @@ body {
 
   .whiteSub {
     font-size: 13px;
+  }
+
+  .whiteCta {
+    margin-top: 16px;
+    padding: 7px 16px;
+    font-size: 12.5px;
   }
 }
 
