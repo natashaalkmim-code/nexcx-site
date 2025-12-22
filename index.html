@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NexCX</title>
 
-  <!-- cache-buster: troca o número quando quiser -->
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=100" />
 </head>
 
 <body>
@@ -17,7 +16,7 @@
       <section class="hero">
         <div class="heroImageWrap">
           <img
-            src="assets/images/collage.png?v=6"
+            src="assets/images/collage.png?v=100"
             alt="Colagem NexCX"
             class="heroImage"
             loading="eager"
@@ -33,72 +32,196 @@
             EMPRESA?
           </h1>
 
-          <!-- seta (SVG) -->
-          <div class="heroArrow" aria-hidden="true">
-            <svg class="arrowSvg arrowDown" viewBox="0 0 24 24" focusable="false">
+          <!-- bolinha clicável -->
+          <button class="heroArrow" id="heroScroll" type="button" aria-label="Ir para a próxima seção">
+            <svg class="arrowSvg arrowDown" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
               <path d="M12 5v12"></path>
               <path d="M7 13l5 5 5-5"></path>
             </svg>
-          </div>
+          </button>
         </div>
       </section>
 
       <!-- WHITE SECTION -->
-      <section class="whiteSection">
+      <section class="whiteSection" id="sobre">
         <div class="whiteInner">
           <p class="whiteLead">
-            Transformamos os processos internos e a experiência dos clientes
-            da sua empresa com clareza, método e acompanhamento real.
+            Transformamos os processos internos e a experiência dos clientes da sua empresa
+            com clareza, método e acompanhamento real.
           </p>
 
           <p class="whiteSub">
-            Enquanto você dirige, a NexCX lê o painel,
-            aponta riscos, sugere rotas e ajusta o trajeto.
+            Enquanto você dirige, a NexCX lê o painel, aponta riscos,
+            sugere rotas e ajusta o trajeto.
           </p>
 
           <a href="#contato" class="whiteCta">Vamos conversar</a>
         </div>
       </section>
 
-      <!-- SERVICES -->
-      <section class="servicesSection">
-        <h2 class="servicesTitle">Serviços</h2>
+      <!-- SERVICES (TOGGLE) -->
+      <section class="servicesToggleSection" id="servicos">
+        <h2 class="servicesMainTitle">Nossos Serviços</h2>
 
-        <div class="card">
-          <h3 class="cardTitle">Mapeamento de processos</h3>
-          <p class="cardText">
-            Entendemos o que realmente acontece, identificamos gargalos
-            e redesenhamos o fluxo ideal.
-          </p>
-        </div>
+        <!-- CARD 1 -->
+        <article class="serviceCard">
+          <div class="serviceTop">
+            <h3 class="serviceTitle">Jornada e Experiência do Cliente</h3>
+            <p class="serviceSummary">
+              Desenhamos e estruturamos a experiência do cliente de forma integrada à operação,
+              garantindo coerência entre estratégia, processos e relacionamento. Atuamos para que a
+              experiência seja mensurável, gerenciável e alinhada aos objetivos do negócio.
+            </p>
 
-        <div class="card">
-          <h3 class="cardTitle">Experiência do cliente</h3>
-          <p class="cardText">
-            Criamos jornadas mais claras, humanas e eficientes.
-          </p>
-        </div>
+            <button class="serviceToggleBtn" type="button" aria-expanded="false">
+              <span class="servicePlus">+</span>
+              <span class="serviceToggleText">Saiba mais</span>
+            </button>
+          </div>
+
+          <div class="serviceBody" aria-hidden="true">
+            <h4>Serviços</h4>
+            <ul>
+              <li>Redesenho da jornada do cliente integrada à estratégia e à operação</li>
+              <li>Aplicação de pesquisas de satisfação e análises da percepção do cliente</li>
+              <li>Realização de cliente oculto para avaliação prática da experiência</li>
+              <li>Estruturação de departamento de pós-vendas e relacionamento</li>
+              <li>Definição de padrões e fluxos de atendimento ao cliente</li>
+              <li>Capacitação de equipes com foco em experiência, retenção e cobrança</li>
+              <li>Implantação de ações práticas para melhoria da satisfação, retenção e relacionamento</li>
+            </ul>
+
+            <h4>Ganhos para a empresa</h4>
+            <ul>
+              <li>Visão clara e estruturada da experiência do cliente</li>
+              <li>Alinhamento entre discurso comercial, atendimento e pós-vendas</li>
+              <li>Melhoria na retenção e no relacionamento com clientes</li>
+              <li>Experiência conectada a resultado e sustentabilidade do negócio</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="serviceCard">
+          <div class="serviceTop">
+            <h3 class="serviceTitle">Gestão de Processos</h3>
+            <p class="serviceSummary">
+              Estruturamos processos para que a operação funcione de forma clara, integrada e alinhada
+              à estratégia do negócio. Nosso foco é transformar conhecimento operacional em métodos
+              consistentes, que sustentam o crescimento e a tomada de decisão.
+            </p>
+
+            <button class="serviceToggleBtn" type="button" aria-expanded="false">
+              <span class="servicePlus">+</span>
+              <span class="serviceToggleText">Saiba mais</span>
+            </button>
+          </div>
+
+          <div class="serviceBody" aria-hidden="true">
+            <h4>Serviços</h4>
+            <ul>
+              <li>Mapeamento e redesenho de processos ponta a ponta</li>
+              <li>Otimização e automação de processos</li>
+              <li>Estruturação de áreas, funções e responsabilidades</li>
+              <li>Implantação de rotinas operacionais e de gestão</li>
+              <li>Padronização e documentação de processos</li>
+              <li>Elaboração e revisão de documentos e padrões ISO 9001</li>
+            </ul>
+
+            <h4>Ganhos para a empresa</h4>
+            <ul>
+              <li>Maior clareza sobre papéis, fluxos e responsabilidades</li>
+              <li>Operação mais organizada, integrada e previsível</li>
+              <li>Redução de dependência de conhecimento tácito</li>
+              <li>Base sólida para crescimento e melhoria contínua</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="serviceCard">
+          <div class="serviceTop">
+            <h3 class="serviceTitle">Auditoria e Monitoramento de Operações</h3>
+            <p class="serviceSummary">
+              Atuamos na avaliação contínua da operação para garantir que processos, normas e diretrizes
+              estejam sendo seguidos na prática. Nosso foco não é apontar erros, mas garantir execução,
+              identificar riscos e fortalecer a governança do negócio.
+            </p>
+
+            <button class="serviceToggleBtn" type="button" aria-expanded="false">
+              <span class="servicePlus">+</span>
+              <span class="serviceToggleText">Saiba mais</span>
+            </button>
+          </div>
+
+          <div class="serviceBody" aria-hidden="true">
+            <h4>Serviços</h4>
+            <ul>
+              <li>Auditoria interna de operações e processos</li>
+              <li>Monitoramento contínuo da qualidade operacional</li>
+              <li>Avaliação de aderência aos processos definidos</li>
+              <li>Identificação de riscos, falhas e desvios</li>
+              <li>Suporte à governança corporativa e compliance</li>
+              <li>Auditoria interna baseada na ISO 9001</li>
+            </ul>
+
+            <h4>Ganhos para a empresa</h4>
+            <ul>
+              <li>Mais controle e visibilidade sobre a execução operacional</li>
+              <li>Redução de riscos e inconsistências nos processos</li>
+              <li>Apoio à tomada de decisão com base em evidências</li>
+              <li>Fortalecimento da governança e da conformidade</li>
+            </ul>
+          </div>
+        </article>
       </section>
 
       <!-- FOOTER -->
-      <footer class="footerSection" id="contato">
-        <h3 class="footerTitle">NexCX</h3>
-        <p class="footerText">
-          Estratégia, processo e experiência com clareza.
-        </p>
-      </footer>
+<footer class="footerSection" id="contato">
+  <div class="footerInner">
+    <img src="assets/images/nexcx.png" alt="NexCX" class="footerLogo" />
+
+    <p class="footerHeadline">
+      Transformando processos, operações e experiências em eficiência real.
+    </p>
+
+    <div class="footerContacts">
+
+      <a class="footerContact" href="mailto:contato@nexcx.com.br">
+  <span class="footerIcon" aria-hidden="true">
+    <img src="assets/images/icon2.png" alt="Ícone de e-mail" />
+  </span>
+  <span class="footerText">contato@nexcx.com.br</span>
+</a>
+
+<a class="footerContact" href="tel:+5562992387062">
+  <span class="footerIcon" aria-hidden="true">
+    <img src="assets/images/icon1.png" alt="Ícone de telefone" />
+  </span>
+  <span class="footerText">(62) 9 9238 7062</span>
+</a>
+
 
     </div>
   </div>
 
-  <!-- VOLTAR AO TOPO (mesma seta, SVG) -->
-  <button id="backToTop" aria-label="Voltar ao topo">
-    <svg class="arrowSvg arrowUp" viewBox="0 0 24 24" focusable="false">
+  <div class="footerDivider"></div>
+
+  <div class="footerBottom">
+    <p class="footerCopy">© NexCX. Conectar. Otimizar. Encantar.</p>
+  </div>
+</footer>
+
+
+
+  <!-- VOLTAR AO TOPO -->
+  <button id="backToTop" type="button" aria-label="Voltar ao topo">
+    <svg class="arrowSvg arrowUp" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
       <path d="M12 19V7"></path>
       <path d="M7 11l5-5 5 5"></path>
     </svg>
   </button>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=100"></script>
 </body>
 </html>
