@@ -82,18 +82,6 @@ body {
   line-height: 1.5;
 }
 
-.whiteCta {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: var(--blue);
-  color: var(--white);
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
 /* SERVICES */
 .servicesSection {
   background: var(--blue);
@@ -137,3 +125,31 @@ body {
 @media (max-width: 520px) {
   :root { --sidePadding: 24px; }
 }
+
+/* === FIX DEFINITIVO BOTÃO === */
+.whiteCta,
+.whiteCta:link,
+.whiteCta:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 16px;
+  padding: 10px 22px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  background: var(--blue);
+  color: #fff !important;
+  border: none;
+
+  text-decoration: none !important;
+}
+
+.whiteCta:hover {
+  opacity: 0.9;
+}
+
