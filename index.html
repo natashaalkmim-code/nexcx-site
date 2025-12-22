@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NexCX</title>
 
-  <!-- cache-buster: troca o número quando quiser forçar atualização -->
+  <!-- cache-buster: troca o número quando quiser -->
   <link rel="stylesheet" href="style.css?v=6" />
 </head>
 
@@ -27,13 +27,19 @@
 
         <div class="heroContent">
           <h1 class="heroTitle">
-            PRECISANDO DE<br />
-            UM <span class="heroBlack">COPILOTO</span> PARA<br />
-            TRANSFORMAR SUA<br />
+            PRECISANDO DE<br>
+            UM <span class="heroBlack">COPILOTO</span> PARA<br>
+            TRANSFORMAR SUA<br>
             EMPRESA?
           </h1>
 
-          <div class="heroArrow">↓</div>
+          <!-- seta (SVG) -->
+          <div class="heroArrow" aria-hidden="true">
+            <svg class="arrowSvg arrowDown" viewBox="0 0 24 24" focusable="false">
+              <path d="M12 5v12"></path>
+              <path d="M7 13l5 5 5-5"></path>
+            </svg>
+          </div>
         </div>
       </section>
 
@@ -41,12 +47,13 @@
       <section class="whiteSection">
         <div class="whiteInner">
           <p class="whiteLead">
-            Transformamos os processos internos e a experiência dos clientes da sua empresa
-            com clareza, método e acompanhamento real.
+            Transformamos os processos internos e a experiência dos clientes
+            da sua empresa com clareza, método e acompanhamento real.
           </p>
 
           <p class="whiteSub">
-            Enquanto você dirige, a NexCX lê o painel, aponta riscos, sugere rotas e ajusta o trajeto.
+            Enquanto você dirige, a NexCX lê o painel,
+            aponta riscos, sugere rotas e ajusta o trajeto.
           </p>
 
           <a href="#contato" class="whiteCta">Vamos conversar</a>
@@ -60,7 +67,8 @@
         <div class="card">
           <h3 class="cardTitle">Mapeamento de processos</h3>
           <p class="cardText">
-            Entendemos o que realmente acontece, identificamos gargalos e redesenhamos o fluxo ideal.
+            Entendemos o que realmente acontece, identificamos gargalos
+            e redesenhamos o fluxo ideal.
           </p>
         </div>
 
@@ -75,16 +83,22 @@
       <!-- FOOTER -->
       <footer class="footerSection" id="contato">
         <h3 class="footerTitle">NexCX</h3>
-        <p class="footerText">Estratégia, processo e experiência com clareza.</p>
+        <p class="footerText">
+          Estratégia, processo e experiência com clareza.
+        </p>
       </footer>
 
     </div>
   </div>
 
-  <!-- BOTÃO VOLTAR AO TOPO -->
+  <!-- VOLTAR AO TOPO (mesma seta, SVG) -->
   <button id="backToTop" aria-label="Voltar ao topo">
-  ↑
-</button>
+    <svg class="arrowSvg arrowUp" viewBox="0 0 24 24" focusable="false">
+      <path d="M12 19V7"></path>
+      <path d="M7 11l5-5 5 5"></path>
+    </svg>
+  </button>
 
+  <script src="script.js?v=6"></script>
 </body>
 </html>
