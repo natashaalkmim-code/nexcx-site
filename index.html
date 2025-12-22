@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NexCX</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=1" />
+  <!-- cache-buster: troca o número quando quiser forçar atualização -->
+  <link rel="stylesheet" href="style.css?v=20251221-2100" />
 </head>
 
 <body>
@@ -15,14 +15,18 @@
 
       <!-- HERO -->
       <section class="hero">
+        <!-- COLAGEM -->
         <div class="heroImageWrap">
           <img
-            src="assets/images/collage.png"
+            src="assets/images/collage.png?v=20251221-2100"
             alt="Colagem NexCX"
             class="heroImage"
+            loading="eager"
+            decoding="async"
           />
         </div>
 
+        <!-- FUNDO AZUL -->
         <div class="heroContent">
           <h1 class="heroTitle">
             PRECISANDO DE<br />
@@ -30,6 +34,7 @@
             TRANSFORMAR SUA<br />
             EMPRESA?
           </h1>
+
           <div class="heroArrow">↓</div>
         </div>
       </section>
@@ -38,18 +43,17 @@
       <section class="whiteSection">
         <div class="whiteInner">
           <p class="whiteLead">
-            Transformamos os processos internos e a experiência dos clientes
-            da sua empresa com clareza, método e acompanhamento real.
+            Transformamos os processos internos e a experiência dos clientes da sua empresa
+            com clareza, método e acompanhamento real.
           </p>
 
           <p class="whiteSub">
-            Enquanto você dirige, a NexCX<br>
-            lê o painel, aponta riscos,<br>
-            sugere rotas e ajusta o trajeto.
+            Enquanto você dirige, a NexCX lê o painel, aponta riscos, sugere rotas e ajusta o trajeto.
           </p>
 
-          <!-- BOTÃO -->
-          <a href="#contato" class="whiteCta">Vamos conversar</a>
+          <a class="whiteCta" href="#contato" aria-label="Vamos conversar">
+            Vamos conversar
+          </a>
         </div>
       </section>
 
@@ -60,8 +64,7 @@
         <div class="card">
           <h3 class="cardTitle">Mapeamento de processos</h3>
           <p class="cardText">
-            Entendemos o que realmente acontece, identificamos gargalos
-            e redesenhamos o fluxo ideal.
+            Entendemos o que realmente acontece, identificamos gargalos e redesenhamos o fluxo ideal.
           </p>
         </div>
 
