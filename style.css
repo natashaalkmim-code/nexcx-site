@@ -334,19 +334,19 @@ body {
 /* mobile refinado */
 @media (max-width: 520px) {
   .servicesMainTitle {
-    font-size: 30px;
-  }
-
-  .serviceTitle {
     font-size: 28px;
   }
 
+  .serviceTitle {
+    font-size: 23px;
+  }
+
   .serviceSummary {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   .serviceToggleBtn {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 
