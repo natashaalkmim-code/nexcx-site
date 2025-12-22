@@ -8,6 +8,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("assets/fonts/RaelaGrotesque-Bold.ttf") format("truetype");
@@ -15,6 +16,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "RaelaGrotesque";
   src: url("assets/fonts/RaelaGrotesque-Black.ttf") format("truetype");
@@ -44,9 +46,12 @@
 /* =========================================================
    RESET
 ========================================================= */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -133,7 +138,9 @@ body {
   letter-spacing: 0.6px;
 }
 
-.heroBlack { font-weight: 900; }
+.heroBlack {
+  font-weight: 900;
+}
 
 .heroArrow {
   margin-top: 28px;
@@ -142,12 +149,26 @@ body {
   opacity: 0.95;
 }
 
+/* MOBILE HERO */
+@media (max-width: 520px) {
+  :root {
+    --sidePadding: 32px;
+    --heroTopPadding: 64px;
+    --heroBottomPadding: 48px;
+    --heroBgZoom: 165%;
+  }
+
+  .heroTitle {
+    font-size: 24px;
+  }
+}
+
 /* =========================================================
    WHITE SECTION
 ========================================================= */
 .whiteSection {
   background: var(--paper);
-  padding: 56px var(--sidePadding); /* ↓ seção mais compacta */
+  padding: 56px var(--sidePadding);
 }
 
 .whiteInner {
@@ -156,11 +177,10 @@ body {
 
 /* TEXTO PRINCIPAL */
 .whiteLead {
-  margin: 0 0 14px; /* ↓ menos espaço */
+  margin: 0 0 12px;
   font-size: 20px;
   line-height: 1.35;
   font-weight: 800;
-  color: var(--ink);
 }
 
 /* TEXTO SECUNDÁRIO */
@@ -174,13 +194,12 @@ body {
 }
 
 /* BOTÃO */
-.whiteCta,
-.whiteCta:visited {
+.whiteCta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  margin-top: 18px;          /* 🔥 MENOS DISTÂNCIA */
+  margin-top: 16px;
   padding: 8px 18px;
   border-radius: 999px;
 
@@ -188,8 +207,8 @@ body {
   font-weight: 700;
   letter-spacing: 0.2px;
 
-  color: var(--white);       /* 🔥 TEXTO BRANCO */
-  background: var(--blue);   /* 🔥 FUNDO AZUL */
+  color: var(--white);
+  background: var(--blue);
   border: 2px solid var(--blue);
 
   text-decoration: none;
@@ -199,27 +218,6 @@ body {
 .whiteCta:hover {
   background: transparent;
   color: var(--blue);
-}
-
-/* MOBILE WHITE */
-@media (max-width: 520px) {
-  .whiteSection {
-    padding: 48px 24px;
-  }
-
-  .whiteLead {
-    font-size: 18px;
-  }
-
-  .whiteSub {
-    font-size: 13px;
-  }
-
-  .whiteCta {
-    margin-top: 16px;
-    padding: 7px 16px;
-    font-size: 12.5px;
-  }
 }
 
 /* =========================================================
@@ -300,7 +298,6 @@ body {
 
   font-size: 20px;
   font-weight: 900;
-  line-height: 1;
 
   display: flex;
   align-items: center;
@@ -313,14 +310,12 @@ body {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* visível */
 #backToTop.show {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-/* hover sutil */
 #backToTop:hover {
   transform: translateY(-2px);
 }
