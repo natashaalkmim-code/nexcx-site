@@ -227,43 +227,55 @@ body{
 /* =========================================================
    BOTÃO VOLTAR AO TOPO
 ========================================================= */
-#backToTop{
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  z-index:999;
+/* =========================================================
+   BOTÃO VOLTAR AO TOPO — MESMA SETA DO HERO
+========================================================= */
+#backToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
 
-  width:44px;
-  height:44px;
-  border-radius:50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
 
-  background:var(--blue);
-  color:var(--white);
+  background: var(--blue);
+  color: var(--white);
 
-  border:none;
-  cursor:pointer;
+  border: none;
+  cursor: pointer;
 
-  font-size:20px;
-  font-weight:900;
-  line-height:1;
+  /* mesma vibe da heroArrow */
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  opacity:0;
-  pointer-events:none;
-  transform:translateY(8px);
-  transition:opacity .25s ease, transform .25s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
-#backToTop.show{
-  opacity:1;
-  pointer-events:auto;
-  transform:translateY(0);
+
+/* aparece */
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
-#backToTop:hover{
-  transform:translateY(-2px);
+
+/* hover sutil, nada espalhafatoso */
+#backToTop:hover {
+  transform: translateY(-2px);
 }
+
 
 /* =========================================================
    MOBILE
