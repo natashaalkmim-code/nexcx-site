@@ -574,13 +574,8 @@ body {
   display: block;
 }
 
-@media (max-width: 520px) {
 
-  .serviceTitle {
-    font-size: 23px;
-    padding: 0px 70px;
-  }
-}
+
 /* =========================================================
    BOTÃO VOLTAR AO TOPO
 ========================================================= */
