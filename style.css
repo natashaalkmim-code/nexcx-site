@@ -647,7 +647,7 @@ html { scroll-behavior: smooth; }
   margin: 0 0 54px;
   max-width: 520px;
 
-  font-size: 13px;
+  font-size: 20px;
   line-height: 1.28;
   font-weight: 500; /* no print não tá 900, é mais “bold” clean */
   letter-spacing: 0.6px;
