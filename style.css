@@ -499,7 +499,7 @@ body {
   text-align: left;         /* alinha à esquerda */
   color: #fff;
   margin-bottom: 30px;
-  padding: 10px 70px;
+  padding: 0px 70px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -574,8 +574,13 @@ body {
   display: block;
 }
 
+@media (max-width: 520px) {
 
-
+  .serviceTitle {
+    font-size: 23px;
+    padding: 0px 70px;
+  }
+}
 /* =========================================================
    BOTÃO VOLTAR AO TOPO
 ========================================================= */
