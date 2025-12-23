@@ -232,58 +232,6 @@ body {
   text-decoration: none;
 }
 
-/* NOVO: Estilo com cantos azuis */
-.styledCorners {
-  position: relative;
-  border-radius: 60px;
-  overflow: hidden;
-}
-
-/* Cantinhos azuis */
-.corner {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  background: var(--blue);
-  z-index: 1;
-}
-
-/* Posição dos cantos */
-.corner-top-left {
-  top: 0;
-  left: 0;
-  border-bottom-right-radius: 60px;
-}
-
-.corner-bottom-right {
-  bottom: 0;
-  right: 0;
-  border-top-left-radius: 60px;
-}
-
-/* Garante que o conteúdo fique acima das pontas */
-.whiteInner {
-  position: relative;
-  z-index: 2;
-
-  z-index: 1;
-}
-
-.corner-top-left {
-  top: 0;
-  left: 0;
-  border-bottom-right-radius: 60px;
-}
-
-.corner-bottom-right {
-  bottom: 0;
-  right: 0;
-  border-top-left-radius: 60px;
-}
-
-
-
-
 /* =========================================================
    TOGGLE DE SERVIÇOS
 ========================================================= */
