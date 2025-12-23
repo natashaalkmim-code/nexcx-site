@@ -1,35 +1,39 @@
-// =====================================
-// ELEMENTOS FIXOS (TOPO + HERO SCROLL)
-// =====================================
+// ===============================
+// ELEMENTOS FIXOS (TOPO + SCROLL)
+// ===============================
+
 const backToTop = document.getElementById("backToTop");
 const heroScroll = document.getElementById("heroScroll");
 const target = document.getElementById("sobre");
 
-// mostrar/esconder botão voltar ao topo
+// mostrar ou esconder botão "voltar ao topo"
 window.addEventListener("scroll", () => {
   if (!backToTop) return;
-  if (window.scrollY > 300) backToTop.classList.add("show");
-  else backToTop.classList.remove("show");
+  if (window.scrollY > 300) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
 });
 
-// voltar ao topo
+// clicar no botão para voltar ao topo
 if (backToTop) {
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
-// descer para a seção branca
-if (heroScroll) {
+// clicar na bolinha e descer até a seção branca
+if (heroScroll && target) {
   heroScroll.addEventListener("click", () => {
-    if (!target) return;
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
 
-// =====================================
-// TOGGLES DE SERVIÇOS (accordion)
-// =====================================
+// ============================
+// TOGGLE DE SERVIÇOS (CARDS)
+// ============================
+
 const serviceCards = Array.from(document.querySelectorAll(".serviceCard"));
 
 const setToggleLabel = (btn, isOpen) => {
@@ -46,6 +50,7 @@ const closeCard = (card) => {
   const body = card.querySelector(".serviceBody");
 
   card.classList.remove("open");
+
   if (btn) btn.setAttribute("aria-expanded", "false");
   if (body) {
     body.setAttribute("aria-hidden", "true");
@@ -60,6 +65,7 @@ const openCard = (card) => {
   const body = card.querySelector(".serviceBody");
 
   card.classList.add("open");
+
   if (btn) btn.setAttribute("aria-expanded", "true");
   if (body) {
     body.setAttribute("aria-hidden", "false");
@@ -69,7 +75,7 @@ const openCard = (card) => {
   setToggleLabel(btn, true);
 };
 
-// init: fecha tudo
+// inicia todos os cards fechados
 serviceCards.forEach((card) => {
   const btn = card.querySelector(".serviceToggleBtn");
   const body = card.querySelector(".serviceBody");
@@ -83,18 +89,19 @@ serviceCards.forEach((card) => {
     btn.addEventListener("click", () => {
       const isOpen = card.classList.contains("open");
 
-      // fecha os outros (accordion)
+      // fecha os outros
       serviceCards.forEach((c) => {
         if (c !== card) closeCard(c);
       });
 
+      // alterna o card clicado
       if (isOpen) closeCard(card);
       else openCard(card);
     });
   }
 });
 
-// recalcula altura do aberto no resize
+// recalcula a altura do conteúdo aberto ao redimensionar a janela
 window.addEventListener("resize", () => {
   serviceCards.forEach((card) => {
     if (!card.classList.contains("open")) return;
