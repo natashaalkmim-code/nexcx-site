@@ -647,7 +647,7 @@ html { scroll-behavior: smooth; }
   margin: 0 0 54px;
   max-width: 520px;
 
-  font-size: 17px;
+  font-size: 13px;
   line-height: 1.28;
   font-weight: 500; /* no print não tá 900, é mais “bold” clean */
   letter-spacing: 0.6px;
@@ -698,8 +698,8 @@ html { scroll-behavior: smooth; }
 
 .footerCopy{
   margin: 18px 0 0;
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 8px;
+  font-weight: 500;
 }
 
 /* MOBILE */
