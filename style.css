@@ -632,7 +632,7 @@ html { scroll-behavior: smooth; }
 
 .footerInner{
   /* respiro lateral igual ao print */
-  padding: 64px calc(var(--sidePadding) + 18px) 34px;
+  padding: 70px calc(var(--sidePadding) + 18px) 34px;
 }
 
 .footerLogo{
