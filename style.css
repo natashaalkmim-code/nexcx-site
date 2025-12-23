@@ -628,6 +628,8 @@ html { scroll-behavior: smooth; }
   /* gradiente igual ao print */
   background: var(--blue);
   color: var(--paper);
+  padding-top: 60px; /* ou maior se quiser mais espaço */
+
 }
 
 .footerInner{
@@ -649,7 +651,7 @@ html { scroll-behavior: smooth; }
 
   font-size: 20px;
   line-height: 1.28;
-  font-weight: 500; /* no print não tá 900, é mais “bold” clean */
+  font-weight: 600; /* no print não tá 900, é mais “bold” clean */
   letter-spacing: 0.6px;
 }
 
