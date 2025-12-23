@@ -190,82 +190,47 @@ body {
 /* =========================================================
    WHITE SECTION
 ========================================================= */
-/* Container principal */
-.styledCorners {
-  position: relative;
-  background: #f9f5ed; /* off-white */
-  border-radius: 60px;
-  overflow: hidden;
-  padding: 80px 40px;
-  margin: 80px auto;
-  max-width: 700px;
+.whiteSection {
+  background: var(--paper);
+  padding: 72px var(--sidePadding);
 }
 
-/* Conteúdo interno */
 .whiteInner {
-  position: relative;
-  z-index: 2;
-  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .whiteLead {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 24px;
+  margin: 0 0 18px;
+  font-size: 23px;
+  line-height: 1.35;
+  font-weight: 900;
 }
 
 .whiteSub {
-  font-size: 1.1rem;
+  margin: 0;
+  font-size: 16px;
   line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 40px auto;
+  max-width: 520px;
 }
 
+/* botão */
 .whiteCta {
-  display: inline-block;
-  background: #241f68;
-  color: white;
-  font-weight: bold;
-  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 48px;
+  padding: 11px 30px;
+
+  font-size: 14.5px;
+  font-weight: 800;
+
+  color: var(--paper);
+  background: var(--blue);
   border-radius: 999px;
   text-decoration: none;
 }
-
-/* Cantos azuis */
-.corner {
-  width: 60px;
-  height: 60px;
-  background-image: url('assets/images/corner.png');
-  background-size: cover;
-  position: absolute;
-  z-index: 1;
-}
-
-.top-left {
-  top: 0;
-  left: 0;
-}
-
-.top-right {
-  top: 0;
-  right: 0;
-  transform: rotate(90deg);
-}
-
-.bottom-left {
-  bottom: 0;
-  left: 0;
-  transform: rotate(-90deg);
-}
-
-.bottom-right {
-  bottom: 0;
-  right: 0;
-  transform: rotate(180deg);
-}
-
-
-
 
 /* =========================================================
    TOGGLE DE SERVIÇOS
