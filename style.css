@@ -191,59 +191,46 @@ body {
    WHITE SECTION
 ========================================================= */
 .whiteSection {
-  position: relative;
-  background-color: var(--paper); /* offwhite */
-  padding: 80px 32px;
-  text-align: center;
-  overflow: hidden;
-  border-radius: 0; /* garantia de canto normal */
+  background: var(--paper);
+  padding: 72px var(--sidePadding);
 }
 
-.whiteSection::before,
-.whiteSection::after {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background-color: #f2a900; /* amarelo NexCX */
-  z-index: 0;
+.whiteInner {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.whiteSection::before {
-  top: -60px;
-  left: -60px;
-  border-top-left-radius: 60px;
+.whiteLead {
+  margin: 0 0 18px;
+  font-size: 23px;
+  line-height: 1.35;
+  font-weight: 900;
 }
 
-.whiteSection::after {
-  top: -60px;
-  right: -60px;
-  border-top-right-radius: 60px;
+.whiteSub {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
 }
 
-/* Cantos inferiores extras */
-.whiteSection .bottom-left,
-.whiteSection .bottom-right {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background-color: #f2a900;
-  z-index: 0;
-}
+/* botão */
+.whiteCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-.whiteSection .bottom-left {
-  bottom: -60px;
-  left: -60px;
-  border-bottom-left-radius: 60px;
-}
+  margin-top: 48px;
+  padding: 11px 30px;
 
-.whiteSection .bottom-right {
-  bottom: -60px;
-  right: -60px;
-  border-bottom-right-radius: 60px;
-}
+  font-size: 14.5px;
+  font-weight: 800;
 
+  color: var(--paper);
+  background: var(--blue);
+  border-radius: 999px;
+  text-decoration: none;
+}
 
 /* =========================================================
    TOGGLE DE SERVIÇOS
