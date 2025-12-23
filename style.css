@@ -391,7 +391,7 @@ body {
   justify-content: space-between;
   gap: 14px; /* espaço entre os passos */
   flex: 1; /* ocupa o espaço restante */
-  padding-right: 30px; /* espaço de respiro à direita */
+  padding-right: 25px; /* espaço de respiro à direita */
 }
 
 .step {
