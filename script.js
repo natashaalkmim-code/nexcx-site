@@ -110,3 +110,24 @@ window.addEventListener("resize", () => {
     body.style.maxHeight = body.scrollHeight + "px";
   });
 });
+
+// ============================
+// TOGGLE DA EQUIPE
+// ============================
+
+const teamMembers = document.querySelectorAll(".teamMember");
+
+teamMembers.forEach((member) => {
+  const button = member.querySelector(".teamToggleBtn");
+  const moreText = member.querySelector(".teamMoreText");
+
+  button.addEventListener("click", () => {
+    const isOpen = member.classList.toggle("open");
+    button.setAttribute("aria-expanded", isOpen);
+    moreText.setAttribute("aria-hidden", !isOpen);
+    button.textContent = isOpen ? "Ver menos" : "Saiba mais";
+  });
+});
+
+
+
