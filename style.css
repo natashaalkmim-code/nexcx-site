@@ -191,41 +191,28 @@ body {
    WHITE SECTION
 ========================================================= */
 .whiteSection {
-  background-color: #f9f5ef; /* fundo off-white */
-  border-radius: 60px;
-  padding: 4rem 2rem;
-  margin: 4rem auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.whiteSection::before,
-.whiteSection::after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: #211b70; /* azul NexCX */
-  z-index: 0;
-}
-
-.whiteSection::before {
-  top: 0;
-  left: 0;
-  border-top-left-radius: 60px;
-}
-
-.whiteSection::after {
-  bottom: 0;
-  right: 0;
-  border-bottom-right-radius: 60px;
+  background: var(--paper);
+  padding: 72px var(--sidePadding);
 }
 
 .whiteInner {
-  position: relative;
-  z-index: 1; /* coloca o conteúdo acima das pontinhas */
+  max-width: 720px;
+  margin: 0 auto;
 }
 
+.whiteLead {
+  margin: 0 0 18px;
+  font-size: 23px;
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+.whiteSub {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+}
 
 /* botão */
 .whiteCta {
@@ -244,6 +231,43 @@ body {
   border-radius: 999px;
   text-decoration: none;
 }
+
+/* NOVO: Estilo com cantos azuis */
+.styledCorners {
+  position: relative;
+  border-radius: 60px;
+  overflow: hidden;
+}
+
+/* Cantinhos azuis */
+.corner {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: var(--blue);
+  z-index: 1;
+}
+
+/* Posição dos cantos */
+.corner-top-left {
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 60px;
+}
+
+.corner-bottom-right {
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: 60px;
+}
+
+/* Garante que o conteúdo fique acima das pontas */
+.whiteInner {
+  position: relative;
+  z-index: 2;
+}
+
+
 
 /* =========================================================
    TOGGLE DE SERVIÇOS
