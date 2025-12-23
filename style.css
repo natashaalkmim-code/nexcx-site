@@ -271,6 +271,13 @@ body {
   transform: rotate(180deg);
 }
 
+.styledCorners {
+  position: relative;
+  border-radius: 60px;
+  overflow: hidden; /* Garante que os cantos não fiquem "vazando" */
+}
+
+
 
 /* =========================================================
    TOGGLE DE SERVIÇOS
