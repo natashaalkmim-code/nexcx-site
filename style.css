@@ -632,14 +632,14 @@ html { scroll-behavior: smooth; }
 
 .footerInner{
   /* respiro lateral igual ao print */
-  padding: 70px calc(var(--sidePadding) + 18px) 34px;
+  padding: 64px calc(var(--sidePadding) + 18px) 34px;
 }
 
 .footerLogo{
   width: 150px;
   height: auto;
   display: block;
-  margin: 0 0 46px;
+  margin: 0 0 30px;
 }
 
 /* texto grande */
