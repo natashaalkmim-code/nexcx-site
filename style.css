@@ -628,7 +628,7 @@ html { scroll-behavior: smooth; }
   /* gradiente igual ao print */
   background: var(--blue);
   color: var(--paper);
-  padding-top: 60px; /* ou maior se quiser mais espaço */
+  padding-top: 15px; /* ou maior se quiser mais espaço */
 
 }
 
