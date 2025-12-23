@@ -190,92 +190,80 @@ body {
 /* =========================================================
    WHITE SECTION
 ========================================================= */
-.whiteSection {
-  background: var(--paper);
-  padding: 72px var(--sidePadding);
+/* Container principal */
+.styledCorners {
+  position: relative;
+  background: #f9f5ed; /* off-white */
+  border-radius: 60px;
+  overflow: hidden;
+  padding: 80px 40px;
+  margin: 80px auto;
+  max-width: 700px;
 }
 
+/* Conteúdo interno */
 .whiteInner {
-  max-width: 720px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 
 .whiteLead {
-  margin: 0 0 18px;
-  font-size: 23px;
-  line-height: 1.35;
-  font-weight: 900;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 24px;
 }
 
 .whiteSub {
-  margin: 0;
-  font-size: 16px;
+  font-size: 1.1rem;
   line-height: 1.6;
-  max-width: 520px;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
 }
 
-/* botão */
 .whiteCta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 48px;
-  padding: 11px 30px;
-
-  font-size: 14.5px;
-  font-weight: 800;
-
-  color: var(--paper);
-  background: var(--blue);
+  display: inline-block;
+  background: #241f68;
+  color: white;
+  font-weight: bold;
+  padding: 14px 28px;
   border-radius: 999px;
   text-decoration: none;
 }
 
-/* cantinho */
-
+/* Cantos azuis */
 .corner {
-  position: absolute;
   width: 60px;
   height: 60px;
-  background-image: url("assets/images/corner.png");
+  background-image: url('assets/images/corner.png');
   background-size: cover;
+  position: absolute;
   z-index: 1;
 }
 
-/* canto superior esquerdo */
-.corner-top-left {
+.top-left {
   top: 0;
   left: 0;
-  transform: rotate(0deg);
 }
 
-/* canto superior direito */
-.corner-top-right {
+.top-right {
   top: 0;
   right: 0;
   transform: rotate(90deg);
 }
 
-/* canto inferior esquerdo */
-.corner-bottom-left {
+.bottom-left {
   bottom: 0;
   left: 0;
-  transform: rotate(270deg);
+  transform: rotate(-90deg);
 }
 
-/* canto inferior direito */
-.corner-bottom-right {
+.bottom-right {
   bottom: 0;
   right: 0;
   transform: rotate(180deg);
 }
 
-.styledCorners {
-  position: relative;
-  border-radius: 60px;
-  overflow: hidden; /* Garante que os cantos não fiquem "vazando" */
-}
 
 
 
