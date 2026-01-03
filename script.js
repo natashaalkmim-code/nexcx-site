@@ -128,6 +128,3 @@ teamMembers.forEach((member) => {
     button.textContent = isOpen ? "Ver menos" : "Saiba mais";
   });
 });
-
-
-

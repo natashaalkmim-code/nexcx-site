@@ -111,7 +111,7 @@ body {
   padding: var(--heroTopPadding) var(--sidePadding) var(--heroBottomPadding);
 }
 
-/* título */
+/* tÃ­tulo */
 .heroTitle {
   margin: 0;
   font-weight: 400;
@@ -215,7 +215,7 @@ body {
 }
 
 
-/* botão */
+/* botÃ£o */
 .whiteCta {
   display: inline-flex;
   align-items: center;
@@ -235,7 +235,7 @@ body {
 
 .whiteSectionWrapper {
   background-color: #282871;
-  padding: 0; /* tira o espaço ao redor */
+  padding: 0; /* tira o espaÃ§o ao redor */
   scroll-margin-top: 0px;
 }
 
@@ -272,7 +272,7 @@ body {
 }
 
 /* =========================================================
-   TOGGLE DE SERVIÇOS
+   TOGGLE DE SERVIÃ‡OS
 ========================================================= */
 
 .servicesToggleSection {
@@ -393,10 +393,10 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 32px;
-  width: 100%; /* ocupa mais espaço horizontal */
+  width: 100%; /* ocupa mais espaÃ§o horizontal */
   max-width: 1100px;
   margin: 80px auto;
-  padding: 0 48px; /* espaço nas laterais */
+  padding: 0 48px; /* espaÃ§o nas laterais */
 }
 
 .timeline-img {
@@ -409,9 +409,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 14px; /* espaço entre os passos */
-  flex: 1; /* ocupa o espaço restante */
-  padding-right: 25px; /* espaço de respiro à direita */
+  gap: 14px; /* espaÃ§o entre os passos */
+  flex: 1; /* ocupa o espaÃ§o restante */
+  padding-right: 25px; /* espaÃ§o de respiro Ã  direita */
 }
 
 .step {
@@ -465,11 +465,11 @@ body {
 .trustLogos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 28px;     /* espaço vertical entre as linhas */
-  column-gap: 0px;  /* espaço horizontal entre as colunas */
+  row-gap: 28px;     /* espaÃ§o vertical entre as linhas */
+  column-gap: 0px;  /* espaÃ§o horizontal entre as colunas */
   max-width: 600px;
   margin: 0 auto;
-  justify-items: center; /* centraliza as logos em cada célula */
+  justify-items: center; /* centraliza as logos em cada cÃ©lula */
 }
 
 
@@ -496,7 +496,7 @@ body {
 
 .sectionTitle {
   font-size: 25px;        /* maior */
-  text-align: left;         /* alinha à esquerda */
+  text-align: left;         /* alinha Ã  esquerda */
   color: #fff;
   margin-bottom: 30px;
   padding: 0px 70px;
@@ -577,7 +577,7 @@ body {
 
 
 /* =========================================================
-   BOTÃO VOLTAR AO TOPO
+   BOTÃƒO VOLTAR AO TOPO
 ========================================================= */
 #backToTop {
   position: fixed;
@@ -616,7 +616,7 @@ body {
 }
 
 /* =========================================================
-   SCROLL SUAVE PARA ÂNCORAS (Vamos conversar -> #contato)
+   SCROLL SUAVE PARA Ã‚NCORAS (Vamos conversar -> #contato)
 ========================================================= */
 html { scroll-behavior: smooth; }
 
@@ -628,7 +628,7 @@ html { scroll-behavior: smooth; }
   /* gradiente igual ao print */
   background: var(--blue);
   color: var(--paper);
-  padding-top: 15px; /* ou maior se quiser mais espaço */
+  padding-top: 15px; /* ou maior se quiser mais espaÃ§o */
 
 }
 
@@ -651,7 +651,7 @@ html { scroll-behavior: smooth; }
 
   font-size: 20px;
   line-height: 1.28;
-  font-weight: 600; /* no print não tá 900, é mais “bold” clean */
+  font-weight: 600; /* no print nÃ£o tÃ¡ 900, Ã© mais â€œboldâ€ clean */
   letter-spacing: 0.6px;
 }
 
@@ -750,4 +750,509 @@ html { scroll-behavior: smooth; }
   .footerCopy{
     font-size: 13px;
   }
+}
+
+/* =========================================================
+   DESKTOP: SITE EM LARGURA TOTAL (SEM AFETAR MOBILE)
+========================================================= */
+@media (min-width: 1024px) {
+
+  .app {
+    justify-content: flex-start;
+  }
+
+  .shell {
+    width: 100%;
+    max-width: none;
+  }
+
+}
+
+/* =========================================================
+   DESKTOP – HERO COM IMAGEM + TEXTO JUNTOS
+   (mobile permanece igual)
+========================================================= */
+@media (min-width: 1024px) {
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  .heroImageWrap {
+    height: 100vh;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   DESKTOP – CARDS DE SERVIÇOS LADO A LADO
+========================================================= */
+@media (min-width: 1024px) {
+
+  .servicesToggleSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .serviceCard {
+    margin: 0;
+    height: 100%;
+  }
+
+}
+
+/* =========================================================
+   DESKTOP — SERVIÇOS (RESET LIMPO)
+   Mobile permanece INTACTO
+========================================================= */
+@media (min-width: 1024px) {
+
+  /* seção NÃO vira grid */
+  .servicesToggleSection {
+    display: block;
+  }
+
+  /* SOMENTE o wrapper dos cards vira grid */
+  .serviceCardWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+    align-items: start;
+  }
+
+  /* cards com mesmo tamanho quando fechados */
+  .serviceCard {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+}
+
+/* =========================================================
+   CORREÇÃO DEFINITIVA — ALTURA DOS CARDS (DESKTOP)
+   Mobile permanece INTACTO
+========================================================= */
+@media (min-width: 1024px) {
+
+  /* garante que o grid não estique os cards */
+  .serviceCardWrapper {
+    align-items: start;
+  }
+
+  /* altura base igual para todos os cards fechados */
+  .serviceCard {
+    min-height: 200px;
+    align-self: start;
+  }
+
+  /* impede o conteúdo expandido de influenciar os outros */
+  .serviceBody {
+    position: relative;
+  }
+
+}
+
+/* =========================================================
+   DESKTOP — AJUSTE FINO DO "SAIBA MAIS"
+   sem alterar altura do card
+========================================================= */
+@media (min-width: 1024px) {
+
+  /* garante fluxo vertical previsível */
+  .serviceCard {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* texto ocupa o espaço natural */
+  .serviceSummary {
+    margin-bottom: 0;
+  }
+
+
+}
+
+
+/* =========================================================
+   DESKTOP — DIMINUIR LARGURA DOS CARDS
+========================================================= */
+@media (min-width: 1024px) {
+
+  .serviceCardWrapper {
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;   /* centraliza o conjunto */
+    gap: 50px;
+  }
+
+  .serviceCard {
+    max-width: 360px;          /* AJUSTE AQUI */
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   DESKTOP — BOTÃO FIXO ACIMA DO CONTEÚDO EXPANDIDO
+========================================================= */
+@media (min-width: 1024px) {
+
+  .serviceCard {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* resumo vem primeiro */
+  .serviceSummary {
+    order: 1;
+  }
+
+  /* botão SEMPRE logo abaixo do resumo */
+  .serviceToggleBtn {
+    order: 2;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    align-self: flex-start;
+  }
+
+  /* conteúdo expandido SEMPRE depois do botão */
+  .serviceBody {
+    order: 3;
+  }
+
+}
+
+/* DESKTOP — reduzir espaço abaixo do "Saiba mais" */
+@media (min-width: 1024px) {
+
+  .serviceCard {
+    padding-bottom: 16px; /* antes provavelmente era 24px ou mais */
+  }
+
+  .serviceToggleBtn {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1;
+  }
+}
+
+/* DESKTOP — abaixar o botão "Saiba mais" APENAS nos dois primeiros cards */
+@media (min-width: 1024px) {
+
+  .serviceCardWrapper .serviceCard:nth-child(1) .serviceToggleBtn,
+  .serviceCardWrapper .serviceCard:nth-child(2) .serviceToggleBtn {
+    margin-top: 35px; /* AJUSTE FINO AQUI */
+  }
+
+  .serviceCardWrapper .serviceCard:nth-child(3) .serviceToggleBtn{
+    margin-top: 35px; /* AJUSTE FINO AQUI */
+
+}
+
+/* DESKTOP — respiro interno do card fechado (título + texto + botão) */
+@media (min-width: 1024px) {
+
+  .serviceCard {
+    padding-top: 32px;     /* topo */
+    padding-left: 32px;    /* lateral esquerda */
+    padding-right: 32px;   /* lateral direita */
+    padding-bottom: 24px;  /* mantém o fundo enxuto */
+  }
+
+}
+
+/* FIX DEFINITIVO — toggle aberto não afeta outros cards (DESKTOP) */
+@media (min-width: 1024px) {
+  .serviceCardWrapper {
+    align-items: flex-start;
+  }
+
+  .serviceCard {
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* o grid NÃO pode alinhar alturas implicitamente */
+  .serviceCardWrapper {
+    align-items: flex-start;
+  }
+
+  /* cada card ignora a altura da linha do grid */
+  .serviceCard {
+    height: fit-content;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  /* título principal da hero */
+  .heroContent h1 {
+    font-size: 56px;       /* ajuste fino aqui */
+    line-height: 1.1;
+  }
+
+}
+
+/* DESKTOP — tipografia maior na primeira seção após a hero */
+@media (min-width: 1024px) {
+
+  .hero + section h2 {
+    font-size: 40px;     /* ajuste fino */
+    line-height: 1.25;
+  }
+
+  .hero + section p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 640px;    /* leitura mais confortável */
+  }
+
+}
+
+/* DESKTOP — primeira seção branca pós-hero
+   título maior, parágrafo normal */
+@media (min-width: 1024px) {
+
+  /* PRIMEIRO parágrafo (headline) */
+  .hero + section p:first-of-type {
+    font-size: 40px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  /* SEGUNDO parágrafo (texto de apoio) */
+  .hero + section p:not(:first-of-type) {
+    font-size: 25px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+}
+
+
+@media (min-width: 1024px) {
+
+  /* bloco de texto da 1ª seção branca */
+  .aboutContent {
+    max-width: 1000px;   /* AQUI está o ouro */
+  }
+
+}
+
+/* DESKTOP — deixar o texto mais “horizontal” na WHITE SECTION */
+@media (min-width: 1024px) {
+  .whiteSectionContent .whiteInner{
+    max-width: 1100px !important; /* aumenta a largura do bloco */
+  }
+
+  .whiteSectionContent .whiteSub{
+    max-width: 1100px !important; /* ou tira o limite */
+    /* max-width: none !important;  <- se quiser soltar total */
+  }
+}
+
+@media (min-width: 1024px) {
+  .whiteSectionContent br {
+    display: none;
+  }
+}
+
+/* =========================================
+   DESKTOP — tirar quebras forçadas (<br>) 
+   só na 1ª sessão branca pós-hero
+========================================= */
+@media (min-width: 1024px) {
+  .whiteSection br {
+    display: none;
+  }
+}
+
+/* (opcional, pra garantir que no mobile continue quebrando) */
+@media (max-width: 1023px) {
+  .whiteSection br {
+    display: inline;
+  }
+}
+
+/* DESKTOP — deixar a 1ª seção branca “sem quebra” (texto mais largo) */
+@media (min-width: 1024px) {
+
+  /* 1) garante que o site não está preso num “shell” estreito no desktop */
+  .shell{
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* 2) libera o bloco do texto dessa seção (sem mexer no fundo) */
+  .whiteSectionContent .whiteInner{
+    max-width: 1200px !important;   /* aumenta bastante */
+    width: 100% !important;
+  }
+
+  /* 3) remove qualquer max-width que esteja limitando os parágrafos */
+  .whiteSectionContent .whiteLead,
+  .whiteSectionContent .whiteSub{
+    max-width: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .whiteSectionContent a {
+    font-size: 18px;
+    padding: 16px 28px;
+    display: inline-block;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  /* BLOCO DO TEXTO — não mexe no fundo */
+  .whiteInner {
+    padding-left: 80px;   /* aumenta aqui */
+    padding-right: 80px;  /* aumenta aqui */
+  }
+
+}
+
+.brandHighlight {
+  color: #2b2b86;      /* azul da marca */
+  font-weight: 900;    /* negrito */
+}
+
+/* =========================================================
+   DESKTOP — LOGOS EM LINHA HORIZONTAL
+   Mobile permanece INTACTO
+========================================================= */
+@media (min-width: 1024px) {
+
+  .clientsLogos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;              /* espaço entre logos */
+    flex-wrap: nowrap;      /* NÃO quebrar linha */
+  }
+
+  .clientsLogos img {
+    max-height: 48px;       /* controla altura */
+    width: auto;
+    object-fit: contain;
+  }
+
+}
+
+/* =========================================================
+   DESKTOP — LOGOS EM LINHA HORIZONTAL
+========================================================= */
+@media (min-width: 1024px) {
+
+  .trustLogos {
+    display: flex;          /* mata o grid */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 64px;              /* espaço entre logos */
+    flex-wrap: nowrap;      /* 🔑 impede quebrar linha */
+  }
+
+  .trustLogos img {
+    max-height: 60px;       /* controla altura visual */
+    width: auto;
+    flex-shrink: 0;         /* impede esmagamento */
+  }
+
+}
+
+/* =========================================================
+   ESPAÇO INFERIOR — SECTION EQUIPE (DESKTOP)
+========================================================= */
+@media (min-width: 1024px) {
+
+  .teamSection {
+    padding-bottom: 100px; /* ajuste fino aqui */
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .footerText {
+    font-size: 22px;     /* maior */
+    line-height: 1.35;
+    white-space: nowrap; /* tenta manter 1 linha */
+  }
+
+  .footerText br {
+    display: none;       /* garante que não quebra por <br> */
+  }
+}
+
+@media (min-width: 1024px) {
+  .footerTagline {
+    font-size: 24px;      /* ajusta aqui */
+    line-height: 1.35;
+  }
+}
+
+@media (min-width: 1024px) {
+  .trustTitle {
+    font-size: 22px;     /* ajuste fino aqui */
+    font-weight: 500;
+    margin-bottom: 32px; /* espaço maior pros logos respirarem */
+  }
+}
+
+@media (min-width: 1024px) {
+  .trustSection .trustLogos img {
+    height: 400px;   /* antes devia estar ~32–40px */
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .trustSection .trustLogos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px; /* aumenta a distância horizontal */
+  }
+}
+
+.trustTitle {
+  margin-bottom: 55px; /* aumente aqui */
+}
+
+.footerHeadline {
+  font-size: 30px;
+  line-height: 1.35;
+}
+
+.footerHeadline {
+  max-width: 700px;
+}
+
+.footerLogo {
+  margin-bottom: 60px; /* aumenta/diminui aqui */
 }
