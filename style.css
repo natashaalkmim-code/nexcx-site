@@ -448,7 +448,7 @@ body {
 
   .processImages img:first-child {
     align-self: flex-start;
-    margin-left: 10px; /* imagem de cima puxa pra esquerda */
+    margin-left: 30px; /* imagem de cima puxa pra esquerda */
   }
 
   .processImages img:last-child {
