@@ -406,11 +406,18 @@ body {
   padding-right: 40px;
 }
 
+.processHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .processTitle {
   font-size: 28px;
   font-weight: 900;
   color: #2b2b86;
-  margin: 0 0 16px;
+  text-align: center;
+  margin-top: 50px
 }
 
 .processSubtitle {
@@ -444,7 +451,7 @@ body {
 
   .processImages img:last-child {
     align-self: flex-end;
-    margin-right: -20px; /* imagem de baixo puxa pra direita */
+    margin-right: -30px; /* imagem de baixo puxa pra direita */
   }
 }
 
@@ -1298,7 +1305,8 @@ html { scroll-behavior: smooth; }
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  margin-top: 24px;
+  margin-top: 0px;   /* diminui espaço entre título e imagens */
+  margin-bottom: 60px; /* aumenta espaço abaixo das imagens */
 }
 
 /* desktop */
@@ -1327,7 +1335,9 @@ html { scroll-behavior: smooth; }
 @media (min-width: 1024px) {
   .processSection {
     padding-top: 60px;    /* diminui espaço superior */
-    padding-bottom: 60px; /* diminui espaço inferior */
+    padding-bottom: 160px;
+    position: relative;
+    z-index: 2
   }
 }
 
@@ -1344,3 +1354,4 @@ html { scroll-behavior: smooth; }
     display: block;
   }
 }
+
