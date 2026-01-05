@@ -437,6 +437,8 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  max-width: 450px; /* 👈 controla o “tamanho visual” */
+  margin: 0 auto;
 }
 
 @media (max-width: 1200px) {
