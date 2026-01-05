@@ -453,7 +453,7 @@ body {
 
   .processImages img:last-child {
     align-self: flex-end;
-    margin-right: -10px; /* imagem de baixo puxa pra direita */
+    margin-right: 10px; /* imagem de baixo puxa pra direita */
   }
 }
 
