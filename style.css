@@ -1297,8 +1297,9 @@ html { scroll-behavior: smooth; }
   align-items: center;
   gap: 24px;
   margin-top: 0px;   /* diminui espaço entre título e imagens */
-  margin-bottom: 60px; /* aumenta espaço abaixo das imagens */
+  margin-bottom: 100px; /* aumenta espaço abaixo das imagens */
 }
+
 
 @media (max-width: 768px) {
   .processImages {
@@ -1347,12 +1348,25 @@ html { scroll-behavior: smooth; }
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 0px; /* CONTROLE REAL DO ESPAÇO ENTRE ELAS */
+    gap: 35px; /* CONTROLE REAL DO ESPAÇO ENTRE ELAS */
   }
 
   .processImages img {
     max-width: 450px; /* 👈 DIMINUI O TAMANHO DAS IMAGENS */
     width: 100%;
     height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .processImages {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .processImages {
+    margin-bottom: 45px; /* AJUSTE FINO AQUI */
   }
 }
