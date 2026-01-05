@@ -430,7 +430,7 @@ body {
 .processImages {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center; /* 👈 ESSENCIAL */
 }
 
 .processImages img {
@@ -445,17 +445,6 @@ body {
   .processImages {
     align-items: stretch;
   }
-
-  .processImages img:first-child {
-    align-self: flex-start;
-    margin-left: -10px; /* imagem de cima puxa pra esquerda */
-  }
-
-  .processImages img:last-child {
-    align-self: flex-end;
-    margin-right: 10px; /* imagem de baixo puxa pra direita */
-  }
-}
 
 
 
