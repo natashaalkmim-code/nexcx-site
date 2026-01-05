@@ -437,7 +437,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  max-width: 400px; /* 👈 controla o “tamanho visual” */
+  max-width: 350px; /* 👈 controla o “tamanho visual” */
   margin: 0 auto;
 }
 
@@ -448,12 +448,12 @@ body {
 
   .processImages img:first-child {
     align-self: flex-start;
-    margin-left: -40px; /* imagem de cima puxa pra esquerda */
+    margin-left: 15px; /* imagem de cima puxa pra esquerda */
   }
 
   .processImages img:last-child {
     align-self: flex-end;
-    margin-right: -30px; /* imagem de baixo puxa pra direita */
+    margin-right: 10px; /* imagem de baixo puxa pra direita */
   }
 }
 
