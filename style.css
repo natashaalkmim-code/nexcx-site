@@ -448,12 +448,12 @@ body {
 
   .processImages img:first-child {
     align-self: flex-start;
-    margin-left: 15px; /* imagem de cima puxa pra esquerda */
+    margin-left: 10px; /* imagem de cima puxa pra esquerda */
   }
 
   .processImages img:last-child {
     align-self: flex-end;
-    margin-right: 10px; /* imagem de baixo puxa pra direita */
+    margin-right: 0px; /* imagem de baixo puxa pra direita */
   }
 }
 
