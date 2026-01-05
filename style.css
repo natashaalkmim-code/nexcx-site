@@ -1334,3 +1334,13 @@ html { scroll-behavior: smooth; }
 .processTitle {
   margin-bottom: 48px;
 }
+
+.desktopBreak {
+  display: inline;
+}
+
+@media (min-width: 1024px) {
+  .desktopBreak {
+    display: block;
+  }
+}
