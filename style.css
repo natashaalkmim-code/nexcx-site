@@ -384,54 +384,66 @@ body {
   }
 }
 
-/* =========================================================
-   3 PASSOS
-========================================================= */
+/* ===============================
+   COMO TRABALHAMOS
+================================ */
 
-
-.timeline {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  width: 100%; /* ocupa mais espaÃ§o horizontal */
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 48px; /* espaÃ§o nas laterais */
+.processSection {
+  background-color: var(--paper);
+  padding-top: 50px;    /* topo */
+  padding-bottom: 20px; /* base */
 }
 
-.timeline-img {
-  width: 50px;
+
+.processContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 55px;  /* ⬅️ MAIS respiro à esquerda */
+  padding-right: 40px;
+}
+
+.processTitle {
+  font-size: 32px;
+  font-weight: 900;
+  color: #2b2b86;
+  margin: 0 0 16px;
+}
+
+.processSubtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.processImages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.processImages img {
+  width: 100%;
   height: auto;
-  margin-top: 12px;
+  display: block;
 }
 
-.timeline-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 14px; /* espaÃ§o entre os passos */
-  flex: 1; /* ocupa o espaÃ§o restante */
-  padding-right: 25px; /* espaÃ§o de respiro Ã  direita */
+@media (max-width: 1200px) {
+  .processImages {
+    align-items: stretch;
+  }
+
+  .processImages img:first-child {
+    align-self: flex-start;
+    margin-left: -40px; /* imagem de cima puxa pra esquerda */
+  }
+
+  .processImages img:last-child {
+    align-self: flex-end;
+    margin-right: -20px; /* imagem de baixo puxa pra direita */
+  }
 }
 
-.step {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.step h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
-  color: #2a2480;
-  font-weight: bold;
-}
-
-.step p {
-  font-size: 13px;
-  line-height: 1.5;
-  margin: 0;
-}
 
 
 /* =========================================================
@@ -616,7 +628,7 @@ body {
 }
 
 /* =========================================================
-   SCROLL SUAVE PARA Ã‚NCORAS (Vamos conversar -> #contato)
+   SCROLL SUAVE PARA ÃNCORAS (Vamos conversar -> #contato)
 ========================================================= */
 html { scroll-behavior: smooth; }
 
@@ -755,7 +767,7 @@ html { scroll-behavior: smooth; }
 /* =========================================================
    DESKTOP: SITE EM LARGURA TOTAL (SEM AFETAR MOBILE)
 ========================================================= */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   .app {
     justify-content: flex-start;
@@ -772,7 +784,7 @@ html { scroll-behavior: smooth; }
    DESKTOP – HERO COM IMAGEM + TEXTO JUNTOS
    (mobile permanece igual)
 ========================================================= */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   .hero {
     display: grid;
@@ -800,7 +812,7 @@ html { scroll-behavior: smooth; }
 /* =========================================================
    DESKTOP – CARDS DE SERVIÇOS LADO A LADO
 ========================================================= */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   .servicesToggleSection {
     display: grid;
@@ -819,7 +831,7 @@ html { scroll-behavior: smooth; }
    DESKTOP — SERVIÇOS (RESET LIMPO)
    Mobile permanece INTACTO
 ========================================================= */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   /* seção NÃO vira grid */
   .servicesToggleSection {
@@ -849,7 +861,7 @@ html { scroll-behavior: smooth; }
    CORREÇÃO DEFINITIVA — ALTURA DOS CARDS (DESKTOP)
    Mobile permanece INTACTO
 ========================================================= */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   /* garante que o grid não estique os cards */
   .serviceCardWrapper {
@@ -873,7 +885,7 @@ html { scroll-behavior: smooth; }
    DESKTOP — AJUSTE FINO DO "SAIBA MAIS"
    sem alterar altura do card
 ========================================================= */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   /* garante fluxo vertical previsível */
   .serviceCard {
@@ -893,7 +905,7 @@ html { scroll-behavior: smooth; }
 /* =========================================================
    DESKTOP — DIMINUIR LARGURA DOS CARDS
 ========================================================= */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   .serviceCardWrapper {
     grid-template-columns: repeat(3, auto);
@@ -911,7 +923,7 @@ html { scroll-behavior: smooth; }
 /* =========================================================
    DESKTOP — BOTÃO FIXO ACIMA DO CONTEÚDO EXPANDIDO
 ========================================================= */
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
 
   .serviceCard {
     display: flex;
@@ -1006,7 +1018,7 @@ html { scroll-behavior: smooth; }
 
   /* título principal da hero */
   .heroContent h1 {
-    font-size: 56px;       /* ajuste fino aqui */
+    font-size: 50px;       /* ajuste fino aqui */
     line-height: 1.1;
   }
 
@@ -1136,11 +1148,6 @@ html { scroll-behavior: smooth; }
 
 }
 
-.brandHighlight {
-  color: #2b2b86;      /* azul da marca */
-  font-weight: 900;    /* negrito */
-}
-
 /* =========================================================
    DESKTOP — LOGOS EM LINHA HORIZONTAL
    Mobile permanece INTACTO
@@ -1255,4 +1262,75 @@ html { scroll-behavior: smooth; }
 
 .footerLogo {
   margin-bottom: 60px; /* aumenta/diminui aqui */
+}
+
+@media (min-width: 1024px) {
+  .heroContent {
+    padding-left: 90px; /* ajuste o valor se quiser mais ou menos */
+  }
+}
+
+.brandHighlight {
+  color: #2b2b86;
+  font-weight: 900;
+}
+
+@media (min-width: 1024px) {
+  .processSection {
+    padding: 120px 0;
+  }
+
+  .processTitle {
+    font-size: 28px;
+  }
+
+  .processSubtitle {
+    font-size: 18px;
+    margin-bottom: 60px;
+  }
+
+  .processImages {
+    gap: 64px;
+  }
+
+  .processImages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .processImages {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .processImages img {
+    max-width: 48%;
+    height: auto;
+  }
+}
+
+}
+
+@media (max-width: 768px) {
+  .processImages {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .processSection {
+    padding-top: 60px;    /* diminui espaço superior */
+    padding-bottom: 60px; /* diminui espaço inferior */
+  }
+}
+
+.processTitle {
+  margin-bottom: 48px;
 }
