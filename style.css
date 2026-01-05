@@ -445,6 +445,7 @@ body {
   .processImages {
     align-items: stretch;
   }
+}
 
 
 
@@ -978,6 +979,7 @@ html { scroll-behavior: smooth; }
     margin-top: 35px; /* AJUSTE FINO AQUI */
 
 }
+}
 
 /* DESKTOP — respiro interno do card fechado (título + texto + botão) */
 @media (min-width: 1024px) {
@@ -1370,3 +1372,29 @@ html { scroll-behavior: smooth; }
     margin-bottom: 45px; /* AJUSTE FINO AQUI */
   }
 }
+
+/* =========================================================
+   FIX FINAL — DESKTOP REAL (mata o layout mobile no desktop)
+========================================================= */
+@media (min-width: 1024px) {
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .app {
+    display: block;          /* mata centralização flex */
+    width: 100%;
+  }
+
+  .shell {
+    width: 100% !important;  /* ocupa toda a tela */
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+}
+
+
+
