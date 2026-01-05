@@ -214,8 +214,12 @@ body {
   max-width: 520px;
 }
 
+.whiteSub .brandHighlight {
+  color: #2b2b86;
+  font-weight: 900;
+}
 
-/* botÃ£o */
+/* botão */
 .whiteCta {
   display: inline-flex;
   align-items: center;
@@ -1270,10 +1274,6 @@ html { scroll-behavior: smooth; }
   }
 }
 
-.brandHighlight {
-  color: #2b2b86;
-  font-weight: 900;
-}
 
 @media (min-width: 1024px) {
   .processSection {
