@@ -1300,22 +1300,6 @@ html { scroll-behavior: smooth; }
   margin-bottom: 60px; /* aumenta espaço abaixo das imagens */
 }
 
-/* desktop */
-@media (min-width: 1024px) {
-  .processImages {
-    flex-direction: row;
-    justify-content: center;
-    gap: 32px;
-  }
-
-  .processImages img {
-    max-width: 48%;
-    height: auto;
-  }
-}
-
-}
-
 @media (max-width: 768px) {
   .processImages {
     flex-direction: column;
@@ -1346,3 +1330,29 @@ html { scroll-behavior: smooth; }
   }
 }
 
+@media (min-width: 1024px) {
+  .processSection {
+    text-align: left;
+  }
+
+  .processImages {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .processImages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0px; /* CONTROLE REAL DO ESPAÇO ENTRE ELAS */
+  }
+
+  .processImages img {
+    max-width: 450px; /* 👈 DIMINUI O TAMANHO DAS IMAGENS */
+    width: 100%;
+    height: auto;
+  }
+}
